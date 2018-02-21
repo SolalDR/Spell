@@ -11,3 +11,5 @@ class Character extends Element {
 	}
 
 }
+
+export default Character

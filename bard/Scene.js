@@ -46,6 +46,10 @@ class Scene {
 		this.fgGroup = new THREE.Group();
 		this.mainGroup = new THREE.Group();
 
+		this.bgGroup.position.y = -5
+		this.mainGroup.position.y = 0
+		this.fgGroup.position.y = 1
+
 		this.threeScene.add(this.bgGroup);
 		this.threeScene.add(this.fgGroup);
 		this.threeScene.add(this.mainGroup);

@@ -1,7 +1,14 @@
+
 class Element {
 
 	static get AVAILABLES_TYPES(){
 		return ["text", "image", "obj3D", "obj2D"];
+	}
+
+	constructor(params){
+		this.actions = {};
+		this._type = null;
+		this.content = null;
 	}
 
 	set type(type) {
@@ -16,10 +23,9 @@ class Element {
 		return this._type;
 	}
 
-	constructor(params){
-		this.actions = {};
-		this._type = null;
-	}
+	display(){}
+
+	hide(){}
 
 	registerAction(name, action, force){
 		if( this.actions[name] && !force ){
@@ -41,3 +47,5 @@ class Element {
 	}
 
 }
+
+export default Element
