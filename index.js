@@ -1,23 +1,7 @@
-import annyang from 'annyang'
+import Book from "./bard/Book.js";
 
-if (annyang) {
-    // Let's define a command. 
-    annyang.setLanguage('fr-FR')
+window.addEventListener("load", function(){
+    var book = new Book();
+    book.start();
+})
 
-    var commands = {
-      "la forêt s'assombrit": function() { alert('Hello world!'); },
-      "la forêt sa sonnerie": function() { alert('Hello world!'); }
-    };
-    
-
-
-    annyang.addCallback('result', function(phrases){
-        console.log(phrases)
-        console.log('ok')
-    })
-    // Add our commands to annyang 
-    annyang.addCommands(commands);
-   
-    // Start listening. 
-    annyang.start();
-  }
