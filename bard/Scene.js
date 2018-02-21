@@ -9,31 +9,46 @@ class Scene {
 	constructor(canvas){
 
 		this.canvas = document.getElementById("canvas");
+		this.threeScene = new THREE.Scene();
+		
+		this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 50 );
+		this.camera.position.z = 5;
 
-		var scene = new THREE.Scene();
-		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+		this.renderer = new THREE.WebGLRenderer( { 
+			canvas: this.canvas, 
+			antialias: true 
+		} );
 
-		var renderer = new THREE.WebGLRenderer( { canvas: this.canvas } );
-		renderer.setSize( window.innerWidth, window.innerHeight );
-		//document.body.appendChild( renderer.domElement );
+		this.renderer.setSize( window.innerWidth, window.innerHeight );
 
-		var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-		var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-		var cube = new THREE.Mesh( geometry, material );
-		scene.add( cube );
+		this.initGroups();
+		
+	}
 
-		camera.position.z = 5;
+	render(){
+		this.renderer.render(this.threeScene, this.camera);
+	}
 
-		var animate = function () {
-			requestAnimationFrame( animate );
+	initGroups(){
+		this.bgGroup = new THREE.Group();
+		this.fgGroup = new THREE.Group();
+		this.mainGroup = new THREE.Group();
 
-			cube.rotation.x += 0.01;
-			cube.rotation.y += 0.01;
+		this.threeScene.add(this.bgGroup);
+		this.threeScene.add(this.fgGroup);
+		this.threeScene.add(this.mainGroup);
+	}
 
-			renderer.render(scene, camera);
-		};
+	addElement(element){
+		switch( element.group ){
+			case "background" : this.bgGroup.add(element.mesh); break;
+			case "foreground" : this.fgGroup.add(element.mesh); break;
+			default: this.mainGroup.add(element.mesh);
+		}
+	}
 
-		animate();
+	removeElement(element){
+
 	}
 
 }

@@ -23,3 +23,5 @@ class BookNavigator {
 		this._currentFragment = fragment;
 	}
 }
+
+export default BookNavigator

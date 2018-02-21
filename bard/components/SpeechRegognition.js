@@ -1,6 +1,7 @@
 import annyang from 'annyang'
 
 class SpeechRecognition(){
+	
 	constructor(){
 
 		if (annyang) {
@@ -25,6 +26,7 @@ class SpeechRecognition(){
 			// Start listening. 
 			annyang.start();
 		}
-		
+
 	}
+	
 }
