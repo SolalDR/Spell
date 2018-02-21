@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.text {
+  position: fixed; }
+  .text--top-left {
+    top: 0;
+    left: 0; }
+  .text--top-right {
+    top: 0;
+    right: 0; }
+  .text--bottom-right {
+    bottom: 0;
+    right: 0; }
+  .text--bottom-left {
+    bottom: 0;
+    left: 0; }
+  .text--default {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 15px;
+    padding: 15px;
+    max-width: 500px;
+    color: white; }
+
+/*# sourceMappingURL=bard.css.map */
