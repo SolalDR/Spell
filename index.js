@@ -7,21 +7,15 @@ import * as THREE from "three";
 
 class StartFragment extends Fragment {
 
-	constructor(params){
-		super();
-	}
+	constructor(){ super(); }
 
 	start(){
-		super.start();
-		
 		var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 		var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 		this.cube = new THREE.Mesh( geometry, material );
-		
-
 		this.addElement( {  mesh: this.cube, group: "scene" });
-
-		this.render();	
+		
+		super.start();	
 	}
 
 	render(){
@@ -32,6 +26,7 @@ class StartFragment extends Fragment {
 
 		super.postRender();
 	}
+	
 }
 
 
@@ -39,7 +34,7 @@ window.addEventListener("load", function(){
     var book = new Book();
     var frag = new StartFragment();
     book.addFragment(frag);
-    
+
     book.start();
 })
 

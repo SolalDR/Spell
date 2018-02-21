@@ -1,5 +1,8 @@
 import annyang from 'annyang'
 
+/**
+ * Allow to recognize speech and execute actions
+ */
 class SpeechRecognition(){
 	
 	constructor(){
@@ -12,8 +15,6 @@ class SpeechRecognition(){
 				"la forêt s'assombrit": function() { alert('Hello world!'); },
 				"la forêt sa sonnerie": function() { alert('Hello world!'); }
 			};
-
-
 
 			annyang.addCallback('result', function(phrases){
 				console.log(phrases)
@@ -28,5 +29,5 @@ class SpeechRecognition(){
 		}
 
 	}
-	
+
 }

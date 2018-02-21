@@ -1,11 +1,14 @@
 import * as THREE from 'three'
 
 /** 
- * The threejs scene
+ * The threejs scene. It persist during the all livecycle of Book
  */
 
 class Scene {
 
+	/**
+	 * Create the THREE.js Scene, camera, renderer and create layer groups
+	 */
 	constructor(canvas){
 
 		this.canvas = document.getElementById("canvas");
@@ -22,13 +25,22 @@ class Scene {
 		this.renderer.setSize( window.innerWidth, window.innerHeight );
 
 		this.initGroups();
-		
+
 	}
 
+	/**
+	 * Call the renderer
+	 */
 	render(){
 		this.renderer.render(this.threeScene, this.camera);
 	}
 
+	/**	
+	 * Init layer group
+	 * - Background
+	 * - Scene
+	 * - Foreground
+	 */
 	initGroups(){
 		this.bgGroup = new THREE.Group();
 		this.fgGroup = new THREE.Group();
@@ -39,6 +51,10 @@ class Scene {
 		this.threeScene.add(this.mainGroup);
 	}
 
+	/**
+	 * Add a new element to specific group according to it's position
+	 * @param element : Element
+	 */
 	addElement(element){
 		switch( element.group ){
 			case "background" : this.bgGroup.add(element.mesh); break;
@@ -47,8 +63,17 @@ class Scene {
 		}
 	}
 
-	removeElement(element){
 
+	/**
+	 * Remove an element in its group
+	 * @param element : Element
+	 */
+	removeElement(element){
+		switch( element.group ){
+			case "background" : this.bgGroup.remove(element.name); break;
+			case "foreground" : this.fgGroup.remove(element.name); break;
+			default: this.mainGroup.remove(element.name);
+		}
 	}
 
 }
