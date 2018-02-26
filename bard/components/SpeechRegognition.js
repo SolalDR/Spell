@@ -3,31 +3,35 @@ import annyang from 'annyang'
 /**
  * Allow to recognize speech and execute actions
  */
-class SpeechRecognition(){
+class SpeechRecognition{
 	
-	constructor(){
+	constructor(args) {
 
-		if (annyang) {
+		this.commands = args.commands ? args.commands : [];
+		this.api = annyang;
+
+		if (this.api) {
 			// Let's define a command. 
-			annyang.setLanguage('fr-FR')
+			this.api.setLanguage('fr-FR')
 
-			var commands = {
-				"la forêt s'assombrit": function() { alert('Hello world!'); },
-				"la forêt sa sonnerie": function() { alert('Hello world!'); }
-			};
-
-			annyang.addCallback('result', function(phrases){
+			this.api.addCallback('result', function(phrases){
 				console.log(phrases)
 				console.log('ok')
 			})
 
 			// Add our commands to annyang 
-			annyang.addCommands(commands);
+			this.api.addCommands(this.commands);
 
 			// Start listening. 
-			annyang.start();
+			this.api.start();
 		}
 
 	}
 
+	updateDico(){
+
+	}
+
 }
+
+export default SpeechRecognition;

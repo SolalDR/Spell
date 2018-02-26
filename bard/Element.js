@@ -1,14 +1,17 @@
-
 class Element {
-
-	static get AVAILABLES_TYPES(){
-		return ["text", "image", "obj3D", "obj2D"];
-	}
 
 	constructor(params){
 		this.actions = {};
+		this.loaded = false;
 		this._type = null;
-		this.content = null;
+
+		if( params.name ){
+			this.name = params.name ? params.name : null;
+		}
+	}
+
+	static get AVAILABLES_TYPES(){
+		return ["text", "image", "sound", "obj3D", "obj2D"];
 	}
 
 	set type(type) {
@@ -22,10 +25,6 @@ class Element {
 	get type(){
 		return this._type;
 	}
-
-	display(){}
-
-	hide(){}
 
 	registerAction(name, action, force){
 		if( this.actions[name] && !force ){
@@ -48,4 +47,4 @@ class Element {
 
 }
 
-export default Element
+export default Element;

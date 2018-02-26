@@ -19,7 +19,7 @@ import Element from "./../Element.js"
 class Text extends Element {
 	
 	constructor(params){
-		super();
+		super(params);
 
 		this.type = "text";
 		this.group = "foreground";
@@ -33,10 +33,33 @@ class Text extends Element {
 		this.initTextElement();
 	}
 
+	/**
+	 * Return the content of the style attribute
+	 */
 	get style(){
 		return `transform: translate3d(${this.position.x},${this.position.y},0); width: ${this.dimension.x}; height: ${this.dimension.y}`;
 	}
 
+
+	/**
+	 * Catpure commands
+	 */
+	 captureCommands(el){
+	 	var commandsEl = el.querySelectorAll("*[data-speech]");
+	 	var commands = [];
+	 	for( var i = 0; i < commandsEl.length; i++){
+	 		commands.push({
+	 			command: commandsEl[i].innerHTML,
+	 			id: commandsEl[i].getAttribute("data-speech")
+	 		});
+	 	}
+
+	 	return commands;
+	 }
+
+	/**
+	 *	Create the html text element
+	 */
 	initTextElement(){
 		this.el = document.createElement("p");
 		this.el.innerHTML = this.text;
@@ -46,8 +69,13 @@ class Text extends Element {
 		this.el.classList.add("text--"+this.theme);
 
 		this.el.setAttribute("style", this.style);
+
+		this.loaded = true;
 	}
 
+	/** 
+	 * Add text element in DOM and display it 
+	 */
 	display(){
 		var fg = document.querySelector(".fragment__foreground");
 		fg.appendChild(this.el);
@@ -55,7 +83,7 @@ class Text extends Element {
 
 	}
 
-
+	
 	hide(){
 		this.el.classList.add("text--hide");
 	}

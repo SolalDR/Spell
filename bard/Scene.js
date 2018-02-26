@@ -1,9 +1,9 @@
 import * as THREE from 'three'
+import OrbitControls from './utils/OrbitControl.js'
 
 /** 
  * The threejs scene. It persist during the all livecycle of Book
  */
-
 class Scene {
 
 	/**
@@ -14,13 +14,22 @@ class Scene {
 		this.canvas = document.getElementById("canvas");
 		this.threeScene = new THREE.Scene();
 		
-		this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 50 );
-		this.camera.position.z = 5;
+		this.camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 10000 );
+		this.camera.position.set(0, 100, 300);
 
 		this.renderer = new THREE.WebGLRenderer( { 
 			canvas: this.canvas, 
 			antialias: true 
-		} );
+		});
+
+		this.threeScene.add( new THREE.AmbientLight( 0xFF0000, 2 ) );
+
+
+		var directionalLight = new THREE.DirectionalLight( 0xffffff, 5 );
+		this.threeScene.add( directionalLight );
+
+		this.controls = new OrbitControls( this.camera );
+		this.controls.update();
 
 		this.renderer.setSize( window.innerWidth, window.innerHeight );
 
@@ -53,6 +62,11 @@ class Scene {
 		this.threeScene.add(this.bgGroup);
 		this.threeScene.add(this.fgGroup);
 		this.threeScene.add(this.mainGroup);
+	}
+
+
+	findElement(){
+
 	}
 
 	/**
