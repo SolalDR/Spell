@@ -17,21 +17,30 @@ import Element from "./../Element.js"
  * @param speechRecognition (SpeechRecognition)
  */
 
+import TextNode from "./TextNode.js"
+
 class Text extends Element {
 	
 	constructor(params){
+
 		super(params);
 
 		this.speechRecognition = params.speechRecognition ? params.speechRecognition : null
 		this.type = "text";
 		this.group = "foreground"; 	// Text is always front
-		this.text = params.text;	
 		this.theme = params.theme ? params.theme : "default"
 
 		this.align = params.align ? params.align : "top-left";
 		this.position = params.position ? params.position : {x: 0, y: 0};
 		this.dimension = params.dimension ? params.dimension : {x: "100%", y: "auto"};
 
+		this.nodes = [];
+		for(var i=0; i<params.nodes.length; i++) {
+			this.nodes.push(new TextNode({
+				text: params.nodes[i],
+				rank: i
+			}));
+		}
 
 	}
 
@@ -62,9 +71,20 @@ class Text extends Element {
 	 *	Create the html text element
 	 */
 	initTextElement(){
-		this.el = document.createElement("p");
-		this.el.innerHTML = this.text;
+		this.el = document.createElement("div");
 		this.el.classList.add("text");
+		
+		this.nodes.forEach((node) => {
+			this.el.appendChild(node.el);
+		})
+		this.currentNode = 0;
+		this.nodes[0].display();
+
+
+		setInterval(()=>{
+			this.next();
+		}, 2000)
+
 		this.hide();
 		this.el.classList.add("text--"+this.align);
 		this.el.classList.add("text--"+this.theme);
@@ -72,6 +92,16 @@ class Text extends Element {
 		this.el.setAttribute("style", this.style);
 
 		this.loaded = true;
+	}
+
+	next(){
+		var next = this.currentNode+1;
+		this.nodes[this.currentNode].hide();
+		if( this.nodes[next] ) {
+			this.nodes[next].display();
+			this.currentNode = next;
+		}
+			
 	}
 
 	/** 

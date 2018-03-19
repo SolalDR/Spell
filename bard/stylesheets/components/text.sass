@@ -22,3 +22,26 @@
 		max-width: 45vw
 		color: white
 		font-weight: 100
+
+	&-node
+		transition: .4s
+
+		&--display
+			opacity: 1
+			transform: translateX(0px)
+			display: block
+
+		&--before-hide
+			opacity: 0
+			transform: translateX(-20px)
+			display: block
+
+		&--before-display
+			opacity: 0
+			transform: translateX(20px)
+			display: block
+
+		&--hide
+			display: none
+			opacity: 0
+			transition: none

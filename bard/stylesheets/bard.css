@@ -70,5 +70,23 @@
     max-width: 45vw;
     color: white;
     font-weight: 100; }
+  .text-node {
+    transition: 0.4s; }
+    .text-node--display {
+      opacity: 1;
+      transform: translateX(0px);
+      display: block; }
+    .text-node--before-hide {
+      opacity: 0;
+      transform: translateX(-20px);
+      display: block; }
+    .text-node--before-display {
+      opacity: 0;
+      transform: translateX(20px);
+      display: block; }
+    .text-node--hide {
+      display: none;
+      opacity: 0;
+      transition: none; }
 
 /*# sourceMappingURL=bard.css.map */

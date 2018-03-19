@@ -9,7 +9,8 @@ class SpeechRecognition {
 	constructor(args) {
 		if( !args ) var args = {}
 		this.commands = args.commands ? args.commands : [];
-		this.api = annyang;
+		this.api = annyang;	
+		console.log(this.api)
 			
   		if (this.api) {
 			// Let's define a command. 
@@ -33,18 +34,15 @@ class SpeechRecognition {
 		return this.api ? true : false;
 	}
 
-	removeAllCommands() {
-
+	removeCommands() {
+		this.commands = [];
+		this.api.removeCommands();
 	}
 
-	addCommand() {
-
+	addCommand(command, callback) {
+		this.commands.push(command);
+		this.api.addCallback(command, callback);
 	}
-
-	addCommands() {
-
-	}
-
 }
 
 export default SpeechRecognition;
