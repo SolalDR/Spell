@@ -11,7 +11,7 @@ class Element {
 	}
 
 	static get AVAILABLES_TYPES(){
-		return ["text", "image", "sound", "obj3D", "obj2D"];
+		return ["text", "image", "sound", "obj3D", "obj2D", "svg"];
 	}
 
 	set type(type) {

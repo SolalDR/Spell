@@ -60,10 +60,9 @@ class Fragment {
 		var action = new Action(this, callback, args); 
 		if( !this.actions[action.name] ){
 			this.actions[action.name] = action; 
-			return true; 
 		}
 		console.warn(`Action cannot be add. You need to remove action with name \"${action.name}\" first.`);
-		return false;
+		return this.actions[action.name]; 
 	}
 
 	/**
@@ -85,6 +84,8 @@ class Fragment {
 	addElement(element){
 		element.fragment = this;
 		this.elements.push(element);
+
+		return this.elements[this.elements.length - 1]
 	}
 
 	/**
