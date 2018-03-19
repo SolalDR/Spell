@@ -8,11 +8,11 @@ class BookNavigator {
 	}
 
 	start(){
-
+		
 	}
 
 	stop(){
-
+		
 	}
 
 	get current(){

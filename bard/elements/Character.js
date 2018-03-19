@@ -6,6 +6,8 @@ import * as THREE from "three"
  */
 class Character extends Mesh {
 	
+	static get MODE_DEBUG(){ return 1; }
+
 	constructor(params){
 		super(params);
 		this.type = "obj3D";
@@ -13,6 +15,7 @@ class Character extends Mesh {
 		this.resourceUrl = params.model ? params.model : "/bard/model/marine.json";
 		this.action = "idle";
 		this.anims = [];
+		this.mode = 
 
 		this.config = {
 			skeleton: false,
@@ -30,7 +33,6 @@ class Character extends Mesh {
 			loadedObject.traverse( ( child ) => {
 				if ( child instanceof THREE.SkinnedMesh ) {
 					this.mesh = child;
-					console.log(this.mesh)
 				}
 			} );
 			if ( this.mesh === undefined ) {
@@ -82,7 +84,9 @@ class Character extends Mesh {
 
 
 	walk(){
-		console.log("Walk");
+		if( this.mode == Character.MODE_DEBUG ){
+			console.log("Walk");	
+		}
 		if( this.action == "idle" ){
 			this.prepareCrossFade( this.idleAction, this.walkAction, 1.0 )	
 		} else if( this.action == "run" ){
@@ -92,7 +96,9 @@ class Character extends Mesh {
 	}
 
 	run(){
-		console.log("Run");
+		if( this.mode == Character.MODE_DEBUG ){
+			console.log("Run");	
+		}
 		if( this.action == "idle" ){
 			this.prepareCrossFade( this.idleAction, this.runAction, 1.0 )	
 		} else if( this.action == "walk" ){
@@ -102,7 +108,9 @@ class Character extends Mesh {
 	}
 
 	idle(){
-		console.log("Idle");
+		if( this.mode == Character.MODE_DEBUG ){
+			console.log("Idle");	
+		}
 		if( this.action == "run" ){
 			this.prepareCrossFade( this.runAction, this.idleAction, 1.0 )	
 		} else if( this.action == "walk" ){

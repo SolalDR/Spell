@@ -1,6 +1,16 @@
+
+/**
+ * Represent a part of a Fragment.
+ * Element is abstract
+ * @param actions [Action]
+ * @param loaded boolean
+ * @abstract
+ */
+
 class Element {
 
 	constructor(params){
+		this.fragment; // Lateinit accessible after initialisation with Fragment.addElement()
 		this.actions = {};
 		this.loaded = false;
 		this._type = null;
@@ -44,6 +54,11 @@ class Element {
 			this.actions[name].call(this, params);
 		}
 	}
+
+
+	/************* Callbacks *************/
+
+	onAttachToFragment() {}
 
 }
 
