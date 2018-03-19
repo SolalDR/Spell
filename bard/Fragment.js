@@ -1,5 +1,7 @@
 import Clock from "./utils/Clock.js"
 import Action from "./Action.js"
+import SpeechRecognition from "./components/SpeechRecognition.js"
+import AlertManager from "./components/AlertManager.js";
 
 /**
  * Represent a fragment of history
@@ -12,6 +14,7 @@ class Fragment {
 		this.clock = new Clock();
 		this.elements = [];
 		this.actions = {};
+		this.speechRecognition = null;
 	}
 
 	/**
@@ -49,6 +52,15 @@ class Fragment {
 		
 	}
 
+	/**
+	 * Add a speech recognition, the speechRecognition will be automatically passed to Text 
+	 */
+	addSpeechRecognition() {
+		this.speechRecognition = new SpeechRecognition();
+		if(!this.speechRecognition.loaded) {
+			AlertManager.error("La reconnaissance vocale ne fonctionne pas sur ce navigateur. Privilégiez un navigateur comme Google Chrome.")
+		}
+	}
 
 	/**
 	 * Add action to the fragment context
@@ -85,6 +97,9 @@ class Fragment {
 		element.fragment = this;
 		this.elements.push(element);
 
+	
+		element.onAttachToFragment();
+		
 		return this.elements[this.elements.length - 1]
 	}
 
