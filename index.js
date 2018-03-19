@@ -1,7 +1,9 @@
 import * as THREE from "three"; 
 import * as Bard from "./bard/bard.js"
 
+
 // Custom Fragment
+
 class StartFragment extends Bard.Fragment {
 
 	constructor(){ super(); }
@@ -12,10 +14,9 @@ class StartFragment extends Bard.Fragment {
 		this.cube = new THREE.Mesh( geometry, material );
 		
 		this.addSpeechRecognition();
-		
 		this.addElement( new Bard.MeshElement({ mesh: this.cube, group: "scene" }));
 		this.addElement( new Bard.TextElement({ 
-			text: [
+			nodes: [
 				"Un soir alors qu'ils <span data-speech='test_recognition'>observent le ciel étoilé</span> d'une belle nuit d'été", 
 				"une étrange comète traverse l'atmosphère ... pour disparaître non loin de là.", 
 				"\"Allons voir cela de plus prêt !\" s'exclament en coeur nos deux héros...", 
@@ -29,6 +30,8 @@ class StartFragment extends Bard.Fragment {
 
 		this.addElement( new Bard.CharacterElement( {group: "scene", name: "guy"} ) );
 		
+
+
 		for(var i=0; i<this.elements.length; i++){
 			this.elements[i].display();
 		}
