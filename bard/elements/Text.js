@@ -2,7 +2,6 @@
 import Element from "./../Element.js"
 
 
-
 /**
  * A text element
  * @param group (String) : Define where this element need to appear (foreground for text)
@@ -80,11 +79,6 @@ class Text extends Element {
 		this.currentNode = 0;
 		this.nodes[0].display();
 
-
-		setInterval(()=>{
-			this.next();
-		}, 2000)
-
 		this.hide();
 		this.el.classList.add("text--"+this.align);
 		this.el.classList.add("text--"+this.theme);
@@ -95,13 +89,13 @@ class Text extends Element {
 	}
 
 	next(){
-		var next = this.currentNode+1;
-		this.nodes[this.currentNode].hide();
-		if( this.nodes[next] ) {
+		if( this.nodes[this.currentNode+1] ) {
+			this.nodes[this.currentNode].hide();
 			this.nodes[next].display();
 			this.currentNode = next;
+		} else {
+
 		}
-			
 	}
 
 	/** 
@@ -111,7 +105,6 @@ class Text extends Element {
 		var fg = document.querySelector(".fragment__foreground");
 		fg.appendChild(this.el);
 		this.el.classList.remove("text--hide");
-
 	}
 
 	
@@ -128,7 +121,6 @@ class Text extends Element {
 	 		this.initTextElement();
 	 	}
 	 }
-
 }
 
 export default Text

@@ -71,7 +71,9 @@
     color: white;
     font-weight: 100; }
   .text-node {
-    transition: 0.4s; }
+    transition: 0.4s;
+    position: absolute;
+    bottom: 0; }
     .text-node--display {
       opacity: 1;
       transform: translateX(0px);

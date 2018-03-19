@@ -9,7 +9,7 @@ import * as Bard from "./path/to/bard.js"
 
 import Action from "./Action.js"
 import Book from "./Book.js"
-import Navigator from "./BookNavigator.js"
+import Navigator from "./Navigator.js"
 import Element from "./Element.js"
 import Fragment from "./Fragment.js"
 import Scene from "./Scene.js"
