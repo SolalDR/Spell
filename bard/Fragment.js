@@ -2,14 +2,17 @@ import Clock from "./utils/Clock.js"
 import Action from "./Action.js"
 import SpeechRecognition from "./components/SpeechRecognition.js"
 import AlertManager from "./components/AlertManager.js";
+import Event from "./utils/Event.js";
 
 /**
  * Represent a fragment of history
  */
 
-class Fragment {
+class Fragment extends Event {
 	
 	constructor(){
+		super();
+		this.eventsList = ["action:add", "action:execute", "action:remove", "element:add", "element:remove", "start"]
 		this.book = null;
 		this.clock = new Clock();
 		this.elements = [];
@@ -71,7 +74,8 @@ class Fragment {
 	addAction(name, procedure){
 		var action = new Action(name, this, procedure); 
 		if( !this.actions[action.name] ){
-			this.actions[action.name] = action; 
+			this.actions[action.name] = action;
+			this.dispatch("action:add", { action: action })
 			return; 
 		}
 		console.warn(`Action cannot be add. You need to remove action with name \"${action.name}\" first.`);
@@ -85,6 +89,7 @@ class Fragment {
 	 */
 	removeAction(name){
 		if( this.actions[name] ){
+			this.dispatch("action:remove", { action: this.actions[name] })
 			this.actions[name] = null; 
 			return true; 
 		}
@@ -97,10 +102,13 @@ class Fragment {
 	 * @param name string
 	 */
 	executeAction(name){
-		if( this.actions[name] )
+		if( this.actions[name] ) {
 			this.actions[name].execute();
-		else
+			this.dispatch("action:execute", { action: this.actions[name] })
+		} else {
 			console.warn(`Action with name "${name}" doesn't exist.`);
+		}
+			
 	}
 
 
@@ -114,7 +122,7 @@ class Fragment {
 
 	
 		element.onAttachToFragment();
-
+		this.dispatch("element:add", { element: element })
 		return element;
 	}
 
@@ -126,7 +134,7 @@ class Fragment {
 		if( this.elements.indexOf(element) >= 0) {
 			
 			element.hide();
-
+			this.dispatch("element:remove", { element: element })
 			for(var i=0; i<this.elements.length; i++){
 				this.elements.splice(i, 1);
 			}
