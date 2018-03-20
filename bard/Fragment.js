@@ -64,14 +64,15 @@ class Fragment {
 
 	/**
 	 * Add action to the fragment context
-	 * @param name Function: The function to be executed when action is fired
-	 * @param args Object : The config object of the action
+	 * @param name String: The action's name
+	 * @param procedure Function : The Function to launched
 	 * @return boolean : Return true if action has been add
 	 */
-	addAction(callback, args){
-		var action = new Action(this, callback, args); 
+	addAction(name, procedure){
+		var action = new Action(name, this, procedure); 
 		if( !this.actions[action.name] ){
 			this.actions[action.name] = action; 
+			return; 
 		}
 		console.warn(`Action cannot be add. You need to remove action with name \"${action.name}\" first.`);
 		return this.actions[action.name]; 
@@ -90,8 +91,22 @@ class Fragment {
 		return false; 
 	}
 
+
+	/**
+	 * Run action 
+	 * @param name string
+	 */
+	executeAction(name){
+		if( this.actions[name] )
+			this.actions[name].execute();
+		else
+			console.warn(`Action with name "${name}" doesn't exist.`);
+	}
+
+
 	/**
 	 * If possible, add a new element to Fragment
+	 * @param element Element
 	 */
 	addElement(element){
 		element.fragment = this;
@@ -105,6 +120,7 @@ class Fragment {
 
 	/**
 	 * if possible hide and remove an element
+	 * @param element Element
 	 */
 	removeElement(element){
 		if( this.elements.indexOf(element) >= 0) {

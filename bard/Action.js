@@ -16,13 +16,14 @@ class Action {
 	 * @param args.id String : Unique id to represente the action in the fragment. 
 	 */
 
-	constructor(ctx, callback, args){
+	constructor(name, ctx, procedure, args){
 	
 		if(!args) var args = {};
+
 		this.once = args.once ? args.once : false; 
-		this.context = ctx; 
-		this.callback = callback; 
-		this.name = args.name ? args.name : this.getRandomName();
+		this.context = ctx;
+		this.procedure = procedure;
+		this.name = name ? name : this.getRandomName();
 		
 		// Increment when "execute" is call
 		this.count = 0;
@@ -30,6 +31,10 @@ class Action {
 	}
 
 
+	/**
+	 * return a random name to serve as id
+	 * Used when name is not defined 
+	 */
 	getRandomName(){
 	
 		return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
@@ -37,14 +42,20 @@ class Action {
 	}
 
 
-	execute(args){
+	/**
+	 * Run action
+	 */
+	execute(){
 	
-		if( this.once && this.count > 0) {
+		if( this.once && this.count < 0 || this.once == false) {
 			this.count++; 
-			this.context.call(this.callback, args)
+			this.procedure.call(this.context, {
+				action: this, 
+				context: this.context 
+			})
 		}
-	
 	}
+
 }
 
 export default Action

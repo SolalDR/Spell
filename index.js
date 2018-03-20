@@ -28,6 +28,7 @@ class StartFragment extends Bard.Fragment {
 		}));
 
 		text.on("update", (args)=>{
+			this.executeAction("fly")
 		})
 		setTimeout(function(){
 			text.next();
@@ -37,6 +38,10 @@ class StartFragment extends Bard.Fragment {
 		}, 5000)
 		
 		this.addElement( new Bard.CharacterElement( {group: "scene", name: "guy"} ) );
+
+		this.addAction("fly", (e)=>{
+			console.log("Lancement de l'action FLY", e)
+		})
 
 		for(var i=0; i<this.elements.length; i++){
 			this.elements[i].display();
@@ -70,7 +75,6 @@ class TestFragment extends Bard.Fragment {
 			this.elements[i].display();
 		}
 
-		this.addAction()
 		super.start()
 	}
 	
