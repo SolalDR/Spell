@@ -24,7 +24,6 @@ class Event {
   dispatch(e, args){
 
     var list = e instanceof Array ? e : [e];
-    console.log(list);
     for(var j=0; j<list.length; j++){
       if( this.events[list[j]] && this.events[list[j]].length ){
         for(var i=0; i<this.events[list[j]].length; i++ ){

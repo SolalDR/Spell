@@ -3,7 +3,6 @@
  */
 class TextNode {
 
-
 	/**
 	 * @param text (string)
 	 * @param rank (int)
@@ -11,9 +10,23 @@ class TextNode {
 	constructor(args){
 		this.el;
 		this.text = args.text; 
+		this.speechs = [];
 		this.genHtml();
 
 	}
+
+
+	/** 
+	 * Helper to strip html tag
+	 */
+	static strip(html){
+	
+		var tmp = document.createElement("DIV");
+		tmp.innerHTML = html;
+		return tmp.textContent || tmp.innerText || "";
+	
+	}
+
 
 	genHtml() {
 
@@ -21,6 +34,12 @@ class TextNode {
 		this.el.classList.add("text-node");	
 		this.el.classList.add("text-node--hide");	
 		this.el.innerHTML = this.text;
+
+		var speechEls = this.el.querySelectorAll("*[data-speech]");
+		speechEls.forEach(el => this.speechs.push({
+			command: TextNode.strip(el.innerHTML),
+			count: 0
+		}));
 
 	}
 

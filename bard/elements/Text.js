@@ -107,15 +107,35 @@ class Text extends Element {
 	 * Manage toggle current nodes
 	 */
 	update(next){
+
+		// If no change, return
+		if( next == this.currentNode ) return; 
+		
+		// Toggle
 		this.nodes[this.currentNode].hide();
 		this.nodes[next].display();
 		
+		// Dispatch event
 		this.dispatch("update", {
 			rank: next,
 			node: this.nodes[next]
 		});
 
+		// Update current textnode rank
 		this.currentNode = next;
+
+		// Manage speech recognition
+		if(!this.speechRecognition) {
+			console.warn("SpeechRecognition not defined in TextElement, need to register element with fragment.addElement");
+			return; 
+		}
+		this.speechRecognition.removeCommands();
+		for(var i=0; i<this.nodes[this.currentNode].speechs.length; i++){
+			this.speechRecognition.addCommand(this.nodes[this.currentNode].speechs[i].command, (e) => {
+				console.log(e);
+			});
+		}
+		
 	}
 
 	/**

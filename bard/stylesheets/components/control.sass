@@ -8,6 +8,8 @@
 		bottom: 0px
 		right: 0
 		margin: 0
+		z-index: 2
+		line-height: 0
 
 	&__btn
 		height: 40px
@@ -23,6 +25,9 @@
 		justify-content: center
 		margin: 10px 0
 		transition: all .4s ease-in-out
+		font-size: 22px
+		z-index: 1
+		outline: 0
 		&:hover 
 			background-color: white
 			color: black
@@ -30,17 +35,21 @@
 
 	&__menu
 		position: absolute
-		bottom: 50px
-		right: 0
+		bottom: 0px
+		right: 40px
 		&-item
 			left: 0
-			position: relative
-			font-size: 22px
+			position: absolute
+			transition: .3s
 			@for $i from 4 through 1
 				&:nth-child(#{$i})
-					transition: .1s*$i
+					transition-delay: .1s*$i
+					bottom: 50px*($i)
+					right: 0px
 
 	&--hide
 		.control__menu-item
-			left: 60px
+			left: 0
+			opacity: 0
+			bottom: 0
 	

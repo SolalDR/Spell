@@ -17,10 +17,10 @@ class StartFragment extends Bard.Fragment {
 		this.addElement( new Bard.MeshElement({ mesh: this.cube, group: "scene" }));
 		var text = this.addElement( new Bard.TextElement({ 
 			nodes: [
-				"Un soir alors qu'ils <span data-speech='test_recognition'>observent le ciel étoilé</span> d'une belle nuit d'été", 
-				"une étrange comète traverse l'atmosphère ... pour disparaître non loin de là.", 
-				"\"Allons voir cela de plus prêt !\" s'exclament en coeur nos deux héros...", 
-				"Soundain des bruits étranges parviennent de la forêt."
+				"Un soir alors qu'ils <span data-speech='test_recognition'>observent le ciel étoilé</span> d'une <span data-speech='next'>belle nuit d'été</span>", 
+				"<span data-speech='test_recognition'>une étrange comète traverse l'atmosphère</span> ... pour disparaître <span data-speech='next'>non loin de là.</span>", 
+				"\"Allons voir cela de plus prêt !\" s'exclament en coeur <span data-speech='next'>nos deux héros...</span>", 
+				"<span data-speech='noises_forest'>Soundain <span data-speech='next'>des bruits étranges parviennent de la forêt.</span>"
 			],
 			align: "bottom-left",
 			position: {x: "40px", y:"-20px"},
@@ -28,7 +28,6 @@ class StartFragment extends Bard.Fragment {
 		}));
 
 		text.on("update", (args)=>{
-			console.log(args)
 		})
 		setTimeout(function(){
 			text.next();
@@ -88,8 +87,9 @@ window.addEventListener("load", function(){
     var frag = new StartFragment();
 	var testFrag = new TestFragment()
 	
-	book.addFragment(testFrag);
+	
 	book.addFragment(frag);
+	book.addFragment(testFrag);
     book.start();
 })
 
