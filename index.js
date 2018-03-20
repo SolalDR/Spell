@@ -26,8 +26,8 @@ class StartFragment extends Bard.Fragment {
 			position: {x: "40px", y:"-20px"},
 			name: "mainText"
 		}));
-
-		text.on("step", (args)=>{
+		
+		text.on("update", (args)=>{
 			console.log(args)
 		})
 		setTimeout(function(){
@@ -36,6 +36,9 @@ class StartFragment extends Bard.Fragment {
 				text.previous();
 			}, 5000)
 		}, 5000)
+
+
+		
 		this.addElement( new Bard.CharacterElement( {group: "scene", name: "guy"} ) );
 		
 

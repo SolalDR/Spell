@@ -23,7 +23,7 @@ class Text extends Element {
 	constructor(params){
 
 		super(params);
-		this.eventsList = ["step", "end"]
+		this.eventsList = ["update", "end"]
 		this.currentNode = null;
 		this.speechRecognition = params.speechRecognition ? params.speechRecognition : null
 		this.type = "text";
@@ -102,11 +102,15 @@ class Text extends Element {
 		});
 	}
 
+
+	/**
+	 * Manage toggle current nodes
+	 */
 	update(next){
 		this.nodes[this.currentNode].hide();
 		this.nodes[next].display();
 		
-		this.dispatch("step", {
+		this.dispatch("update", {
 			rank: next,
 			node: this.nodes[next]
 		});

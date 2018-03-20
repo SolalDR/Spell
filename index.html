@@ -10,11 +10,24 @@
       rel="stylesheet">
 </head>
 <body>
+
+    <!-- Fragment -->
 	<div class="fragment">
 		<div class="fragment__background"></div>
 		<canvas id="canvas"></canvas>	
 		<div class="fragment__foreground"></div>
 	</div>
+
+    <!-- Controller -->
+    <div id="controller" class="control control--hide">
+        <button id="control-menu-btn" class="control__btn"><i class="material-icons">&#xE5D2;</i></button>
+        <div class="control__menu">
+            <button id="" class="control__btn control__menu-item"><i class="material-icons">&#xE034;</i></button>
+            <button class="control__btn control__menu-item">?</button>
+            <button class="control__btn control__menu-item"><i class="custom-icons custom-icons--tree"></i></button>
+            <button class="control__btn control__menu-item"><i class="material-icons">&#xE8B8;</i></i></button>
+        </div>
+    </div>
 	
     <script src="bundle.js"></script>
 </body>

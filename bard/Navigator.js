@@ -1,3 +1,5 @@
+import Control from "./components/Control.js"
+
 /**
  * Allow to navigate inside the book and between fragments
  */
@@ -5,7 +7,7 @@ class Navigator {
 	
 	constructor(book){
 		this.book = book;
-		this.
+		this.control = new Control();
 	}
 
 	start(){
