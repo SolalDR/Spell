@@ -1,4 +1,4 @@
-
+import Event from "./utils/Event.js"
 /**
  * Represent a part of a Fragment.
  * Element is abstract
@@ -7,9 +7,10 @@
  * @abstract
  */
 
-class Element {
+class Element extends Event {
 
 	constructor(params){
+		super();
 		this.fragment; // Lateinit accessible after initialisation with Fragment.addElement()
 		this.actions = {};
 		this.loaded = false;

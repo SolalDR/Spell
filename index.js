@@ -15,7 +15,7 @@ class StartFragment extends Bard.Fragment {
 		
 		this.addSpeechRecognition();
 		this.addElement( new Bard.MeshElement({ mesh: this.cube, group: "scene" }));
-		this.addElement( new Bard.TextElement({ 
+		var text = this.addElement( new Bard.TextElement({ 
 			nodes: [
 				"Un soir alors qu'ils <span data-speech='test_recognition'>observent le ciel étoilé</span> d'une belle nuit d'été", 
 				"une étrange comète traverse l'atmosphère ... pour disparaître non loin de là.", 
@@ -27,7 +27,15 @@ class StartFragment extends Bard.Fragment {
 			name: "mainText"
 		}));
 
-
+		text.on("step", (args)=>{
+			console.log(args)
+		})
+		setTimeout(function(){
+			text.next();
+			setTimeout(function(){
+				text.previous();
+			}, 5000)
+		}, 5000)
 		this.addElement( new Bard.CharacterElement( {group: "scene", name: "guy"} ) );
 		
 

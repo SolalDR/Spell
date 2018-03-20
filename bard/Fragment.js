@@ -98,6 +98,8 @@ class Fragment {
 		element.fragment = this;
 		this.elements.push(element);
 		element.onAttachToFragment();
+
+		return element;
 	}
 
 	/**

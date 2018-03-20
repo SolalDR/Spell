@@ -23,7 +23,8 @@ class Text extends Element {
 	constructor(params){
 
 		super(params);
-
+		this.eventsList = ["step", "end"]
+		this.currentNode = null;
 		this.speechRecognition = params.speechRecognition ? params.speechRecognition : null
 		this.type = "text";
 		this.group = "foreground"; 	// Text is always front
@@ -75,27 +76,69 @@ class Text extends Element {
 		
 		this.nodes.forEach((node) => {
 			this.el.appendChild(node.el);
-		})
-		this.currentNode = 0;
-		this.nodes[0].display();
+		});
 
-		this.hide();
 		this.el.classList.add("text--"+this.align);
 		this.el.classList.add("text--"+this.theme);
-
 		this.el.setAttribute("style", this.style);
 
 		this.loaded = true;
+
+		this.next();
 	}
 
-	next(){
-		if( this.nodes[this.currentNode+1] ) {
-			this.nodes[this.currentNode].hide();
-			this.nodes[next].display();
-			this.currentNode = next;
-		} else {
+	/**
+	 * Restart Text to first TextNode 
+	 */
+	start(){
+		if( this.currentNode !== null ) this.nodes[this.currentNode].hide();
+		this.currentNode = 0;
+		this.nodes[this.currentNode].display();
 
-		}
+		// Launch start event
+		this.dispatch("start", {
+			rank: this.currentNode,
+			node: this.nodes[this.currentNode]
+		});
+	}
+
+	update(next){
+		this.nodes[this.currentNode].hide();
+		this.nodes[next].display();
+		
+		this.dispatch("step", {
+			rank: next,
+			node: this.nodes[next]
+		});
+
+		this.currentNode = next;
+	}
+
+	/**
+	 * Move forward 
+	 */
+	next(){
+		
+		if( this.currentNode == null ) {
+			this.start(); 
+			return;
+		} 
+
+		var next = this.currentNode+1;
+		if( this.nodes[next] )
+			this.update(next);
+		else
+			this.dispatch("end", { node: this.nodes[this.currentNode] });
+	}
+
+	/**
+	 * Move backward 
+	 */
+	previous(){
+		if( this.currentNode == null || this.currentNode == 0) return; 
+		var next = this.currentNode-1;
+		if( this.nodes[next] )
+			this.update(next);
 	}
 
 	/** 
@@ -111,6 +154,8 @@ class Text extends Element {
 	hide(){
 		this.el.classList.add("text--hide");
 	}
+
+
 
 	/**
 	 * Callbacks
