@@ -99,8 +99,8 @@ class Fragment {
 
 	
 		element.onAttachToFragment();
-		
-		return this.elements[this.elements.length - 1]
+
+		return element;
 	}
 
 	/**

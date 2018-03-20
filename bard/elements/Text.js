@@ -2,7 +2,6 @@
 import Element from "./../Element.js"
 
 
-
 /**
  * A text element
  * @param group (String) : Define where this element need to appear (foreground for text)
@@ -17,21 +16,31 @@ import Element from "./../Element.js"
  * @param speechRecognition (SpeechRecognition)
  */
 
+import TextNode from "./TextNode.js"
+
 class Text extends Element {
 	
 	constructor(params){
-		super(params);
 
+		super(params);
+		this.eventsList = ["update", "end"]
+		this.currentNode = null;
 		this.speechRecognition = params.speechRecognition ? params.speechRecognition : null
 		this.type = "text";
 		this.group = "foreground"; 	// Text is always front
-		this.text = params.text;	
 		this.theme = params.theme ? params.theme : "default"
 
 		this.align = params.align ? params.align : "top-left";
 		this.position = params.position ? params.position : {x: 0, y: 0};
 		this.dimension = params.dimension ? params.dimension : {x: "100%", y: "auto"};
 
+		this.nodes = [];
+		for(var i=0; i<params.nodes.length; i++) {
+			this.nodes.push(new TextNode({
+				text: params.nodes[i],
+				rank: i
+			}));
+		}
 
 	}
 
@@ -62,16 +71,78 @@ class Text extends Element {
 	 *	Create the html text element
 	 */
 	initTextElement(){
-		this.el = document.createElement("p");
-		this.el.innerHTML = this.text;
+		this.el = document.createElement("div");
 		this.el.classList.add("text");
-		this.hide();
+		
+		this.nodes.forEach((node) => {
+			this.el.appendChild(node.el);
+		});
+
 		this.el.classList.add("text--"+this.align);
 		this.el.classList.add("text--"+this.theme);
-
 		this.el.setAttribute("style", this.style);
 
 		this.loaded = true;
+
+		this.next();
+	}
+
+	/**
+	 * Restart Text to first TextNode 
+	 */
+	start(){
+		if( this.currentNode !== null ) this.nodes[this.currentNode].hide();
+		this.currentNode = 0;
+		this.nodes[this.currentNode].display();
+
+		// Launch start event
+		this.dispatch("start", {
+			rank: this.currentNode,
+			node: this.nodes[this.currentNode]
+		});
+	}
+
+
+	/**
+	 * Manage toggle current nodes
+	 */
+	update(next){
+		this.nodes[this.currentNode].hide();
+		this.nodes[next].display();
+		
+		this.dispatch("update", {
+			rank: next,
+			node: this.nodes[next]
+		});
+
+		this.currentNode = next;
+	}
+
+	/**
+	 * Move forward 
+	 */
+	next(){
+		
+		if( this.currentNode == null ) {
+			this.start(); 
+			return;
+		} 
+
+		var next = this.currentNode+1;
+		if( this.nodes[next] )
+			this.update(next);
+		else
+			this.dispatch("end", { node: this.nodes[this.currentNode] });
+	}
+
+	/**
+	 * Move backward 
+	 */
+	previous(){
+		if( this.currentNode == null || this.currentNode == 0) return; 
+		var next = this.currentNode-1;
+		if( this.nodes[next] )
+			this.update(next);
 	}
 
 	/** 
@@ -81,13 +152,14 @@ class Text extends Element {
 		var fg = document.querySelector(".fragment__foreground");
 		fg.appendChild(this.el);
 		this.el.classList.remove("text--hide");
-
 	}
 
 	
 	hide(){
 		this.el.classList.add("text--hide");
 	}
+
+
 
 	/**
 	 * Callbacks
@@ -98,7 +170,6 @@ class Text extends Element {
 	 		this.initTextElement();
 	 	}
 	 }
-
 }
 
 export default Text

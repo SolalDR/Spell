@@ -1,6 +1,6 @@
 
-import Element from "./../Mesh.js"
-import Animation from "./../utils/Animation.js"
+import Mesh from "./../Mesh.js"
+import Animation from "./../../utils/Animation.js"
 
 /**
  * An element in a THREE.js scene.

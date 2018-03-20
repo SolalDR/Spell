@@ -1,10 +1,13 @@
+import Control from "./components/Control.js"
+
 /**
  * Allow to navigate inside the book and between fragments
  */
-class BookNavigator {
+class Navigator {
 	
 	constructor(book){
-
+		this.book = book;
+		this.control = new Control();
 	}
 
 	start(){
@@ -22,6 +25,8 @@ class BookNavigator {
 	set current(fragment){
 		this._currentFragment = fragment;
 	}
+
+
 }
 
-export default BookNavigator
+export default Navigator

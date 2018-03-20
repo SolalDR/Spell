@@ -70,5 +70,81 @@
     max-width: 45vw;
     color: white;
     font-weight: 100; }
+  .text-node {
+    transition: 0.4s;
+    position: absolute;
+    bottom: 0; }
+    .text-node--display {
+      opacity: 1;
+      transform: translateX(0px);
+      display: block; }
+    .text-node--before-hide {
+      opacity: 0;
+      transform: translateX(-20px);
+      display: block; }
+    .text-node--before-display {
+      opacity: 0;
+      transform: translateX(20px);
+      display: block; }
+    .text-node--hide {
+      display: none;
+      opacity: 0;
+      transition: none; }
+
+.control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; }
+  .control #control-menu-btn {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    margin: 0; }
+  .control__btn {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    transition: all 0.4s ease-in-out; }
+    .control__btn:hover {
+      background-color: white;
+      color: black;
+      transform: scale(1.1); }
+  .control__menu {
+    position: absolute;
+    bottom: 50px;
+    right: 0; }
+    .control__menu-item {
+      left: 0;
+      position: relative;
+      font-size: 22px; }
+      .control__menu-item:nth-child(4) {
+        transition: 0.4s; }
+      .control__menu-item:nth-child(3) {
+        transition: 0.3s; }
+      .control__menu-item:nth-child(2) {
+        transition: 0.2s; }
+      .control__menu-item:nth-child(1) {
+        transition: 0.1s; }
+  .control--hide .control__menu-item {
+    left: 60px; }
+
+.custom-icons {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 30px;
+  min-height: 30px;
+  display: inline-block; }
+  .custom-icons--tree {
+    background-image: url("./../assets/icons/tree.svg"); }
 
 /*# sourceMappingURL=bard.css.map */

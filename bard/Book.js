@@ -1,6 +1,6 @@
 
 import Scene from "./Scene.js"
-import BookNavigator from "./BookNavigator.js";
+import Navigator from "./Navigator.js";
 
 /**
  * Represents the all book
@@ -16,7 +16,7 @@ class Book {
 		this.author = null;
 		this.title = null;
 
-		this.navigator = new BookNavigator(this);
+		this.navigator = new Navigator(this);
 	}
 
 	addFragment(fragment){
