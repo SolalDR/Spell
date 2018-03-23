@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spell</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<header class="header">
+	
+		<nav class="header__nav header__nav--left">
+			<h1 class="header__brand header__brand--left">
+			<%= link_to root_path do %>
+				Spell
+			<% end %>
+			</h1>
+									
+			<ul class="header__menu">
+				<li class="header__menu-item">
+					<%= link_to "A propos", root_path %>
+				</li>
+				<li class="header__menu-item">
+					<%= link_to "L'équipe", team_path %>
+				</li>
+				<li class="header__menu-item">
+					<%= link_to "Le Magasin", store_path %>
+				</li>
+			</ul>
+		</nav>
+
+		<nav class="header__nav header__nav--right">
+			
+			<ul class="header__menu">
+				
+				<% if current_user.nil? %>
+
+					<li class="header__menu-item">
+						<%= link_to "Connexion", new_user_session_path %>
+					</li>
+					<li class="header__menu-item">
+						<%= link_to "Inscription", new_user_registration_path %>
+					</li>
+
+				<% else %>
+
+					<li class="header__menu-item">
+						<%= link_to "Mon espace", books_path %>
+					</li>
+
+					<li class="header__menu-item">
+						<%= link_to "Déconnexion", destroy_user_session_path, method: "delete" %>
+					</li>
+
+				<% end %>
+
+			</ul>
+			
+		</nav>
+
+	</header>
+
+	
+    <%= yield %>
+  </body>
+</html>
