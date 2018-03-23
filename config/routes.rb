@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   
   root 'home#index'
 
+  get '/team', to: 'home#team', as: 'team'
+  get '/store', to: 'home#store', as: 'store'
+
 
 end

@@ -1,8 +1,13 @@
+<%= render :partial => "partials/header" %>
+
+<div class="container">
+  
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
+<h1 class="title-1">Books</h1>
 
-<table>
+
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -31,3 +36,5 @@
 <br>
 
 <%= link_to 'New Book', new_book_path %>
+
+</div>

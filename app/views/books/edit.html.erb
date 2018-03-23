@@ -1,6 +1,16 @@
-<h1>Editing Book</h1>
 
-<%= render 'form', book: @book %>
+<%= render :partial => "partials/header" %>
+<div class="container">
+  
+	<p id="notice"><%= notice %></p>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+	<h1 class="title-1">Books</h1>
+
+	<h1>Editing Book</h1>
+
+	<%= render 'form', book: @book %>
+
+	<%= link_to 'Show', @book %> |
+	<%= link_to 'Back', books_path %>
+
+</div>

@@ -1,5 +1,13 @@
-<h1>New Book</h1>
+<%= render :partial => "partials/header" %>
+<div class="container">
+  
+	<p id="notice"><%= notice %></p>
 
-<%= render 'form', book: @book %>
+	<h1 class="title-1">Books</h1>
 
-<%= link_to 'Back', books_path %>
+	<h1>New Book</h1>
+
+	<%= render 'form', book: @book %>
+
+	<%= link_to 'Back', books_path %>
+</div>

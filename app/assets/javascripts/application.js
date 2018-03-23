@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+
+document.addEventListener("load", function(){
+	HeaderManager.init();
+})
+
+document.addEventListener("turbolinks:load", function(){
+	HeaderManager.init();
+});
