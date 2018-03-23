@@ -25,6 +25,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 
 gem 'pg', '~> 0.19'
+gem 'devise'
 
 gem 'bootstrap', '~> 4.0.0'
 
