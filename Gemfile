@@ -26,6 +26,7 @@ gem 'jquery-rails'
 
 gem 'pg', '~> 0.19'
 gem 'devise'
+gem 'rails_admin', '~> 1.3'
 
 gem 'bootstrap', '~> 4.0.0'
 
