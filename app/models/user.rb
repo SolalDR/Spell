@@ -26,4 +26,15 @@ class User < ApplicationRecord
 
   has_many :book_marks
 
+  enum :status => { :user => 0, :writer => 1, :admin => 2 }
+
+  def admin?
+    if status == "admin"
+      true
+    else
+      false
+    end
+  end
+
+  
 end
