@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @book_mark.user %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @book_mark.book %>
+</p>
+
+<p>
+  <strong>Config:</strong>
+  <%= @book_mark.config %>
+</p>
+
+<p>
+  <strong>Nb visit:</strong>
+  <%= @book_mark.nb_visit %>
+</p>
+
+<%= link_to 'Edit', edit_book_mark_path(@book_mark) %> |
+<%= link_to 'Back', book_marks_path %>
