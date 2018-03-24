@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(version: 20180324130253) do
     t.string   "title"
     t.string   "author"
     t.integer  "age"
-    t.boolean  "interactive", default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "format",     default: 0
+    t.text     "config"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
