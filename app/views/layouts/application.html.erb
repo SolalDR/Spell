@@ -3,8 +3,7 @@
   <head>
     <title>Spell</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -22,7 +21,7 @@
 		<nav class="header__nav header__nav--right">
 			<ul class="header__menu">
 				<li class="header__menu-item">
-					<a href="#">Books</a>
+					<%= link_to "Ma Bibliothèque", book_marks_path %>
 				</li>
 				<li class="header__menu-item">
 					<a href="#" class="header__drop-btn">Account</a>

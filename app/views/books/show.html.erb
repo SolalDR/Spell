@@ -1,27 +1,27 @@
-<%= render :partial => "partials/header" %>
-<div class="container">
-	<p id="notice"><%= notice %></p>
 
-	<p>
-	  <strong>Title:</strong>
-	  <%= @book.title %>
-	</p>
+<div class="book">
 
-	<p>
-	  <strong>Author:</strong>
-	  <%= @book.author %>
-	</p>
+  <%= link_to "X", book_marks_path, class: "book__close-btn" %>
 
-	<p>
-	  <strong>Age:</strong>
-	  <%= @book.age %>
-	</p>
-
-	<p>
-	  <strong>Interactive:</strong>
-	  <%= @book.interactive %>
-	</p>
-
-	<%= link_to 'Edit', edit_book_path(@book) %> |
-	<%= link_to 'Back', books_path %>
+  <div class="book__container">
+    <h1 class="book__title"><%= @book.title %></h1>
+    <div class="book__specs">
+      <p class="book__spec"><%= @book.author %></p>
+      <p class="book__spec">A partir de <%= @book.age %> ans</p>
+      <p class="book__spec">Edition Hélium</p>
+      <p class="book__spec">Durée: 15min</p>
+    </div>
+    <div class="book__description">
+      Some description
+    </div>
+    <div class="book__actions">
+      <%= link_to "Lancer l'histoire", root_path, class: "btn" %>
+    </div>
+  </div>
 </div>
+
+<% if current_user && current_user.admin? %>
+<div class="adminbar">
+  <%= link_to 'Edit', edit_book_path(@book), class: "adminbar__item" %>
+</div>
+<% end %>

@@ -14,4 +14,6 @@
 
 class Book < ApplicationRecord
 	enum :format => { :bard => 0, :epub => 1 }
+
+	formats = { :bard => 0, :epub => 1 }
 end

@@ -1,0 +1,31 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.books
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  margin: 30px 0
+
+  &__item
+    width: 200px
+    height: 200px
+    flex-direction: column
+    justify-content: center
+    display: flex
+    box-shadow: $shadow
+    text-align: center
+
+    &-title
+      font:
+        weight: bold
+        size: 18px
+      text-align: center
+      margin-bottom: 5px
+
+    &-subtitle
+      text-align: center
+      
+    &-btn
+      

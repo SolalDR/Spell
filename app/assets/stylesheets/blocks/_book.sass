@@ -1,0 +1,44 @@
+$header-h: 60px
+$gutter: 20px
+
+.book
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: center
+  height: calc(100vh - 60px)
+
+  &__close-btn
+    position: absolute
+    top: $gutter
+    right: $gutter
+    font-size: 20px
+
+  &__container
+    width: 80%
+    margin: auto
+    max-width: 500px
+    padding: $gutter
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .2)
+
+  &__title
+    font:
+      size: 30px
+      weight: bold
+    text-align: center
+    margin-bottom: 30px
+
+  &__specs
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: $gutter
+
+  &__spec
+    display: flex
+    width: 50%
+  
+  &__description
+    margin-bottom: $gutter
+
+  &__actions
+    text-align: center

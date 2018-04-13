@@ -1,33 +1,20 @@
+<%= render :partial => "partials/header" %>
+
+<div class="container mt-4">
+  
 <p id="notice"><%= notice %></p>
 
-<h1>Book Marks</h1>
+<h1 class="title-1">Ma bibliothèque</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Book</th>
-      <th>Config</th>
-      <th>Nb visit</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="books">
+  <% @book_marks.each do |book_mark| %>
+  <div class="books__item">
+    <p class="books__item-title"><%= book_mark.book.title %></p>
+    <p class="books__item-subtitle"><%= book_mark.book.author %></p>
+    <div class="books__item-action">
+      <%= link_to "Voir", book_path(book_mark.book), class: "btn books__item-btn" %>
+    </div>
+  <div>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @book_marks.each do |book_mark| %>
-      <tr>
-        <td><%= book_mark.user %></td>
-        <td><%= book_mark.book %></td>
-        <td><%= book_mark.config %></td>
-        <td><%= book_mark.nb_visit %></td>
-        <td><%= link_to 'Show', book_mark %></td>
-        <td><%= link_to 'Edit', edit_book_mark_path(book_mark) %></td>
-        <td><%= link_to 'Destroy', book_mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Book Mark', new_book_mark_path %>
