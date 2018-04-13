@@ -1,0 +1,2 @@
+module BardHelper
+end

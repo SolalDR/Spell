@@ -8,11 +8,11 @@
     <div class="book__specs">
       <p class="book__spec"><%= @book.author %></p>
       <p class="book__spec">A partir de <%= @book.age %> ans</p>
-      <p class="book__spec">Edition Hélium</p>
+      <p class="book__spec"><%= @book.publisher %></p>
       <p class="book__spec">Durée: 15min</p>
     </div>
     <div class="book__description">
-      Some description
+      <%= @book.description %>
     </div>
     <div class="book__actions">
       <%= link_to "Lancer l'histoire", root_path, class: "btn" %>

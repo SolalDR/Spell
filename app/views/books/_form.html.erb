@@ -31,6 +31,16 @@
     <%= f.select :format, Book.formats %>
   </div>
 
+  <div class="field">
+    <%= f.label :publisher %>
+    <%= f.text_field :publisher %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

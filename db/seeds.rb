@@ -7,4 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Book.create!({ :title => "Mission Mars", :author => "Delphine Chedru", :age => 4 })
+b = Book.create!({ 
+  :title => "Mission Mars", 
+  :author => "Delphine Chedru", 
+  :age => 4, 
+  :publisher => "Edition Hélium",
+  :description => "Retrouvons la princesse Attaque et son compagnon le chevalier Courage \n Après leurs dernières aventures, ils courent des jours paisibles dans leur château."
+})
+
+u = User.create!({
+  :email => "admin@admin.com",
+  :password => "adminadmin",
+  :status => 2
+})
+
+bm = BookMark.create!({
+  :user => u,
+  :book => b
+})
