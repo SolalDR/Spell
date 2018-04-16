@@ -1,0 +1,35 @@
+
+<div class="container mt-4">
+  <h1 class="title-1">Fragments</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Content</th>
+        <th>Config</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @fragments.each do |fragment| %>
+        <tr>
+          <td><%= fragment.name %></td>
+          <td><%= fragment.content %></td>
+          <td><%= fragment.config %></td>
+          <td><%= link_to 'Show', fragment %></td>
+          <td><%= link_to 'Edit', edit_fragment_path(fragment) %></td>
+          <td><%= link_to 'Destroy', fragment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Fragment', new_fragment_path, class: "btn" %>
+    
+</div>
+
+

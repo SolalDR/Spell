@@ -17,6 +17,8 @@
 			</h1>
 			<% end %>
 		</nav>
+		
+
 
 		<nav class="header__nav header__nav--right">
 			<ul class="header__menu">
@@ -37,6 +39,12 @@
 		</nav>
 
 	</header>
+
+	<div class="notifications">
+		<p id="notification"><%= notice %></p>
+	</div>
+    
     <%= yield %>
+  
   </body>
 </html>
