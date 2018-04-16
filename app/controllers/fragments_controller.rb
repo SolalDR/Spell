@@ -3,8 +3,8 @@ class FragmentsController < ApplicationController
 
   # GET /fragments
   # GET /fragments.json
-  def index
-    @fragments = Fragment.all
+  def index    
+    @fragments = params[:book_id] ? Fragment.where(book: params[:book_id]) : Fragment.all
   end
 
   # GET /fragments/1
@@ -15,6 +15,8 @@ class FragmentsController < ApplicationController
   # GET /fragments/new
   def new
     @fragment = Fragment.new
+    @book = Book.find(params[:book_id])
+    @fragment.book = @book
   end
 
   # GET /fragments/1/edit
@@ -25,10 +27,10 @@ class FragmentsController < ApplicationController
   # POST /fragments.json
   def create
     @fragment = Fragment.new(fragment_params)
-
+    @book = Book.find(params[:book_id])
     respond_to do |format|
       if @fragment.save
-        format.html { redirect_to @fragment, notice: 'Fragment was successfully created.' }
+        format.html { redirect_to book_fragments_path(book_id: @fragment.book, id: @fragment), notice: 'Fragment was successfully created.' }
         format.json { render :show, status: :created, location: @fragment }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class FragmentsController < ApplicationController
   def update
     respond_to do |format|
       if @fragment.update(fragment_params)
-        format.html { redirect_to @fragment, notice: 'Fragment was successfully updated.' }
+        format.html { redirect_to book_fragments_path(book_id: @fragment.book, id: @fragment), notice: 'Fragment was successfully updated.' }
         format.json { render :show, status: :ok, location: @fragment }
       else
         format.html { render :edit }
@@ -69,6 +71,6 @@ class FragmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fragment_params
-      params.require(:fragment).permit(:name, :content, :config)
+      params.require(:fragment).permit(:name, :content, :config, :book_id)
     end
 end

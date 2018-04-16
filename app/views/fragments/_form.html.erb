@@ -1,4 +1,4 @@
-<%= form_for(fragment) do |f| %>
+<%= form_for [book, fragment] do |f| %>
   <% if fragment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(fragment.errors.count, "error") %> prohibited this fragment from being saved:</h2>
@@ -11,10 +11,17 @@
     </div>
   <% end %>
 
+  <%= f.hidden_field :book_id %>
+
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+
+
+
+    
+
 
   <div class="field">
     <%= f.label :content %>

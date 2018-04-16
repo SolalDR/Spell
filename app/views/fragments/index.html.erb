@@ -19,7 +19,7 @@
           <td><%= fragment.content %></td>
           <td><%= fragment.config %></td>
           <td><%= link_to 'Show', fragment %></td>
-          <td><%= link_to 'Edit', edit_fragment_path(fragment) %></td>
+          <td><%= link_to 'Edit', edit_book_fragment_path(book_id: fragment.book, id: fragment) %></td>
           <td><%= link_to 'Destroy', fragment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
@@ -27,8 +27,6 @@
   </table>
 
   <br>
-
-  <%= link_to 'New Fragment', new_fragment_path, class: "btn" %>
     
 </div>
 

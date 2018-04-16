@@ -23,5 +23,6 @@
 <% if current_user && current_user.admin? %>
 <div class="adminbar">
   <%= link_to 'Edit', edit_book_path(@book), class: "adminbar__item" %>
+  <%= link_to 'New Fragment', new_book_fragment_path(:book_id => @book), class: "adminbar__item" %>
 </div>
 <% end %>

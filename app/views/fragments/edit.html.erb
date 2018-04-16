@@ -2,7 +2,7 @@
   
   <h1 class="title-1">Editing Fragment</h1>
 
-  <%= render 'form', fragment: @fragment %>
+  <%= render 'form', fragment: @fragment, book: @fragment.book %>
 
   <%= link_to 'Show', @fragment %> |
   <%= link_to 'Back', fragments_path %>

@@ -13,7 +13,9 @@
 #
 
 class Book < ApplicationRecord
-	enum :format => { :bard => 0, :epub => 1 }
+  has_many :fragments
 
+	enum :format => { :bard => 0, :epub => 1 }
 	formats = { :bard => 0, :epub => 1 }
+
 end
