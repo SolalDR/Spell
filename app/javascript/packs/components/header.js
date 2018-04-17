@@ -1,7 +1,7 @@
 
 export default  {
 
-  dropEvent: function(btn){
+  dropEvent: function(btn) {
     btn.addEventListener("click", function(e){
       var drop = this.parentNode.querySelector(".header__drop"); 
       if( drop.className.match("header__drop--close") ){
@@ -21,7 +21,7 @@ export default  {
     }
   },
 
-  init: function(){
+  init: function() {
     this.header = document.querySelector(".header");
     this.manageDropBtns();
   }
