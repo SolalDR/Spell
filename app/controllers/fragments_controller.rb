@@ -10,6 +10,9 @@ class FragmentsController < ApplicationController
   # GET /fragments/1
   # GET /fragments/1.json
   def show
+    if @fragment.book.bard?
+      render "bard", layout: "bard"
+    end
   end
 
   # GET /fragments/new

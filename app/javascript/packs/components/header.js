@@ -23,8 +23,9 @@ export default  {
 
   init: function() {
     this.header = document.querySelector(".header");
-    this.manageDropBtns();
+    if( this.header ){
+      this.manageDropBtns();  
+    }
   }
-
 }
 

@@ -1,6 +1,5 @@
 {
-  "presets": [
-    ["env", {
+  "presets": [ ["env", {
       "modules": false,
       "targets": {
         "browsers": "> 1%",

@@ -101,6 +101,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+annyang@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/annyang/-/annyang-2.6.0.tgz#790047ad1a1af1ceb1cdb2751504c34eed482413"
+
 ansi-html@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
@@ -3041,6 +3045,15 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
+js-bard@latest:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/js-bard/-/js-bard-0.0.1.tgz#381c43fc74bbdf2530953870bd60e3becbb35ba4"
+  dependencies:
+    annyang "^2.6.0"
+    three latest
+    three-effectcomposer-es6 "0.0.4"
+    three-shader-fxaa "^5.1.1"
+
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
@@ -5519,6 +5532,18 @@ tar@^2.0.0, tar@^2.2.1:
     block-stream "*"
     fstream "^1.0.2"
     inherits "2"
+
+three-effectcomposer-es6@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/three-effectcomposer-es6/-/three-effectcomposer-es6-0.0.4.tgz#da3471bac92c721845790e964e52835d5cbd8cf2"
+
+three-shader-fxaa@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/three-shader-fxaa/-/three-shader-fxaa-5.1.1.tgz#636f6981df6977ab4105bc3f96bbea39afa8f483"
+
+three@latest:
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.91.0.tgz#033fe745b64e56e679a86581957cfd1c5f9fe284"
 
 through2@^2.0.0:
   version "2.0.3"

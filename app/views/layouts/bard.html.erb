@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spell</title>
+    <%= csrf_meta_tags %>
+    
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+  </head>
+
+  <body>
+
+  <div class="notifications">
+    <p id="notification"><%= notice %></p>
+  </div>
+    
+  <div class="bard">
+    <%= yield %>
+  </div>
+    
+  
+  </body>
+</html>
