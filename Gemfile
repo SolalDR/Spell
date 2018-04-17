@@ -42,6 +42,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Gemfile
 gem 'webpacker', '~> 3.4'
+gem "paperclip", "~> 6.0.0"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
