@@ -6,20 +6,28 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-require("babel-polyfill");
+import 'babel-polyfill'
 import Header from "./components/header.js"
 import * as THREE from "three"; 
 import * as Bard from "js-bard/src/Bard.js"
 
 
+
+class Test {
+  constructor() {
+    console.log("Hello")
+  }
+}
+
+
 // Custom Fragment
 class StartFragment extends Bard.Fragment {
 
-  constructor(){ 
-    super(); 
+  constructor() { 
+    super();
   }
 
-  start(){
+  start() {
     
     this.addSpeechRecognition();
     this.addSoundManager();

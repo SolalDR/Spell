@@ -304,7 +304,7 @@ babel-code-frame@^6.26.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-core@^6.26.0:
+babel-core@^6.26.0, babel-core@latest:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.0.tgz#af32f78b31a6fcef119c87b0fd8d9753f03a0bb8"
   dependencies:
@@ -3045,12 +3045,12 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-js-bard@latest:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/js-bard/-/js-bard-0.0.1.tgz#381c43fc74bbdf2530953870bd60e3becbb35ba4"
+js-bard@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/js-bard/-/js-bard-0.0.3.tgz#b90ff30e4e5a1ad58a60240eb710c3e409b67817"
   dependencies:
     annyang "^2.6.0"
-    three latest
+    three "0.91.0"
     three-effectcomposer-es6 "0.0.4"
     three-shader-fxaa "^5.1.1"
 
@@ -5541,7 +5541,7 @@ three-shader-fxaa@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/three-shader-fxaa/-/three-shader-fxaa-5.1.1.tgz#636f6981df6977ab4105bc3f96bbea39afa8f483"
 
-three@latest:
+three@0.91.0:
   version "0.91.0"
   resolved "https://registry.yarnpkg.com/three/-/three-0.91.0.tgz#033fe745b64e56e679a86581957cfd1c5f9fe284"
 
