@@ -1,1 +1,0 @@
-ressource_controller.rb
