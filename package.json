@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "@rails/webpacker": "3.4",
-    "js-bard": "0.0.3"
+    "@rails/webpacker": "3.4"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2",

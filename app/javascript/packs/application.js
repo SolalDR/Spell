@@ -9,15 +9,7 @@
 import 'babel-polyfill'
 import Header from "./components/header.js"
 import * as THREE from "three"; 
-import * as Bard from "js-bard/src/Bard.js"
-
-
-
-class Test {
-  constructor() {
-    console.log("Hello")
-  }
-}
+import * as Bard from "./vendor/Bard/src/Bard.js"
 
 
 // Custom Fragment
