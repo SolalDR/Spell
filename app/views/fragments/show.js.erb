@@ -1,0 +1,9 @@
+var fragment = Bard.Fragment.build("<%= @fragment.name %>", <%= @fragment.content | raw %>);
+
+console.log("fragment creation show.js.erb");
+
+if( book )
+  book.addFragment(fragment)  
+else 
+  console.warn("Book is not defined");
+

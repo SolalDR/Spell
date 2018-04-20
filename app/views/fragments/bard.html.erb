@@ -16,3 +16,12 @@
   </div>
 </div>
 
+<script type="text/javascript">
+
+  window.addEventListener("load", function(){
+
+    console.log("Load bard.html.erb");
+    loadScriptAsync("/books/<%= @fragment.book.id %>/fragments/<%= @fragment.id %>.js");
+  })
+  
+</script>

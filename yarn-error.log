@@ -19,6 +19,7 @@ npm manifest:
       "@rails/webpacker": "3.4"
     },
     "devDependencies": {
+      "annyang": "^2.6.0",
       "webpack-dev-server": "2.11.2",
       "babel-core": "latest",
       "three-effectcomposer-es6": "0.0.4",
@@ -6098,7 +6099,7 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Found 3 errors.
+  Error: Found 4 errors.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
       at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:59470:13
       at Generator.next (<anonymous>)
