@@ -11,16 +11,13 @@ import Header from "./components/header.js"
 import * as THREE from "three"; 
 import * as Bard from "./vendor/Bard/src/Bard.js"
 
+window.Bard = Bard;
 
-// Custom Fragment
-class StartFragment extends Bard.Fragment {
 
-  constructor() { 
-    super();
-  }
+var fragment = Bard.Fragment.build("StartFragment", {
+  
+  start: function() {
 
-  start() {
-    
     this.addSpeechRecognition();
     this.addSoundManager();
     
@@ -30,7 +27,7 @@ class StartFragment extends Bard.Fragment {
     var forest = this.soundManager.load("forest", "./examples/sounds/forest_ambiance.mp3");
     var rocketLaunch = this.soundManager.load("forest", "./examples/sounds/rocket_launch_start.mp3");
     forest.on("load", () => {
-      console.log("Load")
+      console.log("Load"),
       forest.start();
     })
 
@@ -96,14 +93,12 @@ class StartFragment extends Bard.Fragment {
       this.elements[i].display();
 
     this.initListeners()
-    super.start();  
-  }
+    
+    this.afterStart();  
+  },
 
-  initListeners() {     
-  }
-
-  render(){
-    super.render();
+  render: function() {
+    this.beforeRender();
     
     for(var i=0; i<this.elements.length; i++){
       if(this.elements[i].type == "Mesh"){
@@ -111,21 +106,22 @@ class StartFragment extends Bard.Fragment {
       }
     }
 
-    super.postRender();
-  }
-  
-}
+    this.afterRender();
+  },
 
+  initListeners: function() {
+
+  }
+})
 
 
 window.addEventListener("load", ()=>{
   Header.init();
 
   if( document.querySelector("canvas") ){
-    var book = new Bard.Book();
-    var frag = new StartFragment();
+    window.book = new Bard.Book();
 
-    book.addFragment(frag);
+    book.addFragment(fragment);
     book.start();
   }
 })
