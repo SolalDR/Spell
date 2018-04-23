@@ -1,0 +1,17 @@
+
+
+<div class="tree">
+  <% @fragments.each do |fragment| %>
+  <div 
+    id="fragment-<%= fragment.id %>" 
+    class="tree__item"
+    data-children="<% fragment.children.each do |f| %><%= f.id %><% if fragment.children.last != f %>,<% end %><% end %>">
+      
+      <p cl ass="tree__item-title"><%= fragment.name %></p>
+      <div class="tree__item-ramifications">
+        
+      </div>
+
+  </div>
+  <% end %>
+</div>
