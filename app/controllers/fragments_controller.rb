@@ -1,5 +1,6 @@
 class FragmentsController < ApplicationController
   before_action :set_fragment, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery except: :show
 
   # GET /fragments
   # GET /fragments.json
@@ -10,8 +11,10 @@ class FragmentsController < ApplicationController
   # GET /fragments/1
   # GET /fragments/1.json
   def show
-    if @fragment.book.bard?
-      render "bard", layout: "bard"
+    respond_to do |format|
+      format.js
+      format.json
+      format.html { render "bard", layout: "bard" }
     end
   end
 

@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :tree]
   before_action :authenticate_user!
 
   # GET /books
@@ -16,6 +16,10 @@ class BooksController < ApplicationController
       format.json
       format.html
     end
+  end
+
+  def tree 
+    @fragments = Fragment.where(book: params[:id])
   end
 
   # GET /books/new
