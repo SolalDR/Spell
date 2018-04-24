@@ -19,9 +19,11 @@
 <script type="text/javascript">
 
   window.addEventListener("load", function(){
-
-    console.log("Load bard.html.erb");
-    loadScriptAsync("/books/<%= @fragment.book.id %>/fragments/<%= @fragment.id %>.js");
+    if( window.book ){
+      loadAsyncScript("/books/<%= @fragment.book.id %>/fragments/<%= @fragment.id %>.js", function(element){
+        element.parentNode.removeChild(element);
+      });
+    }
   })
   
 </script>

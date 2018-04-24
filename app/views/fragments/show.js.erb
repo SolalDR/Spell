@@ -1,0 +1,10 @@
+
+if( book ) {
+  
+  var isStarted = book.fragments.length > 0 ? true : false;
+
+  book.addFragment( Bard.Fragment.build( "<%= @fragment.name %>" , <%= raw @fragment.content %> ) );
+
+  if( !isStarted ) book.start();
+
+}
