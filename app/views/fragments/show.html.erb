@@ -1,20 +1,20 @@
 <div class="container mt-4" >
-	<p>
-		<strong>Name:</strong>
-		<%= @fragment.name %>
-	</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @fragment.name %>
+  </p>
 
-	<p>
-		<strong>Content:</strong>
-		<%= @fragment.content %>
-	</p>
+  <p>
+    <strong>Content:</strong>
+    <%= @fragment.content %>
+  </p>
 
-	<p>
-		<strong>Config:</strong>
-		<%= @fragment.config %>
-	</p>
+  <p>
+    <strong>Config:</strong>
+    <%= @fragment.config %>
+  </p>
 
-	<%= link_to 'Edit', edit_book_fragment_path(book_id: @fragment.book, id: @fragment) %> |
-	<%= link_to 'Back', book_fragments_path(@fragment.book) %>
+  <%= link_to 'Edit', edit_book_fragment_path(book_id: @fragment.book, id: @fragment) %> |
+  <%= link_to 'Back', book_fragments_path(@fragment.book) %>
 
 </div>

@@ -1,13 +1,13 @@
 class HomeController < ApplicationController
-	layout 'home'
+  layout 'home'
 
-	def index
-	end
+  def index
+  end
 
-	def store
-	end
+  def store
+  end
 
-	def team
-	end
+  def team
+  end
 
 end
