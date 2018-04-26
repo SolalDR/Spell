@@ -7,9 +7,19 @@ class BookMarksController < ApplicationController
     @book_marks = BookMark.all
   end
 
-  # GET /book_marks/1
-  # GET /book_marks/1.json
-  def show
+
+  def read
+    @book = Book.find(params[:id]);
+    if !current_user
+      redirect_to @book, notice: 'Vous devez être connecté pour lire une histoire.'
+    end
+
+    @book_mark = BookMark.find_by(book_id: @book.id, user_id: current_user.id);
+    if !@book_mark
+      redirect_to @book, notice: 'Vous ne disposez pas de ce livre pour le moment, veuillez l\'ajouter à votre bibliothèque.'
+    end
+
+    redirect_to @book_mark.book.fragments.first
   end
 
   # GET /book_marks/new

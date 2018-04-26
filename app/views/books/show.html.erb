@@ -15,7 +15,7 @@
       <%= @book.description %>
     </div>
     <div class="book__actions">
-      <%= link_to "Lancer l'histoire", root_path, class: "btn" %>
+      <%= link_to "Lancer l'histoire", read_path(id: @book), class: "btn" %>
     </div>
   </div>
 </div>
