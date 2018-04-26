@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :fragments, only: [:index, :show, :destroy]
 
-  resources :book_marks, except: [:show]
+  resources :book_marks, except: [:show, :edit]
   
   resources :books do 
     resources :fragments

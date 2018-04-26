@@ -19,7 +19,11 @@ class BookMarksController < ApplicationController
       redirect_to @book, notice: 'Vous ne disposez pas de ce livre pour le moment, veuillez l\'ajouter à votre bibliothèque.'
     end
 
-    redirect_to @book_mark.book.fragments.first
+    if !@book_mark.fragment
+      @book_mark.fragment = @book_mark.book.fragments.first
+    end
+
+    redirect_to @book_mark.fragment
   end
 
   # GET /book_marks/new
@@ -27,9 +31,6 @@ class BookMarksController < ApplicationController
     @book_mark = BookMark.new
   end
 
-  # GET /book_marks/1/edit
-  def edit
-  end
 
   # POST /book_marks
   # POST /book_marks.json

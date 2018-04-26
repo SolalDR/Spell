@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417142011) do
+ActiveRecord::Schema.define(version: 20180426210536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 20180417142011) do
     t.integer  "book_id"
     t.text     "config"
     t.integer  "nb_visit"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "fragment_id"
     t.index ["book_id"], name: "index_book_marks_on_book_id", using: :btree
+    t.index ["fragment_id"], name: "index_book_marks_on_fragment_id", using: :btree
     t.index ["user_id"], name: "index_book_marks_on_user_id", using: :btree
   end
 
@@ -85,6 +87,7 @@ ActiveRecord::Schema.define(version: 20180417142011) do
   end
 
   add_foreign_key "book_marks", "books"
+  add_foreign_key "book_marks", "fragments"
   add_foreign_key "book_marks", "users"
   add_foreign_key "fragments", "books"
 end

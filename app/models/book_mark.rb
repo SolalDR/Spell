@@ -14,4 +14,5 @@
 class BookMark < ApplicationRecord
   belongs_to :user
   belongs_to :book
+  belongs_to :fragment
 end
