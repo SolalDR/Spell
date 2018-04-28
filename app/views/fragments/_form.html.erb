@@ -19,13 +19,12 @@
   </div>
 
 
-
-    
-
-
-  <div class="field">
+  <div id="codemirror-block" class="field codemirror">
     <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class: "codemirror__textarea" %>
+    <button id="" class="material-icons" data-toggle-target="#codemirror-block" data-toggle-modifier="codemirror--full" >
+      fullscreen
+    </button>
   </div>
 
   <div class="field">

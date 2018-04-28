@@ -39,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'codemirror-rails'
+gem 'material_icons'
 
 # Gemfile
 gem 'webpacker', '~> 3.4'
