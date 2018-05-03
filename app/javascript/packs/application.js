@@ -10,10 +10,6 @@ window.Bard = Bard;
 window.loadAsyncScript = loadAsyncScript;
 
 
-
-
-
-
 window.addEventListener("load", ()=>{
 
   Header.init();
