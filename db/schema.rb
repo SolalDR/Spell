@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426210536) do
+ActiveRecord::Schema.define(version: 20180506151504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,14 +58,17 @@ ActiveRecord::Schema.define(version: 20180426210536) do
   end
 
   create_table "ressources", force: :cascade do |t|
-    t.integer  "mode",              default: 0
+    t.integer  "mode",               default: 0
     t.string   "name"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "file_file_name"
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.string   "ressourceable_type"
+    t.integer  "ressourceable_id"
+    t.index ["ressourceable_type", "ressourceable_id"], name: "index_ressources_on_ressourceable_type_and_ressourceable_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

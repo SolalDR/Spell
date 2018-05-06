@@ -15,6 +15,7 @@
 
 class Ressource < ApplicationRecord
   has_attached_file :file
+  belongs_to :imageable, polymorphic: true
 
   enum mode: ["3d", "image", "sound", "text"]
 end

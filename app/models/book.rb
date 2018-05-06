@@ -16,6 +16,7 @@
 
 class Book < ApplicationRecord
   has_many :fragments
+  has_many :ressources, as: :ressourceable
 
   enum :format => { :bard => 0, :epub => 1 }
   formats = { :bard => 0, :epub => 1 }
