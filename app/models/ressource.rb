@@ -18,7 +18,5 @@ class Ressource < ApplicationRecord
   validates_attachment_content_type :file, :content_type => ["application/json", "text/plain", "image/jpg", "image/jpeg", "image/png", "image/gif"]
   belongs_to :ressourceable, polymorphic: true, :inverse_of => :ressources
 
-
-
   enum mode: ["3d", "image", "sound", "text"]
 end

@@ -86,4 +86,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  Paperclip.options[:content_type_mappings] = {:obj => "text/plain"}
 end

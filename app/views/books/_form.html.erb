@@ -41,13 +41,26 @@
     <%= f.text_field :description %>
   </div>
 
-  <div class="ressources">
-    <%= f.fields_for :ressources, book.ressources do |fr| %>
-      <div class="ressources__fields">
-        <%= fr.label :name %>
-        <%= fr.text_field :name %>
-      </div>
-    <% end %>
+  <div class="ressources" data-namespace="book">
+    <div class="ressources__fields">
+      <%= f.fields_for :ressources, book.ressources do |fr| %>
+        <div class="ressources__field" data-index="<%= fr.index %>">
+
+          <%= fr.file_field :file %>
+          <%= fr.label :name %>
+          <%= fr.text_field :name %>
+  
+          <!-- Onclick, pass _destroy to 1  -->
+          <%= fr.hidden_field :_destroy, :class => 'removable' %>
+          <%= fr.hidden_field :id %>
+          <button class="ressources__field-remove">Remove Child</button>
+
+        </div>
+      <% end %>
+    </div>
+
+    <button class="ressources__add">Ajouter</button>
+
   </div>
   
 
