@@ -41,6 +41,16 @@
     <%= f.text_field :description %>
   </div>
 
+  <div class="ressources">
+    <%= f.fields_for :ressources, book.ressources do |fr| %>
+      <div class="ressources__fields">
+        <%= fr.label :name %>
+        <%= fr.text_field :name %>
+      </div>
+    <% end %>
+  </div>
+  
+
   <div class="actions">
     <%= f.submit %>
   </div>

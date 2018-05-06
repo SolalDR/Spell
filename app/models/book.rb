@@ -17,6 +17,7 @@
 class Book < ApplicationRecord
   has_many :fragments
   has_many :ressources, as: :ressourceable
+  accepts_nested_attributes_for :ressources, :reject_if => :all_blank, :allow_destroy => true
 
   enum :format => { :bard => 0, :epub => 1 }
   formats = { :bard => 0, :epub => 1 }
