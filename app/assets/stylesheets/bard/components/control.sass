@@ -1,0 +1,55 @@
+.control
+	position: fixed
+	bottom: 20px
+	right: 20px
+	
+	#control-menu-btn
+		position: absolute
+		bottom: 0px
+		right: 0
+		margin: 0
+		z-index: 2
+		line-height: 0
+
+	&__btn
+		height: 40px
+		width: 40px
+		padding: 0
+		margin: 0
+		box-sizing: border-box
+		border-radius: 100%
+		border: 2px solid white
+		background-color: transparent
+		color: white
+		display: flex
+		justify-content: center
+		margin: 10px 0
+		transition: all .4s ease-in-out
+		font-size: 22px
+		z-index: 1
+		outline: 0
+		&:hover 
+			background-color: white
+			color: black
+			transform: scale(1.1)
+
+	&__menu
+		position: absolute
+		bottom: 0px
+		right: 40px
+		&-item
+			left: 0
+			position: absolute
+			transition: .3s
+			@for $i from 4 through 1
+				&:nth-child(#{$i})
+					transition-delay: .1s*$i
+					bottom: 50px*($i)
+					right: 0px
+
+	&--hide
+		.control__menu-item
+			left: 0
+			opacity: 0
+			bottom: 0
+	

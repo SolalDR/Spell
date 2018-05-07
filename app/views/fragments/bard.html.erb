@@ -9,11 +9,21 @@
 <div id="controller" class="control control--hide">
   <button id="control-menu-btn" class="control__btn">+</button>
   <div class="control__menu">
-    <button id="" class="control__btn control__menu-item"><i class="material-icons">&#xE034;</i></button>
-    <button class="control__btn control__menu-item">?</button>
-    <button class="control__btn control__menu-item"><i class="custom-icons custom-icons--tree"></i></button>
-    <button class="control__btn control__menu-item"><i class="material-icons">&#xE8B8;</i></i></button>
+    <button class="control__btn control__menu-item" data-target="pause"><i class="material-icons">&#xE034;</i></button>
+    <button class="control__btn control__menu-item" data-target="help">?</button>
+    <button class="control__btn control__menu-item" data-target="tree"><i class="material-icons">timeline</i></button>
+    <button class="control__btn control__menu-item" data-target="settings"><i class="material-icons">&#xE8B8;</i></i></button>
   </div>
+</div>
+
+<div id="settings-panel" class="settings settings--hidden">
+  <div class="settings__container">
+    <button class="settings__close"><i class="material-icons">close</i></button>
+  </div>
+</div>
+
+<div id="help-panel" class="help">
+  
 </div>
 
 <script type="text/javascript">
