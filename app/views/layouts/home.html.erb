@@ -14,7 +14,7 @@
     <nav class="header__nav header__nav--left">
       <h1 class="header__brand header__brand--left">
       <%= link_to root_path do %>
-        Spell
+        <%= image_tag "logo-horizontal" %>
       <% end %>
       </h1>
                   
@@ -51,7 +51,7 @@
           </li>
 
           <li class="header__menu-item">
-            <%= link_to "Déconnexion", destroy_user_session_path, method: "delete" %>
+            <%= link_to "Déconnexion", destroy_user_session_path, :method => :delete %>
           </li>
 
         <% end %>

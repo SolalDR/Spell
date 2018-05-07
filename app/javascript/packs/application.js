@@ -6,6 +6,7 @@ import * as Bard from "js-bard"
 import CodeMirror from "./components/codemirror.js"
 import TogglerManager from "./components/toggler.js"
 import RessourceForm from "./components/ressources.js"
+import deleteRecord from "./components/delete.js"
 
 window.Bard = Bard;
 window.loadAsyncScript = loadAsyncScript;
@@ -23,6 +24,8 @@ window.addEventListener("load", ()=>{
   if( document.querySelector("canvas") ){
     window.book = new Bard.Book();
   }
+
+  deleteRecord();
 
 
 })
