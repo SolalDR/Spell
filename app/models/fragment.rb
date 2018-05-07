@@ -13,8 +13,12 @@
 
 class Fragment < ApplicationRecord
   belongs_to :book
-
   has_many :ressources, as: :ressourceable
   has_many :fragment_links, :foreign_key => :parent_id
   has_many :children, :through => :fragment_links, :source => :child
+
+  has_attached_file :thumbnail
+  validates_attachment_content_type :thumbnail, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+
+  
 end

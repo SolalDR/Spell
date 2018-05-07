@@ -17,6 +17,12 @@
 class Book < ApplicationRecord
   has_many :fragments
   has_many :ressources, as: :ressourceable, :dependent => :destroy
+  
+  has_attached_file :thumbnail
+  has_attached_file :cover
+  validates_attachment_content_type :thumbnail, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+  validates_attachment_content_type :cover, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+
   accepts_nested_attributes_for :ressources, :reject_if => :all_blank, :allow_destroy => true
 
   enum :format => { :bard => 0, :epub => 1 }

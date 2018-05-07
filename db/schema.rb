@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180506151504) do
+ActiveRecord::Schema.define(version: 20180507155702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,12 +32,20 @@ ActiveRecord::Schema.define(version: 20180506151504) do
     t.string   "title"
     t.string   "author"
     t.integer  "age"
-    t.integer  "format",      default: 0
+    t.integer  "format",                 default: 0
     t.text     "config"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.text     "description"
     t.text     "publisher"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   create_table "fragment_links", force: :cascade do |t|
@@ -51,9 +59,13 @@ ActiveRecord::Schema.define(version: 20180506151504) do
     t.string   "name"
     t.text     "content"
     t.text     "config"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "book_id"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
     t.index ["book_id"], name: "index_fragments_on_book_id", using: :btree
   end
 

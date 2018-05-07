@@ -6,6 +6,7 @@
     </div>
     <% fragments.each do |fragment| %>
     <div 
+      style="background-image: url('<%= fragment.thumbnail.url %>')"
       id="fragment-<%= fragment.id %>" 
       class="tree__item"
       data-children="<% fragment.children.each do |f| %><%= f.id %><% if fragment.children.last != f %>,<% end %><% end %>">
