@@ -17,7 +17,7 @@ window.addEventListener("load", ()=>{
   TogglerManager.init();
   RessourceForm.init();
 
-  if( document.querySelector(".tree") ) var tree = new Tree(document.querySelector(".tree"));
+  if( document.querySelector("#tree") ) var tree = new Tree(document.querySelector(".tree"));
 
   if( document.querySelector("canvas") ){
     window.book = new Bard.Book();

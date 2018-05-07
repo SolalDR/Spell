@@ -11,6 +11,7 @@ class FragmentsController < ApplicationController
   # GET /fragments/1
   # GET /fragments/1.json
   def show
+    @fragments = Fragment.where(book: @fragment.book)
     respond_to do |format|
       format.js
       format.json

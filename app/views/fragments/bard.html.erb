@@ -11,18 +11,28 @@
   <div class="control__menu">
     <button class="control__btn control__menu-item" data-target="pause"><i class="material-icons">&#xE034;</i></button>
     <button class="control__btn control__menu-item" data-target="help">?</button>
-    <button class="control__btn control__menu-item" data-target="tree"><i class="material-icons">timeline</i></button>
+    <button class="control__btn control__menu-item" data-target="arborescence"><i class="material-icons">timeline</i></button>
     <button class="control__btn control__menu-item" data-target="settings"><i class="material-icons">&#xE8B8;</i></i></button>
   </div>
 </div>
 
-<div id="settings-panel" class="settings settings--hidden">
-  <div class="settings__container">
-    <button class="settings__close"><i class="material-icons">close</i></button>
+<div id="arborescence-panel" class="panel panel--hidden">
+  <div class="panel__container">
+    <button class="panel__close"><i class="material-icons">close</i></button>
+  </div>
+ 
+
+  <%= render "partials/tree", fragments: @fragments %>
+
+</div>
+
+<div id="settings-panel" class="panel panel--hidden">
+  <div class="panel__container">
+    <button class="panel__close"><i class="material-icons">close</i></button>
   </div>
 </div>
 
-<div id="help-panel" class="help">
+<div id="help-panel" class="panel panel--hidden">
   
 </div>
 
