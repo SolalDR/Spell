@@ -14,21 +14,16 @@ p, ol, ul, td {
 }
 
 pre {
-  background-color: #eee;
+  background-color: $color-light;
   padding: 10px;
   font-size: 11px;
 }
 
 a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
+  color: $color-dark;
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: $color-primary;
   }
 }
 
@@ -56,6 +51,18 @@ div {
   padding: 0;
 }
 
+.color-primary {
+  color: $color-primary;
+}
+
+.color-secondary {
+  color: $color-secondary; 
+}
+
+.color-grey {
+  color: $color-grey;
+}
+
 .field_with_errors {
   padding: 2px;
   background-color: red;
@@ -68,7 +75,7 @@ div {
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: $color-light;
 
   h2 {
     text-align: left;
