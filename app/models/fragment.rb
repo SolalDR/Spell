@@ -17,7 +17,7 @@ class Fragment < ApplicationRecord
   has_many :fragment_links, :foreign_key => :parent_id
   has_many :children, :through => :fragment_links, :source => :child
 
-  has_attached_file :thumbnail
+  has_attached_file :thumbnail, default_url: "/images/missing_fragment.png"
   validates_attachment_content_type :thumbnail, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
   
