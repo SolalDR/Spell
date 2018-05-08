@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+
 b = Book.create!({ 
   :title => "Mission Mars", 
   :author => "Delphine Chedru", 
@@ -15,13 +17,21 @@ b = Book.create!({
   :description => "Retrouvons la princesse Attaque et son compagnon le chevalier Courage \n Après leurs dernières aventures, ils courent des jours paisibles dans leur château."
 })
 
-u = User.create!({
-  :email => "admin@admin.com",
-  :password => "adminadmin",
-  :status => 2
-})
+json = ActiveSupport::JSON.decode(File.read('db/seeds/fragments.json'))
+json.each do |a|
+  Fragment.create!({
+    book_id: b.id,
+    name: a['name'], 
+    content: a['content']
+  })
+end
 
-bm = BookMark.create!({
-  :user => u,
-  :book => b
-})
+json.each do |a|
+  f = Fragment.where(name: a['name']).first
+  a['children'].each do |c|
+    f.children << Fragment.where(name: c['name']).first
+  end
+
+  f.save
+end
+

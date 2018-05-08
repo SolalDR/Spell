@@ -13,8 +13,8 @@
 
 class Fragment < ApplicationRecord
   belongs_to :book
-  has_many :ressources, as: :ressourceable
-  has_many :fragment_links, :foreign_key => :parent_id
+  has_many :ressources, as: :ressourceable, dependent: :destroy
+  has_many :fragment_links, :foreign_key => :parent_id, dependent: :destroy
   has_many :children, :through => :fragment_links, :source => :child
 
   has_attached_file :thumbnail, default_url: "/images/missing_fragment.png"

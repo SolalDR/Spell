@@ -24,7 +24,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :book_marks
+  has_many :book_marks, dependent: :destroy
 
   enum :status => { :reader => 0, :writer => 1, :admin => 2 }
 
