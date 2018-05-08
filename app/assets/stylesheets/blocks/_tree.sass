@@ -18,8 +18,6 @@
   &__item
     position: absolute
     display: flex
-    background-color: white
-    box-shadow: $shadow
     width: 100px
     height: 100px
     border-radius: 100%
@@ -28,12 +26,22 @@
     flex-direction: column
     transform: translateY(-50%) rotate(30deg)
     transition: .4s ease
-
-    &:hover
-      box-shadow: $shadow-big
-
+    background-position: center
+    background-size: 80%
+    background-repeat: no-repeat
+    @for $i from 1 to 25
+      &:nth-child(25n + #{$i})
+        background-image: image-url("examples/planete-#{random(7)}.png")
 
     &-title
+      position: absolute
+      top: 100%
+      width: 120px
+      left: 50%
+      transform: translateX(-50%)
+      font-size: 14px
+      font-weight: bold
+      line-height: 1.2em
 
 
     &-ramifications

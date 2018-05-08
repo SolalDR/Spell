@@ -6,12 +6,12 @@
     </div>
     <% fragments.each do |fragment| %>
     <div 
-      style="background-image: url('<%= fragment.thumbnail.url %>')"
+      <% if fragment.thumbnail.present? %> style="background-image: url('<%= fragment.thumbnail.url %>')" <% end %>
       id="fragment-<%= fragment.id %>" 
       class="tree__item"
       data-children="<% fragment.children.each do |f| %><%= f.id %><% if fragment.children.last != f %>,<% end %><% end %>">
         
-        <p cl ass="tree__item-title"><%= fragment.name %></p>
+        <p class="tree__item-title"><%= fragment.name %></p>
         <div class="tree__item-ramifications">
           <span class="tree__item-ramification"></span>
         </div>
