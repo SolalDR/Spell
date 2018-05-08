@@ -40,14 +40,16 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'aws-sdk', '~> 2.3'
+
 
 gem 'codemirror-rails'
 gem 'material_icons'
 
 # Gemfile
 gem 'webpacker', '~> 3.4'
-gem "paperclip", "~> 6.0.0"
+
+gem 'paperclip', '~> 5.1.0'
+gem 'aws-sdk',   '~> 2.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
