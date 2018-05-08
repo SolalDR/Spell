@@ -72,6 +72,44 @@ div {
   display: table;
 }
 
+.font-big {
+  font-size: $font-size-big;
+  line-height: $font-size-big;
+}
+
+.font-medium {
+  font-size: $font-size-medium;
+  line-height: $font-size-medium;
+}
+
+.font-normal {
+  font-size: $font-size-normal;
+  line-height: $font-size-normal;
+}
+
+.font-small {
+  font-size: $font-size-small;
+  line-height: $font-size-small;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+.bottom-center-big {
+  position: absolute;
+  bottom: $size-big;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+#alert-manager {
+  display: none;
+} 
+  
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;

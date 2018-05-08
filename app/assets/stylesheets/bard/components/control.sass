@@ -1,55 +1,68 @@
+$size: 50px
+$gutter: 10px
+
 .control
-	position: fixed
-	bottom: 20px
-	right: 20px
-	
-	#control-menu-btn
-		position: absolute
-		bottom: 0px
-		right: 0
-		margin: 0
-		z-index: 2
-		line-height: 0
+  position: fixed
+  bottom: 20px
+  right: 20px
+  
+  #control-menu-btn
+    position: absolute
+    bottom: 0px
+    right: 0
+    margin: 0
+    z-index: 2
+    line-height: 0
 
-	&__btn
-		height: 40px
-		width: 40px
-		padding: 0
-		margin: 0
-		box-sizing: border-box
-		border-radius: 100%
-		border: 2px solid white
-		background-color: transparent
-		color: white
-		display: flex
-		justify-content: center
-		margin: 10px 0
-		transition: all .4s ease-in-out
-		font-size: $font-size-medium
-		z-index: 1
-		outline: 0
-		&:hover 
-			background-color: white
-			color: black
-			transform: scale(1.1)
+  &__btn
+    height: $size
+    width: $size
+    border: 0px
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border-radius: 100%
+    background-color: $color-primary-dark
+    color: white
+    display: flex
+    justify-content: center
+    margin: 10px 0
+    transition: all .4s ease-in-out
+    font-size: $font-size-medium
+    z-index: 1
+    outline: 0
 
-	&__menu
-		position: absolute
-		bottom: 0px
-		right: 40px
-		&-item
-			left: 0
-			position: absolute
-			transition: .3s
-			@for $i from 4 through 1
-				&:nth-child(#{$i})
-					transition-delay: .1s*$i
-					bottom: 50px*($i)
-					right: 0px
 
-	&--hide
-		.control__menu-item
-			left: 0
-			opacity: 0
-			bottom: 0
-	
+  &__menu
+    position: absolute
+    bottom: -$gutter/2
+    right: -$gutter/2
+    width: $size+$gutter
+    height: #{($size+$gutter)*5+5px}
+    background-color: #cdd3f2
+    border-radius: $size
+    overflow: hidden
+    transition: .4s
+    
+    &-item
+      left: $gutter/2
+      position: absolute
+      transition: .3s
+      background-color: #FFF
+      cursor: pointer
+      display: flex
+      justify-content: center
+      flex-direction: column
+      align-items: center
+      img
+        height: 60%
+
+      @for $i from 4 through 1
+        &:nth-child(#{$i})
+          transition-delay: .1s*$i
+          bottom: $size*($i)+$gutter*($i)
+
+  &--hide
+    .control__menu
+      height: $size+$gutter
+  

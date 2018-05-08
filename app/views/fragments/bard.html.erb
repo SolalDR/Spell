@@ -6,34 +6,107 @@
   <div class="fragment__foreground"></div>
 </div>
 
+
+<!-- Menu -->
 <div id="controller" class="control control--hide">
-  <button id="control-menu-btn" class="control__btn">+</button>
+  <button id="control-menu-btn" class="control__btn">
+    <i class="material-icons">pause</i>
+  </button>
   <div class="control__menu">
-    <button class="control__btn control__menu-item" data-target="pause"><i class="material-icons">&#xE034;</i></button>
-    <button class="control__btn control__menu-item" data-target="help">?</button>
-    <button class="control__btn control__menu-item" data-target="arborescence"><i class="material-icons">timeline</i></button>
-    <button class="control__btn control__menu-item" data-target="settings"><i class="material-icons">&#xE8B8;</i></i></button>
+    <button class="control__btn control__menu-item" data-target="help">
+      <%= image_tag "picto/picto-_" %>
+    </button>
+    <button class="control__btn control__menu-item" data-target="settings">
+      <%= image_tag "picto/picto-settings" %>
+    </button>
+    <button class="control__btn control__menu-item" data-target="arborescence">
+      <%= image_tag "picto/picto-boussole" %>
+    </button>
+    <a href="<%= book_path(@fragment.book) %>" class="control__btn control__menu-item" data-target="pause">
+      <%= image_tag "picto/picto-sortie" %>
+    </a>
   </div>
 </div>
 
+
+<!-- Tree -->
 <div id="arborescence-panel" class="panel panel--hidden">
   <div class="panel__container">
     <button class="panel__close"><i class="material-icons">close</i></button>
+    <h2 class="title-1 text-center panel__title"><%= @fragment.book.title %></h2>
+    <a href="" class="btn bottom-center-big">Ma collection de mot</a>
   </div>
- 
-
   <%= render "partials/tree", fragments: @fragments %>
-
 </div>
 
+
+
+<!-- Settings -->
 <div id="settings-panel" class="panel panel--hidden">
   <div class="panel__container">
     <button class="panel__close"><i class="material-icons">close</i></button>
+    <h2 class="title-1 text-center panel__title">Réglages</h2>
+    <div class="settings container">
+      
+      <div class="settings__item">
+        <div class="settings__item-label">
+          <%= image_tag "picto/picto-img", class: "settings__item-img" %>
+          <p class="settings__item-title">Qualité</p>
+        </div>
+        <div class="settings__item-input">
+          <p>< Basse ></p>
+        </div>
+      </div>
+
+      <div class="settings__item">
+        <div class="settings__item-label">
+          <%= image_tag "picto/picto-participation", class: "settings__item-img" %>
+          <p class="settings__item-title">Participation de l'enfant</p>
+        </div>
+        <div class="settings__item-input">
+          <p>Oui ° Non</p>
+        </div>
+      </div>
+
+      <div class="settings__item">
+        <div class="settings__item-label">
+          <%= image_tag "picto/picto-commande-vocale", class: "settings__item-img" %>
+          <p class="settings__item-title">Commande vocale</p>
+        </div>
+        <div class="settings__item-input">
+          <p>Oui ° Non</p>
+        </div>
+      </div>
+
+
+      <div class="settings__item">
+        <div class="settings__item-label">
+          <%= image_tag "picto/picto-volume-son", class: "settings__item-img" %>
+          <p class="settings__item-title">Volume du son</p>
+        </div>
+        <div class="settings__item-input">
+          <p><input type="range"></p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
+
+<!-- Help -->
 <div id="help-panel" class="panel panel--hidden">
-  
+  <button class="panel__close"><i class="material-icons">close</i></button>
+  <div class="panel__container">
+    <div class="text-center">
+      <h3 id="help-title" class="font-big bold mb-5">Cherche et trouve</h3>
+      <p  id="help-content" class="mb-5 font-medium">Trouve l’objet mentionné dans le texte et touche-le  <br>pour faire avancer l’histoire.</p>
+      <%= image_tag "picto/picto-aide", id: "help-logo" %>
+    </div>
+    <div class="text-center mt-3">
+        <a href="#" class="btn">Plus d'aide</a>
+      </div>
+  </div>
 </div>
 
 <script type="text/javascript">
