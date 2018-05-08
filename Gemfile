@@ -40,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'aws-sdk', '~> 2.3'
+
 gem 'codemirror-rails'
 gem 'material_icons'
 
@@ -70,7 +72,6 @@ group :development do
 end
 
 group :production do 
-  gem 'aws-sdk', '~> 2.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
