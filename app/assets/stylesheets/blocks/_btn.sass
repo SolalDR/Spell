@@ -1,9 +1,48 @@
 .btn 
   display: inline-block
-  padding: 5px 10px
-  background-color: #EEE
+  padding: 7px 15px
+  background-color: rgba($color-primary, .5)
+  color: white
   color: black
   transition: .4s
   width: auto
-  &:hover 
-    background-color: #CCC
+  margin: 10px 0
+  color: white
+  position: relative
+  text-decoration: none
+ 
+  &:hover
+    background-color: rgba($color-primary, .5)
+    text-decoration: none
+
+    &::before 
+      width: 100%
+
+  &--slide
+
+    background-color: transparent
+    
+    &::before, &::after
+      z-index: -1
+      content: ""
+      display: block
+      position: absolute
+      left: 0
+      top: 0
+      height: 100%
+      transition: .4s
+      background-color: $color-secondary
+
+    &::before
+      width: 0px
+  
+    &::after
+      background-color: rgba($color-primary, .5)
+      z-index: -2
+      width: 100%
+
+    &:hover 
+      background-color: transparent
+      color: black
+
+

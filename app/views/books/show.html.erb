@@ -4,18 +4,21 @@
   <%= link_to "X", book_marks_path, class: "book__close-btn" %>
 
   <div class="book__container">
-    <h1 class="book__title"><%= @book.title %></h1>
-    <div class="book__specs">
-      <p class="book__spec"><%= @book.author %></p>
-      <p class="book__spec">A partir de <%= @book.age %> ans</p>
-      <p class="book__spec"><%= @book.publisher %></p>
-      <p class="book__spec">Durée: 15min</p>
-    </div>
-    <div class="book__description">
-      <%= @book.description %>
-    </div>
-    <div class="book__actions">
-      <%= link_to "Lancer l'histoire", read_path(id: @book), class: "btn" %>
+  
+    <div class="container">
+      <h1 class="book__title title-1 container__title"><%= @book.title %></h1>
+      <div class="book__specs">
+        <p class="book__spec"><%= @book.author %></p>
+        <p class="book__spec">A partir de <%= @book.age %> ans</p>
+        <p class="book__spec"><%= @book.publisher %></p>
+        <p class="book__spec">Durée: 15min</p>
+      </div>
+      <div class="book__description">
+        <%= @book.description %>
+      </div>
+      <div class="book__actions">
+        <%= link_to "Lancer l'histoire", read_path(id: @book), class: "btn" %>
+      </div>
     </div>
   </div>
 </div>

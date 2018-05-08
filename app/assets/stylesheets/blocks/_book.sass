@@ -1,16 +1,13 @@
 $header-h: 60px
-$gutter: 20px
+$gutter: 10px
 
 .book
   position: relative
-  display: flex
-  flex-direction: column
-  justify-content: center
   background-repeat: no-repeat
   background-size: cover
   background-position: center bottom
 
-  height: calc(100vh - 60px)
+  height: calc(100vh - 70px)
 
   &__close-btn
     position: absolute
@@ -19,19 +16,16 @@ $gutter: 20px
     font-size: 20px
 
   &__container
-    width: 80%
-    margin: auto
-    max-width: 500px
-    padding: $gutter
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, .2)
-    background-color: white
+    background: linear-gradient(white 20%, rgba(255, 255, 255, 0.5) 80%, transparent 100%)
+    padding-bottom: 64px
 
   &__title
     font:
       size: 30px
       weight: bold
-    text-align: center
-    margin-bottom: 30px
+    text-align: left
+    padding-bottom: 15px !important
+    margin-bottom: 0px
 
   &__specs
     display: flex
@@ -39,11 +33,18 @@ $gutter: 20px
     margin-bottom: $gutter
 
   &__spec
-    display: flex
-    width: 50%
+    display: inline-block
+    font-weight: bold 
+    &::after
+      content: "|"
+      display: inline-block
+      margin: 0 5px
+    &:last-child
+      &::after
+        content: ""
   
   &__description
     margin-bottom: $gutter
 
   &__actions
-    text-align: center
+    text-align: left

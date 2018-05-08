@@ -1,16 +1,18 @@
 <div class="container mt-4">
 
-<h1 class="title-1">Ma bibliothèque</h1>
+<h1 class="title-1 container__title">Ma bibliothèque</h1>
 
 <div class="books">
   <% @book_marks.each do |book_mark| %>
-  <div class="books__item">
-    <img src="<%= book_mark.book.thumbnail.url %>" alt="<%= book_mark.book.title %>">
-    <p class="books__item-title"><%= book_mark.book.title %></p>
-    <p class="books__item-subtitle"><%= book_mark.book.author %></p>
-    <div class="books__item-action">
-      <%= link_to "Voir", book_path(book_mark.book), class: "btn books__item-btn" %>
-    </div>
-  <div>
+    <%= link_to book_path(book_mark.book), class: "books__item" do %>
+      <div class="books__item-img-container">
+        <img src="<%= book_mark.book.thumbnail.url %>" class="books__item-img" alt="<%= book_mark.book.title %>">  
+      </div>
+      <p class="books__item-title"><%= book_mark.book.title %></p>
+      <p class="books__item-subtitle"><%= book_mark.book.author %></p>
+      <div class="books__item-action">
+        <%= link_to "Voir", book_path(book_mark.book), class: "btn books__item-btn" %>
+      </div>
+    <% end %>
   <% end %>
 </div>

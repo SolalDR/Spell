@@ -4,13 +4,14 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  padding-top: 60px;
+  padding-top: 70px;
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   margin: 0;
+  line-height: 2em;
 }
 
 pre {
@@ -24,6 +25,7 @@ a {
 
   &:hover {
     color: $color-primary;
+    text-decoration: none;
   }
 }
 
