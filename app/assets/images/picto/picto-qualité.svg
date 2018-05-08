@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>picto-qualité</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.233988116,6.92841248 C0.233988116,3.25699864 3.21851242,0.280770692 6.9008857,0.280770692 C10.583259,0.280770692 13.5674893,3.25699864 13.5674893,6.92841248 C13.5674893,10.5998263 10.583259,13.5754681 6.9008857,13.5754681 C3.21851242,13.5754681 0.233988116,10.5998263 0.233988116,6.92841248 Z" id="path-1"></path>
+        <path d="M0.0536512471,28.8080393 C0.0536512471,12.9302082 13.2257735,0.0593753262 29.4752838,0.0593753262 C33.688537,0.0593753262 37.6940027,0.924227638 41.3173886,2.48275754 L41.3173886,28.8080393 L0.0536512471,28.8080393 Z" id="path-3"></path>
+        <path d="M0.260712483,19.7372456 C0.260712483,8.88362732 9.03754396,0.0855495251 19.8645903,0.0855495251 C30.6919298,0.0855495251 39.468468,8.88362732 39.468468,19.7372456 L0.260712483,19.7372456 Z" id="path-5"></path>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="picto-qualité">
+            <g id="Group-3">
+                <rect id="Rectangle-2-Copy-3" fill="#143ADB" opacity="0.3" x="0" y="0" width="60" height="60" rx="9"></rect>
+                <g id="Group-10-Copy" transform="translate(3.818182, 5.454545)">
+                    <g id="Group-6">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-5"></g>
+                        <polygon id="Fill-4" fill="#143ADB" mask="url(#mask-2)" points="-2.79668711 16.5968304 16.5981646 16.5968304 16.5981646 -2.74029851 -2.79668711 -2.74029851"></polygon>
+                    </g>
+                    <g id="Group-9" opacity="0.499433877" transform="translate(10.941655, 19.480519)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="Clip-8"></g>
+                        <polygon id="Fill-7" fill="#143ADB" mask="url(#mask-4)" points="-3.00209851 31.7938942 61.9526661 31.7938942 61.9526661 -2.92647949 -3.00209851 -2.92647949"></polygon>
+                    </g>
+                    <g id="Group-12" opacity="0.499433877" transform="translate(0.781547, 28.831169)">
+                        <mask id="mask-6" fill="white">
+                            <use xlink:href="#path-5"></use>
+                        </mask>
+                        <g id="Clip-11"></g>
+                        <polygon id="Fill-10" fill="#143ADB" mask="url(#mask-6)" points="-2.76226195 22.768227 42.492029 22.768227 42.492029 -2.94513795 -2.76226195 -2.94513795"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

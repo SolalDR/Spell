@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="44px" viewBox="0 0 29 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>picto-?</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="picto-?" fill="#143ADB">
+            <g id="Group-20">
+                <polygon id="Fill-64" opacity="0.501924819" points="8 33 15 33 15 21 8 21"></polygon>
+                <path d="M11.5,37 C9.56694101,37 8,38.566941 8,40.5 C8,42.433059 9.56694101,44 11.5,44 C13.433059,44 15,42.433059 15,40.5 C15,38.566941 13.433059,37 11.5,37 Z" id="Fill-66"></path>
+                <path d="M15,0 L15,7.00005497 C18.8659588,7.00005497 22.0001099,10.1339616 22.0001099,13.9998901 C22.0001099,17.8660384 18.8659588,20.999945 15,20.999945 L15,28 C22.7321375,28 29,21.7319669 29,13.9998901 C29,6.26803314 22.7321375,0 15,0" id="Fill-68" opacity="0.501924819"></path>
+                <path d="M0,14 L7.24982919,14 C7.24982919,10.1340412 10.4958888,6.99989005 14.4998861,6.99989005 C18.5041112,6.99989005 21.7499431,10.1340412 21.7499431,14 L29,14 C29,6.26786247 22.5081085,0 14.4998861,0 C6.49189147,0 0,6.26786247 0,14" id="Fill-70" opacity="0.501924819"></path>
+            </g>
+        </g>
+    </g>
+</svg>

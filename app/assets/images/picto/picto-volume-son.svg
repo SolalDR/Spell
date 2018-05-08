@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="105px" height="59px" viewBox="0 0 105 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>picto-volume-son</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="picto-volume-son" fill="#143ADB">
+            <g id="Group-3-Copy">
+                <g id="Group-26-Copy">
+                    <polygon id="Fill-38" points="0 41 23 41 23 18 0 18"></polygon>
+                    <polygon id="Fill-40" opacity="0.501358696" points="1 29.4998505 60 59 60 29.4998505 60 0"></polygon>
+                </g>
+                <g id="Group" transform="translate(74.000000, 11.000000)" opacity="0.5">
+                    <path d="M-4.80645161,24.3421053 L1,24.3421053 C1,21.1155113 3.59954912,18.5 6.80645161,18.5 C10.0133541,18.5 12.6129032,21.1155113 12.6129032,24.3421053 L18.4193548,24.3421053 C18.4193548,17.8889173 13.2202566,12.6578947 6.80645161,12.6578947 C0.392646617,12.6578947 -4.80645161,17.8889173 -4.80645161,24.3421053" id="Fill-20-Copy-9" transform="translate(6.806452, 18.500000) rotate(-270.000000) translate(-6.806452, -18.500000) "></path>
+                    <path d="M3.90322581,27.2631579 L12.8548387,27.2631579 C12.8548387,22.4232669 16.8624769,18.5 21.8064516,18.5 C26.7504263,18.5 30.7580645,22.4232669 30.7580645,27.2631579 L39.7096774,27.2631579 C39.7096774,17.5833759 31.694401,9.73684211 21.8064516,9.73684211 C11.9185022,9.73684211 3.90322581,17.5833759 3.90322581,27.2631579" id="Fill-20-Copy-10" transform="translate(21.806452, 18.500000) rotate(-270.000000) translate(-21.806452, -18.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

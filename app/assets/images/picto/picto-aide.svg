@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="158px" height="193px" viewBox="0 0 158 193" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>picto-aide</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0635314286 0.259385507 16.6929314 0.259385507 16.6929314 34 0.0635314286 34"></polygon>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="picto-aide">
+            <g id="Group-3">
+                <path d="M66,0 C29.549192,0 0,29.5490826 0,66.0002442 C0,102.450429 29.549192,132 66,132 C102.450808,132 132,102.450429 132,66.0002442 C132,29.5490826 102.450808,0 66,0" id="Fill-1" fill-opacity="0.5" fill="#143ADB" opacity="0.503283514"></path>
+                <g id="Group-40" transform="translate(104.061549, 131.839724) rotate(-15.000000) translate(-104.061549, -131.839724) translate(63.061549, 79.839724)" opacity="0.753057065">
+                    <polygon id="Fill-3" fill="#143ADB" points="33 44 48 44 48 29 33 29"></polygon>
+                    <path d="M65,54 L82,54 L82,103 L65,103 L16,103 L16,44 L65,44 L65,54 Z M82,39.1775524 L81.8224476,54 L67,53.8224476 L67.1775524,39 L82,39.1775524 Z M74.5895954,31.0005755 C78.7318679,31.0532271 82.0489183,34.6345659 81.9994539,39 L67,38.8105576 C67.0494644,34.4451235 70.4473228,30.9484401 74.5895954,31.0005755 Z" id="Combined-Shape" fill="#143ADB"></path>
+                    <polygon id="Fill-9" fill="#143ADB" points="16 44 31 44 31 7 16 7"></polygon>
+                    <g id="Group-13" transform="translate(0.000000, 70.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-12"></g>
+                        <polygon id="Fill-11" fill="#143ADB" mask="url(#mask-2)" points="16.6929314 0.259385507 0.0635314286 0.259385507 16.6929314 34.0001971"></polygon>
+                    </g>
+                    <path d="M23.4997551,0 C19.3576023,0 16,3.13386444 16,7 L31,7 C31,3.13386444 27.641908,0 23.4997551,0" id="Fill-14" fill="#143ADB"></path>
+                    <path d="M40.5,22 C36.3579824,22 33,25.1338644 33,29 L48,29 C48,25.1338644 44.6420176,22 40.5,22" id="Fill-16" fill="#143ADB"></path>
+                    <polygon id="Fill-18" fill="#143ADB" points="65 34.1183683 64.8224476 44 50 43.8816317 50.1775524 34"></polygon>
+                    <path d="M57.5895954,26.0005869 C53.4478126,25.9479354 50.0494644,29.4446137 50,33.8105579 L64.9994539,34 C65.0489183,29.6345721 61.7318679,26.0527222 57.5895954,26.0005869" id="Fill-20" fill="#143ADB"></path>
+                    <polygon id="Fill-26" fill="#143ADB" points="0 71 15 71 15 41 0 41"></polygon>
+                    <path d="M7.49975513,34 C3.35760227,34 0,37.1338644 0,41 L15,41 C15,37.1338644 11.641908,34 7.49975513,34" id="Fill-28" fill="#143ADB"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
