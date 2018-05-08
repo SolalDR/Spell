@@ -10,9 +10,6 @@
       </div>
       <p class="books__item-title"><%= book_mark.book.title %></p>
       <p class="books__item-subtitle"><%= book_mark.book.author %></p>
-      <div class="books__item-action">
-        <%= link_to "Voir", book_path(book_mark.book), class: "btn books__item-btn" %>
-      </div>
     <% end %>
   <% end %>
 </div>

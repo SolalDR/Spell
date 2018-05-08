@@ -1,10 +1,13 @@
 
 <div class="book" style="background-image: url('<%= @book.cover.url %>')">
 
-  <%= link_to "X", book_marks_path, class: "book__close-btn" %>
+
 
   <div class="book__container">
     <div class="container">
+      <%= link_to book_marks_path, class: "book__close-btn" do  %>
+      <i class="material-icons">close</i>
+      <% end %>
       <h1 class="book__title title-1 container__title"><%= @book.title %></h1>
       <div class="book__specs">
         <p class="book__spec"><%= @book.author %></p>
@@ -16,7 +19,7 @@
         <%= @book.description %>
       </div>
       <div class="book__actions">
-        <%= link_to "Lancer l'histoire", read_path(id: @book), class: "btn" %>
+        <%= link_to "Commencez l'aventure", read_path(id: @book), class: "btn" %>
       </div>
     </div>
   </div>

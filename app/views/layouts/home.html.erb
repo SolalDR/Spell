@@ -63,7 +63,9 @@
   </header>
 
   <div class="notifications">
-    <p id="notification"><%= notice %></p>
+    <% if notice %>
+    <p class="notification"><%= notice %></p>
+    <% end %>
   </div>
   
     <%= yield %>
