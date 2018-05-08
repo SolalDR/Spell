@@ -10,6 +10,6 @@
     "three-shader-fxaa": "^5.1.1",
     "three": "0.91.0",
     "codemirror": "5.37.0",
-    "js-bard": "0.0.4"
+    "js-bard": "0.0.5"
   }
 }
