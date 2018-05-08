@@ -17,13 +17,8 @@
 
         <div class="field">
           <%= f.label :password %>
-          <i>(leave blank if you don't want to change it)</i>
           <%= f.password_field :password, autocomplete: "off" %>
-          
-          <% if @minimum_password_length %>
-            <br />
-            <em><%= @minimum_password_length %> characters minimum</em>
-          <% end %>
+          <i>(Laisser vide si vous ne voulez pas le changer)</i>
         </div>
 
         <div class="field">
@@ -32,20 +27,22 @@
         </div>
 
         <div class="field">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+          <%= f.label :current_password %> 
           <%= f.password_field :current_password, autocomplete: "off" %>
+          <i>(Mot de passe actuel pour confirmer)</i>
         </div>
 
-        <div class="actions">
-          <%= f.submit "Update" %>
+        <div class="actions text-right">
+          <%= f.submit "Mettre à jour" %>
         </div>
       <% end %>
 
-      <h3>Annuler mon compte</h3>
+      <div class="text-right">
+         <p><%= button_to "Annuler mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sur ?" }, method: :delete %></p>
 
-      <p>Non satisfait ? <%= button_to "Annuler mon compte", registration_path(resource_name), data: { confirm: "Vous êtes sur ?" }, method: :delete %></p>
-
-      <%= link_to "Retour", :back %>
+          <%= link_to "Retour", :back, class:"btn " %>
+      </div>
+     
  
     </div>
   </div>
