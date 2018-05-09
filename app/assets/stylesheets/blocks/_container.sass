@@ -1,5 +1,24 @@
 .container
   position: relative
+  margin: auto
+  max-width: $wrapper-xl - $gutter
+  width: 85%
   &__title
     padding-top: 64px
     padding-bottom: 64px
+
+$gutter: 128px
+
+  
+@media screen and (max-width: $wrapper-l)
+  .container
+    max-width: $wrapper-l - $gutter
+
+@media screen and (max-width: $wrapper-md)
+  .container
+    max-width: $wrapper-md - $gutter
+
+@media screen and (max-width: $wrapper-sm)
+  .container
+    max-width: $wrapper-sm - $gutter
+

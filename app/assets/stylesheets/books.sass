@@ -2,13 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$book-size: 200px
+$book-size: 300px
 
 .books
   display: flex
   flex-wrap: wrap
   justify-content: space-between
-  margin: 30px 0
+  margin: 0
 
   &__item
     width: $book-size
@@ -49,3 +49,8 @@ $book-size: 200px
         width: $book-size
         overflow: hidden
         position: relative
+        background-color: #f7fafe
+        transition: .4s
+        box-shadow: 0
+        &:hover
+          box-shadow: $shadow

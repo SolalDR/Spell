@@ -1,7 +1,7 @@
 .btn 
   display: inline-block
   padding: 7px 15px
-  background-color: rgba($color-primary, .5)
+  background-color: rgba($color-primary, .6)
   color: white
   color: black
   transition: .4s
@@ -12,7 +12,7 @@
   text-decoration: none
  
   &:hover
-    background-color: rgba($color-primary, .5)
+    background-color: rgba($color-primary, .6)
     text-decoration: none
 
     &::before 
@@ -21,6 +21,7 @@
   &--slide
 
     background-color: transparent
+    z-index: 1
     
     &::before, &::after
       z-index: -1
