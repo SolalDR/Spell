@@ -3,7 +3,23 @@ if( book ) {
   
   var isStarted = book.fragments.length > 0 ? true : false;
 
-  book.addFragment( Bard.Fragment.build( "<%= @fragment.name %>" , <%= raw @fragment.content %> ) );
+  class <%= @fragment.js_class %> extends Bard.Fragment <%= raw @fragment.content %>
+
+  var frag = new <%= @fragment.js_class %>();
+  frag.id = <%= @fragment.id %>;
+  frag.childrenLinks = <%= raw @fragment.children.map(&:id).to_json %>  
+  
+
+  book.addFragment(frag);
+
+  frag.on("start", function(){
+    for(var i=0; i<this.childrenLinks.length; i++){
+      loadAsyncScript("/books/<%= @fragment.book.id %>/fragments/"+this.childrenLinks[i]+".js", function(element){
+        element.parentNode.removeChild(element);
+      });
+    }
+  })
+
 
   if( !isStarted ) book.start();
 
