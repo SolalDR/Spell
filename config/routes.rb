@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   
   resources :books do 
     resources :fragments
+    resources :words, only: [:index]
   end
 
   get 'books/:id/tree', to: 'books#tree', as: :tree

@@ -1,13 +1,18 @@
 var RessourcesForm = {
   proto: `<div class="ressources__field ressources__field--added" data-index="{index}">
-      <input name="book[ressources_attributes][{index}][file]" id="book_ressources_attributes_{index}_file" type="file">
-      <label for="book_ressources_attributes_{index}_name">Name</label>
-      <input value="" name="book[ressources_attributes][{index}][name]" id="book_ressources_attributes_{index}_name" type="text">
-      <button class="ressources__field-remove">Remove Child</button>
+      <div class="ressources__field-name">
+        <input value="" name="book[ressources_attributes][{index}][name]" id="book_ressources_attributes_{index}_name" placeholder="Nom du fichier" type="text">
+      </div>
+      <div class="ressources__field-file">
+        <input name="book[ressources_attributes][{index}][file]" id="book_ressources_attributes_{index}_file" type="file">
+        <label for="book_ressources_attributes_{index}_file">Télécharger</label>
+      </div>
+      <button class="ressources__field-remove"><i class="material-icons">close</i></button>
     </div>`,
 
   initItem: function(element) {
     var index = element.getAttribute("data-index");
+    var labelFile = element.querySelector("#" + this.namespace + "_ressources_attributes_" + index + "_file")
     var destroyInput = element.querySelector("#" + this.namespace + "_ressources_attributes_" + index + "__destroy");
     var removeBtn = element.querySelector(".ressources__field-remove");
 

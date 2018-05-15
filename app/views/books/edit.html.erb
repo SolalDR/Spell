@@ -1,10 +1,11 @@
 <div class="container mt-4">
   
-  <h1>Editing Book</h1>
+  <h1 class="title-1 container__title">Editer livre</h1>
 
   <%= render 'form', book: @book %>
 
-  <%= link_to 'Show', @book %> |
-  <%= link_to 'Back', books_path %>
-
+  <div class="text-right">
+    <%= link_to 'Show', @book %> |
+    <%= link_to 'Back', books_path %>
+  </div>
 </div>
