@@ -109,10 +109,23 @@
   </div>
 </div>
 
+<!-- Words -->
+<div id="word-panel" class="word-panel panel panel--hidden">
+  <button class="panel__close"><i class="material-icons" data-toggle-target="#word-panel" data-toggle-modifier="panel--hidden">close</i></button>
+  <div class="panel__container">
+    <div>
+      <img id="word-panel-img" src="" alt="" class="word-panel__img">
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
 
   window.addEventListener("load", function(){
     if( window.book ){
+
+      window.book.dictionnary = <%= raw @fragment.book.dictionnary %>
+
       loadAsyncScript("/books/<%= @fragment.book.id %>/fragments/<%= @fragment.id %>.js", function(element){
         element.parentNode.removeChild(element);
       });

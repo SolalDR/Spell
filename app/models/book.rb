@@ -30,4 +30,10 @@ class Book < ApplicationRecord
   enum :format => { :bard => 0, :epub => 1 }
   formats = { :bard => 0, :epub => 1 }
 
+
+
+  def dictionnary
+    dictionnary = words.map { |w| {id: w.id, name: w.name, match: w.match, url: w.file_url }}.to_json
+  end
+
 end

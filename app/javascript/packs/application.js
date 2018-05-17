@@ -7,6 +7,7 @@ import CodeMirror from "./components/codemirror.js"
 import TogglerManager from "./components/toggler.js"
 import RessourceForm from "./components/ressources.js"
 import deleteRecord from "./components/delete.js"
+import BardManager from "./components/bard.js"
 
 window.Bard = Bard;
 window.loadAsyncScript = loadAsyncScript;
@@ -27,6 +28,8 @@ window.addEventListener("load", ()=>{
       id: parseInt(canvas.getAttribute("data-book")),
       debug: false
     });
+
+    BardManager.init(window.book);
   }
 
   deleteRecord();
