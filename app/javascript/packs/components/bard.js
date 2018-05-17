@@ -14,7 +14,7 @@ export default {
 
   manageDictionnary: function(textElement){
     textElement.on("word:click", function(e){
-      WordPanel.displayWord(e.word);
+      WordPanel.displayWord(e);
     })
   },
 

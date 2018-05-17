@@ -22,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :age %>
+    <%= f.label :age, value: "Age minimum" %>
     <%= f.number_field :age %>
   </div>
 
@@ -39,6 +39,14 @@
   <div class="field">
     <%= f.label :description %>
     <%= f.text_field :description %>
+  </div>
+
+  <div id="codemirror-block" class="field codemirror">
+    <%= f.label :config %>
+    <%= f.text_area :config, class: "codemirror__textarea" %>
+    <button id="" class="material-icons" data-toggle-target="#codemirror-block" data-toggle-modifier="codemirror--full" >
+      fullscreen
+    </button>
   </div>
 
 

@@ -1,26 +1,28 @@
+$gutter: 10px
+
 .text
   position: fixed
 
   &--top-left
-    top: 0
-    left: 0
+    top: $gutter
+    left: $gutter
   &--top-right  
-    top: 0
-    right: 0
+    top: $gutter
+    right: $gutter
   &--bottom-right
-    bottom: 0
-    right: 0
+    bottom: $gutter
+    right: $gutter
   &--bottom-left
-    bottom: 0
-    left: 0
+    bottom: $gutter
+    left: $gutter
 
   &--default 
     font-size: $font-size-medium
     line-height: 30px
     padding: 15px
-    max-width: 45vw
+    max-width: 80%
     color: white
-    font-weight: 100
+    font-weight: 500
     *
       color: white
 
@@ -48,3 +50,43 @@
       display: none
       opacity: 0
       transition: none
+
+
+  .clickable
+
+    &__letter
+      margin: 0
+      padding: 0
+      transition: .2s
+      animation-duration: 2.5s
+      animation-name: rotate
+      display: inline-block  
+      &:hover 
+        transform: translateY(-5px)
+
+    &--load
+      .clickable__letter
+        animation-name: bounce
+        animation-iteration-count: infinite
+
+    @for $i from 1 to 10
+      span:nth-child(#{$i})
+        animation-delay: $i*.05s + 2s
+        
+@keyframes bounce
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(-15px)
+  
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+  20%
+    transform: rotate(45deg)
+  35%
+    transform: rotate(0deg)
+  50%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)

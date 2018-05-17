@@ -11,12 +11,14 @@ export default {
     return this.element.classList.contains("panel--hidden") ? false : true;
   },
 
-  displayWord(word){
-    this.displayed = true;
+  displayWord(event){
+    event.element.classList.add("clickable--load");
     var img = new Image();
-    img.src = word.url;
+    img.src = event.word.url;
     img.addEventListener("load", ()=>{
+      this.displayed = true;
       this.img.src = img.src; 
+      event.element.classList.remove("clickable--load");
     })
   },
 
