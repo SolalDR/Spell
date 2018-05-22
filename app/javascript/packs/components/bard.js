@@ -1,4 +1,5 @@
 import WordPanel from "./bard/WordPanel.js";
+import SettingsPanel from "./bard/SettingsPanel.js";
 
 
 export default {
@@ -33,6 +34,7 @@ export default {
     this.book = book;
     if( this.book ){
       WordPanel.init(document.querySelector("#word-panel"));
+      SettingsPanel.init(document.querySelector("#settings-panel"), this);
       this.initListener();    
     }
   }

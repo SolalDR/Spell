@@ -54,7 +54,13 @@
           <p class="settings__item-title">Qualité</p>
         </div>
         <div class="settings__item-input">
-          <p>< Basse ></p>
+          <p>
+            <select name="" id="quality">
+              <option value="low">Basse</option>
+              <option value="medium">Medium</option>
+              <option value="hign">High</option>
+            </select>
+          </p>
         </div>
       </div>
 
@@ -64,7 +70,10 @@
           <p class="settings__item-title">Participation de l'enfant</p>
         </div>
         <div class="settings__item-input">
-          <p>Oui ° Non</p>
+          <p class="field">
+            <input id="child-participation" type="checkbox">
+            <label for="child-participation"></label>
+          </p>
         </div>
       </div>
 
@@ -74,7 +83,10 @@
           <p class="settings__item-title">Commande vocale</p>
         </div>
         <div class="settings__item-input">
-          <p>Oui ° Non</p>
+          <p class="field">
+            <input id="speech-recognition" type="checkbox">
+            <label for="speech-recognition"></label>
+          </p>
         </div>
       </div>
 
@@ -85,7 +97,7 @@
           <p class="settings__item-title">Volume du son</p>
         </div>
         <div class="settings__item-input">
-          <p><input type="range"></p>
+          <p><input id="sound-gain" type="range" min="0" max="1" step="0.01" value=""></p>
         </div>
       </div>
 

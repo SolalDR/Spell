@@ -14,14 +14,15 @@ ActiveRecord::Schema.define(version: 20180515132901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "citext"
 
   create_table "book_marks", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "book_id"
-    t.text     "config"
+    t.jsonb    "config",      default: {}, null: false
     t.integer  "nb_visit"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.integer  "fragment_id"
     t.index ["book_id"], name: "index_book_marks_on_book_id", using: :btree
     t.index ["fragment_id"], name: "index_book_marks_on_fragment_id", using: :btree
@@ -33,9 +34,9 @@ ActiveRecord::Schema.define(version: 20180515132901) do
     t.string   "author"
     t.integer  "age"
     t.integer  "format",                 default: 0
-    t.text     "config"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.jsonb    "config",                 default: {}, null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.text     "description"
     t.text     "publisher"
     t.string   "thumbnail_file_name"
@@ -58,9 +59,9 @@ ActiveRecord::Schema.define(version: 20180515132901) do
   create_table "fragments", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
-    t.text     "config"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.jsonb    "config",                 default: {}, null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.integer  "book_id"
     t.string   "thumbnail_file_name"
     t.string   "thumbnail_content_type"

@@ -16,7 +16,11 @@
         <%= @book.description %>
       </div>
       <div class="book__actions">
-        <%= link_to "Commencez l'aventure", read_path(id: @book), class: "btn btn--slide" %>
+        <% if @book_mark %>
+          <%= link_to "Commencez l'aventure", read_path(id: @book), class: "btn btn--slide" %>
+        <% else %>
+          <%= link_to "Ajouter à ma bibliothèque", add_book_mark_path(id: @book.id), class: "btn btn--slide" %>
+        <% end %>
       </div>
     </div>
   </div>

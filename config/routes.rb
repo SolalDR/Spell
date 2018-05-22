@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :fragments, only: [:index, :show, :destroy]
 
-  resources :book_marks, except: [:show, :edit]
+  resources :book_marks
   
   resources :books do 
     resources :fragments
@@ -19,5 +19,9 @@ Rails.application.routes.draw do
 
   get '/team', to: 'home#team', as: 'team'
   get '/store', to: 'home#store', as: 'store'
+
+  get '/books/:id/add_book_mark', to: 'book_marks#add_from_book', as: :add_book_mark
+
+  post '/book_marks/:id/edit_config', to: 'book_marks#update_config', as: :book_marks_update_config
 
 end

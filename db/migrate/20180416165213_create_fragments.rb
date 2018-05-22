@@ -3,7 +3,7 @@ class CreateFragments < ActiveRecord::Migration[5.0]
     create_table :fragments do |t|
       t.string :name
       t.text :content
-      t.text :config
+      t.jsonb :config, null: false, default: {}
 
       t.timestamps
     end

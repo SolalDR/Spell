@@ -1,10 +1,11 @@
 class BookMarksController < ApplicationController
-  before_action :set_book_mark, only: [:show, :edit, :update, :destroy]
+  before_action :set_book_mark, only: [:show, :edit, :update, :destroy, :update_config]
 
   # GET /book_marks
   # GET /book_marks.json
   def index
     @book_marks = BookMark.all
+    @books_interest = Book.all.except(@book_marks.map(&:book)).first(3)
   end
 
 
@@ -62,12 +63,39 @@ class BookMarksController < ApplicationController
     end
   end
 
+  def update_config
+    if params[:key] && params[:value]
+
+      @book_mark.config[params[:key]] = params[:value]
+
+      respond_to do |format|
+        format.json { render json: @book_mark.config }
+      end
+    end
+  end
+
+  def add_from_book
+    @book = Book.find(params[:id])
+    if @book && current_user
+     @book_mark = BookMark.find_by({book: @book, user: current_user}) 
+     
+     if !@book_mark
+      @book_mark = BookMark.create!({book: @book, user: current_user, fragment: @book.fragments.first, config: @book.config})
+      @book_mark.save
+     end
+
+    end
+
+    redirect_to @book #, notice: @book.title.capitalize + ' a bien été rajouté à votre bibliothèque.'
+  end 
+
+
   # DELETE /book_marks/1
   # DELETE /book_marks/1.json
   def destroy
     @book_mark.destroy
     respond_to do |format|
-      format.html { redirect_to book_marks_url, notice: 'Book mark was successfully destroyed.' }
+      format.html { redirect_to book_marks_url, notice: 'Votre livre a bien été supprimé de votre bibliothèque.' }
       format.json { head :no_content }
     end
   end

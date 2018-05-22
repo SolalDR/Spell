@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $book-size: 300px
+$book-size-s: 150px
 
 .books
   display: flex
@@ -54,3 +55,9 @@ $book-size: 300px
         box-shadow: 0
         &:hover
           box-shadow: $shadow
+
+    &--small
+      width: $book-size-s
+      .books__item-img-container
+        height: $book-size-s
+        width: $book-size-s

@@ -2,6 +2,12 @@
 
 <h1 class="title-1 container__title">Ma bibliothèque</h1>
 
+<% if @book_marks.length < 1 %>
+
+<p class="books__empty">Vous n'avez pas encore de livres dans votre bibliothèque.</p> 
+
+<% else %>
+
 <div class="books">
   <% @book_marks.each do |book_mark| %>
     <%= link_to book_path(book_mark.book), class: "books__item" do %>
@@ -12,4 +18,25 @@
       <p class="books__item-subtitle"><%= book_mark.book.author %></p>
     <% end %>
   <% end %>
+</div>
+
+<% end %>
+
+<% if @books_interest.length > 0 %>
+
+<h2 class="title-2 mt-4 container__sub-title">Ces livres peuvent vous intéresser également</h2>  
+
+<div class="books">
+  <% @books_interest.each do |book| %>
+    <%= link_to book_path(book), class: "books__item books__item--small" do %>
+      <div class="books__item-img-container">
+        <img src="<%= book.thumbnail.url %>" class="books__item-img" alt="<%= book.title %>">  
+      </div>
+      <p class="books__item-title"><%= book.title %></p>
+      <p class="books__item-subtitle"><%= book.author %></p>
+    <% end %>
+  <% end %>
+</div>
+<% end %>
+
 </div>

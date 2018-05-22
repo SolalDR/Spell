@@ -1,32 +1,137 @@
+$height: 30px
+$border-height: 2px
+
+$color: #000
+$color-valid: #61aeae
+$color-invalid: #ffbcbc
+
 .field
-  label
-    display: inline-block
-    margin-bottom: .5rem
-    text-transform: uppercase
-    letter-spacing: 5px
-    font-size: $font-size-small
-    margin-bottom: 5px
-    max-width: 25%
-
-    & + i
-      display: block
-      font-size: 13px
-      color: #c5c5c5
-
-  i
-    display: block
-    float: right
-
-  input, textarea
-    width: 100%
-    border-radius: 5px
-    padding: 10px 10px
-    border: 1px solid #DDD
+  margin: auto
+  position: relative
+  width: 100%
+  max-width: 650px
+  margin-top: $height
   
-    &[type="checkbox"] 
-      display: inline-block
-      padding: 0
-      width: 30px
+  input[type="radio"], input[type="checkbox"]
+    height: 0
+    width: 0
+    display: none
+    
+    & ~ label
+      position: relative
+      padding-right: 10px
+      
+      &::before, &::after
+        content: ""
+        display: block
+        position: absolute
+        right: 0%
+        top: 50%
+        transform: translateY(-50%)
+        transition: .3s ease-in-out
+
+      &::before
+        width: 60px
+        height: 30px
+        border-radius: 30px
+        border: 2px solid black
+
+      &::after
+        width: 28px
+        height: 28px
+        border-radius: 30px
+        background-color: $color-valid
+        transform: translateX(-32px) translateY(-50%)
+
+    &:checked ~ label
+      &::after
+        transform: translateX(-4px) translateY(-50%)
+        background-color: white
+      &::before
+        background-color: $color-valid
+      
+   
+  
+  input:not([type="radio"]):not([type="checkbox"])
+    border: 0
+    border-bottom: $border-height solid $color
+    width: 100%
+    height: $height
+    box-sizing: border-box
+    box-shadow: none
+    outline: none
+    
+    &:focus ~ label, &:not([data-value=""]) ~ label
+      padding-bottom: $height*0.75
+      top: -$height*0.75
+      //transform: translateY(-#{$height*0.75}) scale(0.9)
+    
+    &:invalid ~ label
+      &::after
+        width: 100%
+        background-color: $color-invalid
+        color: $color-invalid
+   
+    & ~ label
+      color: $color
+      position: absolute
+      top: 0
+      left: 0
+      pointer-events: none
+      line-height: $height
+      width: 100%
+      transition: .2s
+      transform: scale(1) translateY(0)
+        origin: 0
+
+      &:after
+        content: ""
+        bottom: 0
+        height: $border-height
+        display: block
+        width: 0
+        position: absolute
+        background-color: $color-invalid
+        transition: .3s
+      
+  // Mention
+  i 
+    color: grey
+    margin-top: 10px
+    font-size: 12px
+    display: inline-block
+  
+
+
+.field
+  // label
+  //   display: inline-block
+  //   margin-bottom: .5rem
+  //   text-transform: uppercase
+  //   letter-spacing: 5px
+  //   font-size: $font-size-small
+  //   margin-bottom: 5px
+  //   max-width: 25%
+
+  //   & + i
+  //     display: block
+  //     font-size: 13px
+  //     color: #c5c5c5
+
+  // i
+  //   display: block
+  //   float: right
+
+  // input, textarea
+  //   width: 100%
+  //   border-radius: 5px
+  //   padding: 10px 10px
+  //   border: 1px solid #DDD
+  
+  //   &[type="checkbox"] 
+  //     display: inline-block
+  //     padding: 0
+  //     width: 30px
 
 input[type="submit"]
   padding: 10px 20px
@@ -37,6 +142,7 @@ input[type="submit"]
 
   &[data-confirm]
     background-color: #efefef
+
 
 .actions
   text-align: right

@@ -11,6 +11,9 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+
+    @book_mark = BookMark.find_by({book: @book.id, user: current_user}); 
+
     respond_to do |format|
       format.js
       format.json
