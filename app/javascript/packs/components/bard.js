@@ -19,6 +19,18 @@ export default {
     })
   },
 
+  updateConfig: function() {
+    new Http({
+      url: `/book_marks/${this.book.bookMark}/edit_config`, 
+      auto: true,
+      params: {
+        config: JSON.stringify(this.book.config),
+        authenticity_token: window._token
+      },
+      method: "post"
+    })
+  },
+
   initListener: function(){
     var self = this;
     this.book.on("fragment:start", function(fragment){

@@ -137,7 +137,8 @@
     if( window.book ){
 
       window.book.dictionnary = <%= raw @fragment.book.dictionnary %>
-
+      window.book.config = <%= raw @book_mark.config.to_json %>
+      window.book.bookMark = <%= @book_mark.id %>
       loadAsyncScript("/books/<%= @fragment.book.id %>/fragments/<%= @fragment.id %>.js", function(element){
         element.parentNode.removeChild(element);
       });

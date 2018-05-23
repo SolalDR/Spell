@@ -64,9 +64,13 @@ class BookMarksController < ApplicationController
   end
 
   def update_config
-    if params[:key] && params[:value]
+    if params[:config]
+      config = ActiveSupport::JSON.decode(params[:config])
 
-      @book_mark.config[params[:key]] = params[:value]
+      @book_mark.config["sound"]["gain"] = config["sound"]["gain"]
+      @book_mark.config["sound"]["mute"] = config["sound"]["mute"]
+      @book_mark.config["sound"]["voiceRecognition"] = config["sound"]["voiceRecognition"]
+      @book_mark.save;
 
       respond_to do |format|
         format.json { render json: @book_mark.config }
@@ -86,7 +90,7 @@ class BookMarksController < ApplicationController
 
     end
 
-    redirect_to @book #, notice: @book.title.capitalize + ' a bien été rajouté à votre bibliothèque.'
+    redirect_to @book, notice: @book.title.capitalize + ' a bien été rajouté à votre bibliothèque.'
   end 
 
 

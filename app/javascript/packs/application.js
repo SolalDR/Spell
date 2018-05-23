@@ -8,7 +8,9 @@ import TogglerManager from "./components/toggler.js"
 import RessourceForm from "./components/ressources.js"
 import deleteRecord from "./components/delete.js"
 import BardManager from "./components/bard.js"
+import Http from "./components/http.js"
 
+window.Http = Http;
 window.Bard = Bard;
 window.loadAsyncScript = loadAsyncScript;
 
@@ -28,7 +30,6 @@ window.addEventListener("load", ()=>{
       id: parseInt(canvas.getAttribute("data-book")),
       debug: false
     });
-
     BardManager.init(window.book);
   }
 

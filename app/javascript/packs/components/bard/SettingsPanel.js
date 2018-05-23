@@ -3,7 +3,12 @@ export default {
   initListener: function(){
     var self = this;
     this.soundInput.addEventListener("input", function() {
-      self.manager.book.soundManager.volume = this.value 
+      self.manager.book.soundManager.volume = this.value; 
+      self.manager.book.config.sound.gain = this.value; 
+    })
+
+    this.soundInput.addEventListener("change", function(){
+      self.manager.updateConfig();
     })
   },
 
