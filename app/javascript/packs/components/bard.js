@@ -45,9 +45,11 @@ export default {
   init: function(book){
     this.book = book;
     if( this.book ){
-      WordPanel.init(document.querySelector("#word-panel"));
-      SettingsPanel.init(document.querySelector("#settings-panel"), this);
-      this.initListener();    
+      this.book.on("start", ()=>{
+        WordPanel.init(document.querySelector("#word-panel"));
+        SettingsPanel.init(document.querySelector("#settings-panel"), this);
+        this.initListener();   
+      })  
     }
   }
 }

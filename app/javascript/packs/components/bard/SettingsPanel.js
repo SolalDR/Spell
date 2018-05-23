@@ -2,14 +2,21 @@ export default {
 
   initListener: function(){
     var self = this;
+
+    this.soundInput.value = this.manager.book.config.sound.gain;
+    self.manager.book.soundManager.volume = this.soundInput.value;
+
+    console.log(this.soundInput)
     this.soundInput.addEventListener("input", function() {
       self.manager.book.soundManager.volume = this.value; 
+        console.log(self.manager.book.soundManager.volume)
       self.manager.book.config.sound.gain = this.value; 
     })
 
     this.soundInput.addEventListener("change", function(){
       self.manager.updateConfig();
-    })
+    })  
+
   },
 
   init: function(element, manager){
