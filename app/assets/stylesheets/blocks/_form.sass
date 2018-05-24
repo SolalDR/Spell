@@ -1,4 +1,8 @@
 $height: 30px
+$check-width: 80px
+$check-height: 40px
+$check-gutter: 4px
+
 $border-height: 2px
 
 $color: #000
@@ -20,6 +24,9 @@ $color-invalid: #ffbcbc
     & ~ label
       position: relative
       padding-right: 10px
+      min-width: $check-width
+      display: inline-block
+      margin: 10px
       
       &::before, &::after
         content: ""
@@ -30,26 +37,25 @@ $color-invalid: #ffbcbc
         transform: translateY(-50%)
         transition: .3s ease-in-out
 
+
       &::before
-        width: 60px
-        height: 30px
-        border-radius: 30px
+        width: $check-width
+        height: $check-height
+        border-radius: $check-width
         border: 2px solid black
+        opacity: 66
+        background-color: transparent
 
       &::after
-        width: 28px
-        height: 28px
+        width: $check-height - 2*$check-gutter
+        height: $check-height - 2*$check-gutter
         border-radius: 30px
-        background-color: $color-valid
-        transform: translateX(-32px) translateY(-50%)
+        background-color: #031347
+        transform: translateX(-#{$check-height + $check-gutter}) translateY(-50%)
 
     &:checked ~ label
       &::after
-        transform: translateX(-4px) translateY(-50%)
-        background-color: white
-      &::before
-        background-color: $color-valid
-      
+        transform: translateX(-$check-gutter) translateY(-50%)
    
   
   input:not([type="radio"]):not([type="checkbox"])

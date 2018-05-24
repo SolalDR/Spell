@@ -67,13 +67,14 @@ class BookMarksController < ApplicationController
     if params[:config]
       config = ActiveSupport::JSON.decode(params[:config])
 
-      @book_mark.config["sound"]["gain"] = config["sound"]["gain"]
-      @book_mark.config["sound"]["mute"] = config["sound"]["mute"]
-      @book_mark.config["sound"]["voiceRecognition"] = config["sound"]["voiceRecognition"]
+      
+      @book_mark.config["variables"].keys.each do |key|
+        @book_mark.config["variables"][key] = config["variables"][key]
+      end
       @book_mark.save;
 
       respond_to do |format|
-        format.json { render json: @book_mark.config }
+        format.json { render json: config["variables"] }
       end
     end
   end
