@@ -1,5 +1,6 @@
 $size: 50px
 $gutter: 10px
+$n-child: 5
 
 .control
   position: fixed
@@ -38,7 +39,7 @@ $gutter: 10px
     bottom: -$gutter/2
     right: -$gutter/2
     width: $size+$gutter
-    height: #{($size+$gutter)*5+5px}
+    height: #{($size+$gutter)*($n-child+1)+5px}
     background-color: #cdd3f2
     border-radius: $size
     overflow: hidden
@@ -57,7 +58,7 @@ $gutter: 10px
       img
         height: 60%
 
-      @for $i from 4 through 1
+      @for $i from $n-child through 1
         &:nth-child(#{$i})
           transition-delay: .1s*$i
           bottom: $size*($i)+$gutter*($i)

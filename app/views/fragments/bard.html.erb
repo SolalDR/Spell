@@ -22,6 +22,9 @@
     <button class="control__btn control__menu-item" data-target="arborescence">
       <%= image_tag "picto/picto-boussole.svg" %>
     </button>
+    <button class="control__btn control__menu-item" data-target="fullscreen">
+      <%= image_tag "picto/picto-fullscreen.svg" %>
+    </button>
     <a href="<%= book_path(@fragment.book) %>" class="control__btn control__menu-item" data-target="pause">
       <%= image_tag "picto/picto-sortie.svg" %>
     </a>
@@ -115,6 +118,10 @@
   </div>
 </div>
 
+
+<div id="help-manager" class="help">
+  
+</div>
 
 <!-- Help -->
 <div id="help-panel" class="panel panel--hidden">

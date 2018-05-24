@@ -1,6 +1,7 @@
 import WordPanel from "./bard/WordPanel.js";
 import SettingsPanel from "./bard/SettingsPanel.js";
-
+import HelpManager from "./bard/HelpManager.js";
+import MenuManager from "./bard/MenuManager.js";
 
 export default {
 
@@ -48,6 +49,8 @@ export default {
       this.book.on("start", ()=>{
         WordPanel.init(document.querySelector("#word-panel"));
         SettingsPanel.init(document.querySelector("#settings-panel"), this);
+        MenuManager.init();
+        HelpManager.init();
         this.initListener();   
       })  
     }
