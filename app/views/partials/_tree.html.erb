@@ -5,7 +5,8 @@
     
     </div>
     <% fragments.each do |fragment| %>
-    <div 
+    <a 
+      href="<%= fragment_path(fragment) %>"
       <% if fragment.thumbnail.present? %> style="background-image: url('<%= fragment.thumbnail.url %>')" <% end %>
       id="fragment-<%= fragment.id %>" 
       class="tree__item"
@@ -15,7 +16,7 @@
         <div class="tree__item-ramifications">
           <span class="tree__item-ramification"></span>
         </div>
-    </div>
+    </a>
     <% end %>
   </div>
 </div>

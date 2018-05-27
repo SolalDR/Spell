@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="letter-B" width="90px" height="120px" viewBox="0 0 90 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>B</title>
+    <g class="letter-svg__group" stroke="none" stroke-width="1" fill="none">
+      <path class="letter-svg__element" d="M90,30 C90,13.432 76.569,0 60,0 L60,60 C76.569,60 90,46.568 90,30" fill="#143ADB" opacity="0.5"></path>
+      <path class="letter-svg__element" d="M90,90 C90,73.432 76.569,60 60,60 L60,120 C76.569,120 90,106.568 90,90" fill="#143ADB" opacity="0.5"></path>
+      <polygon class="letter-svg__element" id="Fill-6" points="0 120 60 120 60 0 0 0" fill="#143ADB" opacity="0.5"></polygon>
+    </g>
+</svg>

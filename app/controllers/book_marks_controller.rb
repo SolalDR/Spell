@@ -1,5 +1,5 @@
 class BookMarksController < ApplicationController
-  before_action :set_book_mark, only: [:show, :edit, :update, :destroy, :update_config]
+  before_action :set_book_mark, only: [:show, :edit, :update, :destroy, :update_config, :sandbox]
 
   # GET /book_marks
   # GET /book_marks.json
@@ -32,6 +32,10 @@ class BookMarksController < ApplicationController
     @book_mark = BookMark.new
   end
 
+  # GET /book_marks/1/box
+  def sandbox
+
+  end
 
   # POST /book_marks
   # POST /book_marks.json
@@ -67,7 +71,6 @@ class BookMarksController < ApplicationController
     if params[:config]
       config = ActiveSupport::JSON.decode(params[:config])
 
-      
       @book_mark.config["variables"].keys.each do |key|
         @book_mark.config["variables"][key] = config["variables"][key]
       end
@@ -79,18 +82,16 @@ class BookMarksController < ApplicationController
     end
   end
 
+
   def add_from_book
     @book = Book.find(params[:id])
     if @book && current_user
      @book_mark = BookMark.find_by({book: @book, user: current_user}) 
-     
      if !@book_mark
       @book_mark = BookMark.create!({book: @book, user: current_user, fragment: @book.fragments.first, config: @book.config})
       @book_mark.save
      end
-
     end
-
     redirect_to @book, notice: @book.title.capitalize + ' a bien été rajouté à votre bibliothèque.'
   end 
 

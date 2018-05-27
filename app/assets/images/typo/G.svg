@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="letter-G" width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>G</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="letter-svg__group">
+      <path d="M120,60 C120,26.862 93.137,0 60,0 C26.863,0 0,26.862 0,60 C0,93.137 26.863,120 60,120 C93.137,120 120,93.137 120,60" fill="#143ADB" opacity="0.5" class="letter-svg__element"></path>
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="60 90 120 90 120 60 60 60"></polygon>
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="90 120 120 120 120 60 90 60"></polygon>    
+    </g>
+</svg>

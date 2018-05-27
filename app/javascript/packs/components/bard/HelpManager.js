@@ -91,11 +91,11 @@ export default {
   },
 
   init: function(manager){
+    this.manager = manager;
     this.registerHelpMessages();
     this.element = document.querySelector("#help-manager");
-    window.help = this;
-    this.manager.book.on("help", (name)=>{
-      this.launch(name);
+    this.manager.book.on("alert", (event)=>{
+      this.launch(event.name);
     })
   }
 }

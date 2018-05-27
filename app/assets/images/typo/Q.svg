@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="letter-Q" width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Q</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="letter-svg__group">
+      <path d="M60,0 C26.8631405,0 0,26.8631405 0,60 C0,93.1378512 26.8631405,120 60,120 C93.1368595,120 120,93.1378512 120,60 C120,26.8631405 93.1368595,0 60,0" fill="#143ADB" opacity="0.5" class="letter-svg__element"></path>
+      <path d="M90.582,89.9995 C74.013,89.9995 60.582,103.4315 60.582,119.9995 L120.582,119.9995 C120.582,103.4315 107.151,89.9995 90.582,89.9995" fill="#143ADB" opacity="0.5" class="letter-svg__element"></path>
+    </g>
+</svg>

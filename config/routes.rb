@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :fragments, only: [:index, :show, :destroy]
 
   resources :book_marks
+  get 'book_marks/:id/box', to: 'book_marks#sandbox', as: :book_marks_box
   
   resources :books do 
     resources :fragments

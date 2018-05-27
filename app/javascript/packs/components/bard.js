@@ -49,8 +49,8 @@ export default {
       this.book.on("start", ()=>{
         WordPanel.init(document.querySelector("#word-panel"));
         SettingsPanel.init(document.querySelector("#settings-panel"), this);
-        MenuManager.init();
-        HelpManager.init();
+        MenuManager.init(this);
+        HelpManager.init(this);
         this.initListener();   
       })  
     }

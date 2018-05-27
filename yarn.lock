@@ -3179,9 +3179,9 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-js-bard@0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/js-bard/-/js-bard-0.1.8.tgz#5ab8d939a94a63ea187d2b12f1967f2545701342"
+js-bard@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/js-bard/-/js-bard-0.2.0.tgz#1c5ae6a2799341d4397cbed7e56fd0eb977a0902"
   dependencies:
     annyang "^2.6.0"
     babel-plugin-glslify "^2.0.0"

@@ -9,10 +9,11 @@ import RessourceForm from "./components/ressources.js"
 import deleteRecord from "./components/delete.js"
 import BardManager from "./components/bard.js"
 import Http from "./components/http.js"
+import MagicBox from "./components/MagicBox.js"
 
 window.Http = Http;
 window.Bard = Bard;
-window.loadAsyncScript = loadAsyncScript;
+
 
 
 window.addEventListener("load", ()=>{
@@ -21,11 +22,15 @@ window.addEventListener("load", ()=>{
   CodeMirror.init();
   TogglerManager.init();
   RessourceForm.init();
+  MagicBox.init();
 
   if( document.querySelector("#tree") ) var tree = new Tree(document.querySelector(".tree"));
 
-  var canvas = document.querySelector("canvas"); 
+
+
+  var canvas = document.querySelector("#bard-canvas"); 
   if( canvas ){
+    window.loadAsyncScript = loadAsyncScript;
     window.book = new Bard.Book({
       id: parseInt(canvas.getAttribute("data-book")),
       debug: false
@@ -33,8 +38,8 @@ window.addEventListener("load", ()=>{
     BardManager.init(window.book);
   }
 
-  deleteRecord();
 
+  deleteRecord();
 })
 
 

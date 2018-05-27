@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="letter-U" width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>U</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="letter-svg__group">
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="0 60 60 60 60 30 0 30"></polygon>
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="60 60 120 60 120 30 60 30"></polygon>
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="0 30 60 30 60 0 0 0"></polygon>
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="60 30 120 30 120 0 60 0"></polygon>
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="45 60.006 75 60.006 75 0.006 45 0.006"></polygon>
+      <path d="M60,119.9999 C93.137,119.9999 120,93.1369 120,59.9999 L0,59.9999 C0,93.1369 26.863,119.9999 60,119.9999" fill="#143ADB" opacity="0.5" class="letter-svg__element"></path>
+    </g>
+</svg>

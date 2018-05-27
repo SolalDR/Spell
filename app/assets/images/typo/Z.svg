@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="letter-Z" width="97px" height="120px" viewBox="0 0 97 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Z</title>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="letter-svg__group">
+    <polygon class="letter-svg__element" fill="#143ADB" opacity="0.5" points="60 0 90 0 60 60"></polygon>
+    <polygon class="letter-svg__element" fill="#143ADB" opacity="0.5" points="37 120 7 120 37 60"></polygon>
+    <polygon class="letter-svg__element" fill="#143ADB" opacity="0.5" points="37 60 97 60 97 120 37 120"></polygon>
+    <polygon class="letter-svg__element" fill="#143ADB" opacity="0.5" points="0 60 60 60 60 0 0 0"></polygon>
+  </g>
+</svg>

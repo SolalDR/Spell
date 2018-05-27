@@ -1,0 +1,13 @@
+<section id="sandbox" class="sandbox">
+  <canvas class="sandbox__canvas"></canvas>
+
+  <div class="alphabet__input">
+    <svg id="alphabet__sandbox" viewBox="0 0 1920 1280"></svg>
+  </div>
+  
+  <div class="alphabet__storage">
+    <%  ("A".."Z").each do |letter| %>
+      <%= svg("typo/"+letter) %>
+    <% end %>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="letter-X" width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>X</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="letter-svg__group">
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="120 0 0 0 60 120"></polygon>
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="0 120 120 120 60 0"></polygon>
+    </g>
+</svg>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="letter-K" width="108px" height="120px" viewBox="0 0 108 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>K</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" class="letter-svg__group">
+      <path d="M85.0784991,76.9215009 C73.1831646,65.0261664 53.8963396,65.0261664 42,76.9215009 L85.0784991,120 C96.9738336,108.10366 96.9738336,88.8178405 85.0784991,76.9215009" fill="#143ADB" opacity="0.5" class="letter-svg__element"></path>
+      <path d="M84.5420353,84.4565792 C110.898384,64.142281 115.778668,26.3297069 95.443815,0 L0,73.5648156 C20.3348529,99.8955261 58.1856871,104.770877 84.5420353,84.4565792" fill="#143ADB" opacity="0.5" class="letter-svg__element"></path>
+      <polygon fill="#143ADB" opacity="0.5" class="letter-svg__element" points="0 120 60 120 60 0 0 0"></polygon>
+    </g>
+</svg>
