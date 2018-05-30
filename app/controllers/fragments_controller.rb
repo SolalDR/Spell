@@ -13,6 +13,7 @@ class FragmentsController < ApplicationController
   def show
     @fragments = Fragment.where(book: @fragment.book)
     @book_mark = BookMark.find_by(book: @fragment.book, user: current_user);
+
     respond_to do |format|
       format.js
       format.json

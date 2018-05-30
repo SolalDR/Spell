@@ -17,18 +17,14 @@ class Playground {
   
   constructor(element) {
     this.element = element;
-
-
-
     this.width = 0;
     this.letters = [];
-    
     this.config = {
       gutter: 10,
       duration: 1.2,
       size: 50,
       padding: 30,
-      top: 100
+      top: 120
     }
     this.rat = 120/this.config.size;
 
@@ -44,12 +40,12 @@ class Playground {
   initEvents() {
     window.addEventListener("resize", ()=>{
       this.setViewBox();
-      this.refreshPosition();
+       this.refresh();
     });
   }
 
   static getRandomTransform() {
-    var angle = Math.random()*Math.PI + Math.PI;
+    var angle = Math.random()*Math.PI;
     var distance = Math.random()*300 + 600
 
     return {
@@ -126,9 +122,11 @@ class Playground {
     this.letters.forEach(letter => this.transitionOut(letter) )
     setTimeout(()=>{
       this.letters.forEach( letter => {
-        if(letter.element) this.removeChild(letter.element) 
+        if(letter.element) this.element.removeChild(letter.element) 
       });
       this.letters = [];
+      this.width = 0;
+      console.log(this);
     }, this.config.duration * 1000 + 300)
   }
 }
@@ -158,7 +156,7 @@ export default {
       
       if( e.keyCode == 13 ){
         this.playground.refresh();
-        alert(this.playground.currentString)
+        this.onEnter.call(this, this.playground.currentString);
       }
 
       if (e.keyCode == 8) {
@@ -170,7 +168,7 @@ export default {
 
   },
 
-  init: function(alphabetSelector, playground){
+  init: function(args = {}){
     this.playground = new Playground(document.querySelector("#alphabet__sandbox"));
     this.alphabetStorage = document.querySelector("#sandbox .alphabet__storage");
 
@@ -178,5 +176,8 @@ export default {
       this.storeLetters();
       this.initEvents();
     }
+
+    if( args.onEnter ) this.onEnter = args.onEnter;
   }
+
 }

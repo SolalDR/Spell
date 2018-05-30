@@ -51,13 +51,14 @@ export default {
     })
   },
   
-  init: function(manager){
+  init: function(manager = null){
     this.manager = manager;
     this.menu = document.querySelector("#controller");
     this.items = this.menu.querySelectorAll(".control__menu-item");
     this.btn = this.menu.querySelector("#control-menu-btn"); 
     this._display = false;
     window.menu = this;
+
     this.btns = {
       fullscreen: this.menu.querySelector("button[data-target='fullscreen']")
     }

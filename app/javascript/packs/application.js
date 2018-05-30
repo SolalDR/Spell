@@ -33,7 +33,8 @@ window.addEventListener("load", ()=>{
     window.loadAsyncScript = loadAsyncScript;
     window.book = new Bard.Book({
       id: parseInt(canvas.getAttribute("data-book")),
-      debug: false
+      debug: false,
+      canvas: canvas
     });
     BardManager.init(window.book);
   }

@@ -6,6 +6,7 @@ $n-child: 5
   position: fixed
   bottom: 20px
   right: 20px
+  z-index: 2
   
   #control-menu-btn
     position: absolute
@@ -33,6 +34,7 @@ $n-child: 5
     z-index: 1
     outline: 0
 
+  
 
   &__menu
     position: absolute
@@ -44,6 +46,10 @@ $n-child: 5
     border-radius: $size
     overflow: hidden
     transition: .4s
+
+    @for $i from 0 to 5
+      &--#{$i}
+        height: #{($size+$gutter)*($i+1)+5px}
     
     &-item
       left: $gutter/2
