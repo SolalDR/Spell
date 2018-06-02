@@ -1,11 +1,10 @@
 var RessourcesForm = {
   proto: `<div class="ressources__field ressources__field--added" data-index="{index}">
       <div class="ressources__field-name">
-        <input value="" name="book[ressources_attributes][{index}][name]" id="book_ressources_attributes_{index}_name" placeholder="Nom du fichier" type="text">
+        <input value="" name="{namespace}[ressources_attributes][{index}][name]" id="{namespace}_ressources_attributes_{index}_name" placeholder="Nom du fichier" type="text">
       </div>
       <div class="ressources__field-file">
-        <input name="book[ressources_attributes][{index}][file]" id="book_ressources_attributes_{index}_file" type="file">
-        <label for="book_ressources_attributes_{index}_file">Télécharger</label>
+        <input name="{namespace}[ressources_attributes][{index}][file]" id="{namespace}_ressources_attributes_{index}_file" type="file">
       </div>
       <button class="ressources__field-remove"><i class="material-icons">close</i></button>
     </div>`,
@@ -49,6 +48,7 @@ var RessourcesForm = {
     var index = this.count;
 
     var html = this.proto.replace(/{index}/g, index);
+    html = this.proto.replace(/{namespace}/g, this.namespace);
     var fragment = document.createElement("fragment");
     fragment.innerHTML = html;
     var element = fragment.firstChild;

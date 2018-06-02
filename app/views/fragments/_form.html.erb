@@ -1,4 +1,4 @@
-<%= form_for [book, fragment] do |f| %>
+<%= form_for([book, fragment], html: { enctype: "multipart/form-data"}) do |f| %>
   <% if fragment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(fragment.errors.count, "error") %> prohibited this fragment from being saved:</h2>
@@ -30,6 +30,48 @@
   <div class="field">
     <%= f.label :config %>
     <%= f.text_area :config %>
+  </div>
+
+  <div class="ressources" data-namespace="fragment">
+    <div class="field">
+      <label for="">Ressources</label>
+    </div>
+    <div class="ressources__fields">
+      <%= f.fields_for :ressources, fragment.ressources do |fr| %>
+        <div class="ressources__field" data-index="<%= fr.index %>">  
+  
+          <div class="ressources__field-thumbnail">
+            <%= image_tag fragment.ressources[fr.index].file %>
+          </div>
+
+          <div class="ressources__field-name">
+            <%= fr.text_field :name, placeholder: "Nom du fichier" %>
+          </div>
+
+          <div class="ressources__field-file">
+            <%= fr.file_field :file %>
+          </div>
+          <!-- Onclick, pass _destroy to 1  -->
+          <%= fr.hidden_field :_destroy, :class => 'removable' %>
+          <%= fr.hidden_field :id %>
+          <button class="ressources__field-remove"><i class="material-icons">close</i></button>
+        </div>
+      <% end %>
+      <% i = fragment.ressources.length %>
+
+      <div class="ressources__field ressources__field--added" data-index="<%= i %>">
+        <div class="ressources__field-name">
+          <input value="" name="fragment[ressources_attributes][<%= i %>][name]" id="fragment_ressources_attributes_<%= i %>_name" placeholder="Nom du fichier" type="text">
+        </div>
+        <div class="ressources__field-file">
+          <input name="fragment[ressources_attributes][<%= i %>][file]" id="fragment_ressources_attributes_<%= i %>_file" type="file">
+        </div>
+        <button class="ressources__field-remove">
+          <i class="material-icons">close</i>
+        </button>
+      </div>
+    </div>
+    <button class="ressources__add btn">Ajouter</button>
   </div>
 
   <div class="actions">

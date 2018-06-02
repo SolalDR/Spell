@@ -145,7 +145,7 @@ export default {
       Matter.Body.setPosition(this.boundaries[0], Matter.Vector.create(window.innerWidth/2, window.innerHeight-70))
       Matter.Body.setPosition(this.boundaries[2], Matter.Vector.create(window.innerWidth, 0))
       Matter.Body.setPosition(this.boundaries[3], Matter.Vector.create(window.innerWidth/2, window.innerHeight-70))
-
+      
       this.renderer.options.width;
     })
   },

@@ -16,7 +16,7 @@
 #
 
 class Ressource < ApplicationRecord
-  has_attached_file :file
+  has_attached_file :file, default_url: "/images/missing_fragment.png"
   validates_attachment_content_type :file, :content_type => ["application/json", "text/plain", "image/jpg", "image/jpeg", "image/png", "image/gif"]
   belongs_to :ressourceable, polymorphic: true, :inverse_of => :ressources
 

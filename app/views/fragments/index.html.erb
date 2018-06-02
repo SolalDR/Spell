@@ -5,8 +5,8 @@
   <table class="table">
     <thead>
       <tr>
+        <th>Img</th>
         <th>Name</th>
-        <th>Content</th>
         <th>Config</th>
         <th colspan="3"></th>
       </tr>
@@ -15,9 +15,8 @@
     <tbody>
       <% @fragments.each do |fragment| %>
         <tr>
+          <td><%= image_tag fragment.thumbnail, class: "img--small" %></td>
           <td><%= fragment.name %></td>
-          <td><%= fragment.content %></td>
-          <td><%= fragment.config %></td>
           <td><%= link_to 'Show', fragment %></td>
           <td><%= link_to 'Edit', edit_book_fragment_path(book_id: fragment.book, id: fragment) %></td>
           <td><%= link_to 'Destroy', fragment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

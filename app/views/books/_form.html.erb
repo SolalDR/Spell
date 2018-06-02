@@ -56,14 +56,18 @@
     </div>
     <div class="ressources__fields">
       <%= f.fields_for :ressources, book.ressources do |fr| %>
-        <div class="ressources__field" data-index="<%= fr.index %>">
+        <div class="ressources__field" data-index="<%= fr.index %>">  
+  
+          <div class="ressources__field-thumbnail">
+            <%= image_tag book.ressources[fr.index].file %>
+          </div>
+
           <div class="ressources__field-name">
             <%= fr.text_field :name, placeholder: "Nom du fichier" %>
           </div>
 
           <div class="ressources__field-file">
             <%= fr.file_field :file %>
-            <%= fr.label :file, value: "Télécharger" %>
           </div>
           <!-- Onclick, pass _destroy to 1  -->
           <%= fr.hidden_field :_destroy, :class => 'removable' %>
@@ -73,19 +77,18 @@
       <% end %>
       <% i = book.ressources.length %>
 
-    <div class="ressources__field ressources__field--added" data-index="<%= i %>">
-      <div class="ressources__field-name">
-        <input value="" name="book[ressources_attributes][<%= i %>][name]" id="book_ressources_attributes_<%= i %>_name" placeholder="Nom du fichier" type="text">
+      <div class="ressources__field ressources__field--added" data-index="<%= i %>">
+        <div class="ressources__field-name">
+          <input value="" name="book[ressources_attributes][<%= i %>][name]" id="book_ressources_attributes_<%= i %>_name" placeholder="Nom du fichier" type="text">
+        </div>
+        <div class="ressources__field-file">
+          <input name="book[ressources_attributes][<%= i %>][file]" id="book_ressources_attributes_<%= i %>_file" type="file">
+        </div>
+        <button class="ressources__field-remove">
+          <i class="material-icons">close</i>
+        </button>
       </div>
-      <div class="ressources__field-file">
-        <input name="book[ressources_attributes][<%= i %>][file]" id="book_ressources_attributes_<%= i %>_file" type="file">
-        <label for="book_ressources_attributes_<%= i %>_file">Télécharger</label>
-      </div>
-      <button class="ressources__field-remove">
-        <i class="material-icons">close</i>
-      </button>
     </div>
-
     <button class="ressources__add btn">Ajouter</button>
   </div>
   

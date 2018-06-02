@@ -20,6 +20,7 @@ class Fragment < ApplicationRecord
   has_attached_file :thumbnail, default_url: "/images/missing_fragment.png"
   validates_attachment_content_type :thumbnail, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
+  accepts_nested_attributes_for :ressources, :reject_if => :all_blank, :allow_destroy => true
 
   def js_class
     # I18n.transliterate(@fragment.name.split.map(&:capitalize).join)

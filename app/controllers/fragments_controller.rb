@@ -80,6 +80,6 @@ class FragmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fragment_params
-      params.require(:fragment).permit(:name, :content, :config, :book_id)
+      params.require(:fragment).permit(:name, :content, :config, :book_id, :ressources_attributes => [:id, :name, :_destroy, :mode, :file])
     end
 end

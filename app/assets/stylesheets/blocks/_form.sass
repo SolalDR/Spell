@@ -140,11 +140,21 @@ $color-invalid: #ffbcbc
   //     width: 30px
 
 input[type="submit"]
-  padding: 10px 20px
-  background-color: #FFD674
-  border-radius: 10px
+  display: inline-block
+  padding: 7px 15px
+  background-color: $color-primary-light
+  color: white
+  color: black
+  transition: 0.4s
+  width: auto
+  margin: 10px 0
+  color: white
+  position: relative
+  text-decoration: none
   border: 0
-  letter-spacing: 2px
+  cursor: pointer
+  box-shadow: none
+  outline: none
 
   &[data-confirm]
     background-color: #efefef
@@ -154,6 +164,9 @@ input[type="submit"]
   text-align: right
 
 .ressources
+  max-width: 650px
+  margin: auto
+
   &__fields
 
   &__field
@@ -168,6 +181,24 @@ input[type="submit"]
     &--destroy
       opacity: 0.5
       filter: grayscale(60%)
+
+    &-thumbnail 
+      position: absolute
+      height: 50px
+      width: 50px
+      left: -60px
+      overflow: hidden
+      background-color: #EFEFEF
+
+      img
+        display: block
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translateX(-50%) translateY(-50%)
+        min-width: 100%
+        max-width: 100%
+
 
     &-name
       display: inline-block
@@ -186,6 +217,7 @@ input[type="submit"]
 
       input
         height: 50px
+        margin-top: 13px
 
       label
         display: inline-block
