@@ -4,7 +4,7 @@
   <!-- Alphabet -->
   <div class="alphabet__input">
     <svg id="alphabet__sandbox" viewBox="0 0 1920 1280"></svg>
-  </div>
+  </div>  
   
   <div class="alphabet__storage">
     <%  ("A".."Z").each do |letter| %>
@@ -12,22 +12,31 @@
     <% end %>
   </div>
 
+
   <!-- Dialog -->
-  <div id="dialog" class="dialog">
+  <div id="dialog-1" class="dialog">
     <p class="dialog__content">
-      Bienvenue dans ta boîte magique, écris ou prononce les mots magiques
+      Bienvenue dans ta boîte magique !
+      <br>écris ou prononce les mots magiques
       <br>pour les faire apparaître</p> 
-    <button class="btn btn--light" data-toggle-target="#dialog" data-toggle-modifier="dialog--hidden">J'ai compris</button>
+    <button class="btn btn--slide" data-toggle-target="#dialog-1, #dialog-2" data-toggle-modifier="dialog--hidden, dialog--hidden">Suivant</button>
+  </div>
+
+  <div id="dialog-2" class="dialog dialog--hidden">
+    <p class="dialog__content">
+      Si tu ne te rappelles pas, tu peux retrouver tes mots magiques<br>
+      en cliquant sur ta bibliothèque en haut à gauche</p> 
+    <button class="btn btn--slide" data-toggle-target="#dialog-2, #controller" data-toggle-modifier="dialog--hidden, control--disabled">J'ai compris</button>
   </div>
 
 
   <!-- Menu -->
-<div id="controller" class="control control--hide ">
+<div id="controller" class="control control--hide control--disabled">
   <button id="control-menu-btn" class="control__btn" data-toggle-target="#controller" data-toggle-modifier="control--hide">
     <i class="material-icons">pause</i>
   </button>
   <div class="control__menu control__menu--4">
-    <button class="control__btn control__menu-item" data-toggle-target="#dictionnary-box" data-toggle-modifier="dictionnary--hidden">
+    <button class="control__btn control__menu-item" data-toggle-target="#dictionnary-box" data-toggle-modifier="panel--hidden">
       <%= image_tag "picto/picto-_.svg" %>
     </button>
     <button class="control__btn control__menu-item" data-toggle-target="#arborescence-panel" data-toggle-modifier="panel--hidden">
@@ -42,6 +51,7 @@
   </div>
 </div>
 
+
 <!-- Tree -->
 <div id="arborescence-panel" class="panel panel--hidden">
   <div class="panel__container">
@@ -52,12 +62,15 @@
   <%= render "partials/tree", fragments: @book_mark.book.fragments %>
 </div>
 
-<!-- Dictionnary -->
-<div id="dictionnary-box" class="dictionnary dictionnary--hidden">
-  <div class="dictionnary__title-container">
-    <h2 class="dictionnary__title title-2">Mon dictionnaire</h2>
+
+<!-- Dictionnary  -->
+<div id="dictionnary-box" class="panel panel--hidden">
+  <div class="panel__container mb-5">
+    <button class="panel__close" data-toggle-target="#dictionnary-box" data-toggle-modifier="panel--hidden"><i class="material-icons">close</i></button>
+    <h2 class="title-1 text-center panel__title">Mes mots magiques</h2>
   </div>
-  <div class="dictionnary__list">
+
+  <div class="flex flex--between container mb-5">
     <div class="magicword dictionnary__list-item">
       <%= image_tag "/images/boite.png", class: "magicword__img" %>
       <p class="magicword__title">Boite</p>
@@ -84,8 +97,8 @@
       <%= image_tag "/images/etoile.png", class: "magicword__img" %>
       <p class="magicword__title">Etoile</p>
     </div>
+
   </div>
 </div>
-
 
 </section>

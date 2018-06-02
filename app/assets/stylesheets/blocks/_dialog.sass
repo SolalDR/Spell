@@ -1,21 +1,71 @@
-.bard .dialog, .dialog
-  background-color: rgba(255, 255, 255, .8)
-  transition: .4s
-  opacity: 1
+#alert-manager
+  position: absolute
+  top: 0
+  left: 0
+
+
+$radius: 10px
+$width: 500px
+$height: 200px
+
+.dialog
+
   position: fixed
+  max-width: $width
+  min-height: $height
   top: 50%
   left: 50%
-  max-width: 500px
   transform: translateX(-50%) translateY(-50%)
+  background-color: white
+  border-radius: $radius
   text-align: center
   z-index: 999
-  
-  &--hidden
-    transform: translateY(10px)
-    opacity: 0
+  transition: .4s ease-in-out
 
-  &__title
+  &--hidden
+    transform: translateX(-50%) translateY(-40%)
+    opacity: 0
+    pointer-events: none
+
+  &--info
+  &--warn
+  &--error
+  &--config
+
+  &__header
+    height: 30px
+    background-color: #DDD
+    border-radius: $radius $radius 0 0
+    margin-bottom: 20px
 
   &__content
     font-size: 20px
+  
+  &__close 
+    position: absolute
+    top: 0
+    right: 0
+    width: 30px
+    height: 30px
+    border: 0
+    background-color: transparent
 
+  &__body
+    padding: 0 20px
+
+  &__action 
+    padding: 10px 15px
+    border: 0
+    bottom: 10px
+    background-color: #5ccfb7
+    border-radius: 5px
+    color: white
+    letter-spacing: 2px
+    text-transform: uppercase
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    transition: .4s
+
+    &:hover
+      background-color: darken(#5ccfb7, 15%)

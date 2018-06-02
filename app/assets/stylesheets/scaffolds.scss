@@ -50,6 +50,15 @@ div {
   color: green;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  &--between {
+    justify-content: space-between;
+  }
+}
+
+
 .no-pad {
   padding: 0;
 }
