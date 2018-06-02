@@ -1,6 +1,7 @@
 <section id="sandbox" class="sandbox bard">
   <canvas class="sandbox__canvas"></canvas>
 
+  <!-- Alphabet -->
   <div class="alphabet__input">
     <svg id="alphabet__sandbox" viewBox="0 0 1920 1280"></svg>
   </div>
@@ -11,12 +12,21 @@
     <% end %>
   </div>
 
+  <!-- Dialog -->
+  <div id="dialog" class="dialog">
+    <p class="dialog__content">
+      Bienvenue dans ta boîte magique, écris ou prononce les mots magiques
+      <br>pour les faire apparaître</p> 
+    <button class="btn btn--light" data-toggle-target="#dialog" data-toggle-modifier="dialog--hidden">J'ai compris</button>
+  </div>
+
+
   <!-- Menu -->
 <div id="controller" class="control control--hide ">
   <button id="control-menu-btn" class="control__btn" data-toggle-target="#controller" data-toggle-modifier="control--hide">
     <i class="material-icons">pause</i>
   </button>
-  <div class="control__menu control__menu--3">
+  <div class="control__menu control__menu--4">
     <button class="control__btn control__menu-item" data-toggle-target="#dictionnary-box" data-toggle-modifier="dictionnary--hidden">
       <%= image_tag "picto/picto-_.svg" %>
     </button>
@@ -26,6 +36,9 @@
     <button class="control__btn control__menu-item" data-target="fullscreen">
       <%= image_tag "picto/picto-fullscreen.svg" %>
     </button>
+    <a href="<%= book_path(@book_mark.book) %>" class="control__btn control__menu-item" data-target="pause">
+      <%= image_tag "picto/picto-sortie.svg" %>
+    </a>
   </div>
 </div>
 
@@ -39,6 +52,7 @@
   <%= render "partials/tree", fragments: @book_mark.book.fragments %>
 </div>
 
+<!-- Dictionnary -->
 <div id="dictionnary-box" class="dictionnary dictionnary--hidden">
   <div class="dictionnary__title-container">
     <h2 class="dictionnary__title title-2">Mon dictionnaire</h2>
@@ -59,11 +73,16 @@
     </div>
     <div class="magicword dictionnary__list-item">
       <%= image_tag "/images/fusee.png", class: "magicword__img" %>
+      <p class="magicword__title">Fusée</p>
       <ul class="magicword__synonymes">
         <li class="magicword__synonyme">Vaisseau</li>
         <li class="magicword__synonyme">Navette</li>
         <li class="magicword__synonyme">Avion</li>
       </ul>
+    </div>
+    <div class="magicword dictionnary__list-item">
+      <%= image_tag "/images/etoile.png", class: "magicword__img" %>
+      <p class="magicword__title">Etoile</p>
     </div>
   </div>
 </div>
