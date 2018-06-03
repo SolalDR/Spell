@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy, :tree]
+  before_action :is_admin?, only: [:new, :edit, :create, :update, :destroy]
   before_action :authenticate_user!
 
   # GET /books
@@ -11,9 +12,6 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-
-    @book_mark = BookMark.find_by({book: @book.id, user: current_user}); 
-
     respond_to do |format|
       format.js
       format.json
@@ -21,7 +19,10 @@ class BooksController < ApplicationController
     end
   end
 
-  def tree 
+  def tree
+    if !@book_mark 
+      redirect_to @book, notice: "Vous ne disposez pas de ce livre"
+    end
     @fragments = Fragment.where(book: params[:id])
   end
 
@@ -77,10 +78,17 @@ class BooksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])
+      @book_mark = BookMark.find_by({book: @book.id, user: current_user});
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:title, :author, :age, :publisher, :description, :config, :ressources_attributes => [:id, :name, :_destroy, :mode, :file])
+    end
+
+    def is_admin?
+      if !current_user.admin?
+        redirect_to root_path, notice: "Vous n'êtes pas autoriser à modifier ces ressources"
+      end
     end
 end
