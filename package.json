@@ -2,7 +2,8 @@
   "dependencies": {
     "@rails/webpacker": "3.4",
     "codemirror": "5.37.0",
-    "js-bard": "0.2.6"
+    "js-bard": "0.2.6",
+    "matter-js": "0.14.1"
   },
   "devDependencies": {
     "annyang": "^2.6.0",
@@ -11,7 +12,6 @@
     "three-effectcomposer-es6": "0.0.4",
     "three-shader-fxaa": "^5.1.1",
     "three": "0.91.0",
-    "matter-js": "0.14.1",
     "recorder-js": "1.0.7"
   }
 }
