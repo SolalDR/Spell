@@ -43,13 +43,16 @@ export default {
 
   registerCommands: function(){
     var self = this;
-    this.commands = {
-      dragon: { path: "boss.png", synonymous: ["boss", "monstre", "méchant"], options: { width: 926, height: 486, path: "22.9768814 211.077592 155.222018 199.168168 380.914645 161.942641 599.351819 32.4986206 795.760614 0.900280312 882.482929 32.4986206 924.162793 179.70384 908.110961 226.293456 648.648973 261.890718 613.844009 394.734757 554.396707 484.894522 259.443513 484.894522 174.418088 373.430051 1.09198946 350.297446 1.09198946 252.395619" }},
-      boite: { path: "boite.png", synonymous: ["boîte", "cube"], options: { width: 100, height: 100, xScale: .5, yScale: .5 }},
-      fusee: { path: "fusee.png", synonymous: ["vaisseau", "navette", "fusée"], options: { width: 100, height: 200 }},
-      etoile: { path: "etoile.png", synonymous: ["étoile", "soleil"], options: { width: 100, height: 100, constraint: {x: [0.1, 0.9], y: [0.05, 0.0] }}}
-    };
 
+    this.commands = {};
+    var words = JSON.parse(document.querySelector("#dictionnary-storage").innerHTML);
+    words.forEach(word => {
+      this.commands[word.name.toLowerCase()] = {
+        path: word.path,
+        synonymous: word.config.synonymous,
+        options: word.config.options
+      }
+    })
 
     for(var command in this.commands){
       (function(speech, command, name){
@@ -124,8 +127,9 @@ export default {
     Matter.World.add(this.world, this.boundaries);
   },
 
-  execute: function(name){
-    var words = name.split(/\s+?/);
+
+  execute: function(string){
+    var words = string.split(/\s+?/);
     for(var i in words){
       if(this.commands[words[i]]) {
         if( this.commands[words[i]].path ){
@@ -166,7 +170,7 @@ export default {
 
     var render = {
       sprite: {
-        texture: '/images/'+file,
+        texture: file,
         xScale: options.xScale,
         yScale: options.yScale
       }

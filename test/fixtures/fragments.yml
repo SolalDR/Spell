@@ -2,13 +2,17 @@
 #
 # Table name: fragments
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  content    :text
-#  config     :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  book_id    :integer
+#  id                     :integer          not null, primary key
+#  name                   :string
+#  content                :text
+#  config                 :jsonb            not null
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  book_id                :integer
+#  thumbnail_file_name    :string
+#  thumbnail_content_type :string
+#  thumbnail_file_size    :integer
+#  thumbnail_updated_at   :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

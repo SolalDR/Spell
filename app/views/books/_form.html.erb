@@ -12,33 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
     <%= f.text_field :title %>
+    <%= f.label :title %>
   </div>
 
   <div class="field">
-    <%= f.label :author %>
     <%= f.text_field :author %>
+    <%= f.label :author %>
   </div>
 
   <div class="field">
-    <%= f.label :age, value: "Age minimum" %>
     <%= f.number_field :age %>
+    <%= f.label :age, value: "Age minimum" %>
   </div>
 
   <div class="field">
-    <%= f.label :format %>
     <%= f.select :format, Book.formats %>
+    <%= f.label :format %>
   </div>
 
   <div class="field">
-    <%= f.label :publisher %>
     <%= f.text_field :publisher %>
+    <%= f.label :publisher %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
     <%= f.text_field :description %>
+    <%= f.label :description %>
   </div>
 
   <div id="codemirror-block" class="field codemirror">

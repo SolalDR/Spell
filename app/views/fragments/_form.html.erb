@@ -14,8 +14,8 @@
   <%= f.hidden_field :book_id %>
 
   <div class="field">
-    <%= f.label :name %>
     <%= f.text_field :name %>
+    <%= f.label :name %>
   </div>
 
 
@@ -27,9 +27,12 @@
     </button>
   </div>
 
-  <div class="field">
+  <div id="codemirror-block-2" class="field">
     <%= f.label :config %>
-    <%= f.text_area :config %>
+     <%= f.text_area :config, class: "codemirror__textarea" %>
+    <button id="" class="material-icons" data-toggle-target="#codemirror-block-2" data-toggle-modifier="codemirror--full" >
+      fullscreen
+    </button>
   </div>
 
   <div class="ressources" data-namespace="fragment">

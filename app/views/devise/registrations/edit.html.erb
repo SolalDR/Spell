@@ -7,8 +7,8 @@
         <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.label :email %>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -16,19 +16,19 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :password %>
           <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :password %>
           <i>(Laisser vide si vous ne voulez pas le changer)</i>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %>
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.label :password_confirmation %>
         </div>
 
         <div class="field">
-          <%= f.label :current_password %> 
           <%= f.password_field :current_password, autocomplete: "off" %>
+          <%= f.label :current_password %> 
           <i>(Mot de passe actuel pour confirmer)</i>
         </div>
 

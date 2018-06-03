@@ -5,13 +5,13 @@
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
-          <%= f.label :email, value: "Nom d'utilisateur" %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.label :email, value: "Nom d'utilisateur" %>
         </div>
 
         <div class="field">
-          <%= f.label :password, value: "Mot de passe" %>
           <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :password, value: "Mot de passe" %>
         </div>
   
         <div class="text-right">

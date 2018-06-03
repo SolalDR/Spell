@@ -8,18 +8,18 @@
         <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :email %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.label :email %>
         </div>
 
         <div class="field">
-          <%= f.label :password, value: "Mot de passe" %>
           <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :password, value: "Mot de passe" %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation, value: "Confirmation" %>
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.label :password_confirmation, value: "Confirmation" %>
         </div>
 
         <div class="actions text-right">

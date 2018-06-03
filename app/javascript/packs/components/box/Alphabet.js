@@ -151,7 +151,7 @@ export default {
   },
 
   initEvents: function() {
-    window.addEventListener("keypress", (e) => {
+    window.addEventListener("keydown", (e) => {
       if( this.letters[e.key] ) this.playground.addLetter(this.letters[e.key]);
       
       if( e.keyCode == 13 ){

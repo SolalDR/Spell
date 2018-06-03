@@ -105,12 +105,17 @@ ActiveRecord::Schema.define(version: 20180515132901) do
   create_table "words", force: :cascade do |t|
     t.string   "name"
     t.string   "match"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.string   "file_file_name"
-    t.string   "file_content_type"
-    t.integer  "file_file_size"
-    t.datetime "file_updated_at"
+    t.datetime "created_at",                                                                       null: false
+    t.datetime "updated_at",                                                                       null: false
+    t.jsonb    "config",                 default: {"match"=>nil, "options"=>{}, "synonymous"=>[]}, null: false
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
+    t.string   "figure_file_name"
+    t.string   "figure_content_type"
+    t.integer  "figure_file_size"
+    t.datetime "figure_updated_at"
     t.integer  "book_id"
     t.index ["book_id"], name: "index_words_on_book_id", using: :btree
   end

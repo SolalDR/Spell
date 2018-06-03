@@ -19,14 +19,14 @@
       Bienvenue dans ta boîte magique !
       <br>écris ou prononce les mots magiques
       <br>pour les faire apparaître</p> 
-    <button class="btn btn--slide" data-toggle-target="#dialog-1, #dialog-2" data-toggle-modifier="dialog--hidden, dialog--hidden">Suivant</button>
+    <span class="btn btn--slide" data-toggle-target="#dialog-1, #dialog-2" data-toggle-modifier="dialog--hidden, dialog--hidden">Suivant</span>
   </div>
 
   <div id="dialog-2" class="dialog dialog--hidden">
     <p class="dialog__content">
       Si tu ne te rappelles pas, <br>tu peux retrouver tes mots magiques<br>
       dans le dictionnaire présent dans le menu</p> 
-    <button class="btn btn--slide" data-toggle-target="#dialog-2, #controller" data-toggle-modifier="dialog--hidden, control--disabled">J'ai compris</button>
+    <span class="btn btn--slide" data-toggle-target="#dialog-2, #controller" data-toggle-modifier="dialog--hidden, control--disabled">J'ai compris</span>
   </div>
 
 
@@ -69,8 +69,24 @@
     <button class="panel__close" data-toggle-target="#dictionnary-box" data-toggle-modifier="panel--hidden"><i class="material-icons">close</i></button>
     <h2 class="title-1 text-center panel__title">Mes mots magiques</h2>
   </div>
+  
+  <div id="dictionnary-storage" class="dictionnary__storage">
+    <%= @words.map { |word| { name: word.name, path: word.thumbnail.url,  config: word.config }}.to_json.html_safe %>
+  </div>
 
   <div class="flex flex--between container mb-5">
+    <% @words.each do |word| %>
+      <div class="magicword dictionnary__list-item">
+        <%= image_tag word.thumbnail.url, class: "magicword__img" %>
+        <p class="magicword__title"><%= word.name %></p>
+
+        <ul class="magicword__synonymes">
+          <% word.config["synonymous"].each do |synonym| %>
+          <li class="magicword__synonyme"><%= synonym.capitalize %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <div class="magicword dictionnary__list-item">
       <%= image_tag "/images/boite.png", class: "magicword__img" %>
       <p class="magicword__title">Boite</p>

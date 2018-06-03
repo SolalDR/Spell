@@ -46,6 +46,10 @@ div {
   }
 }
 
+button:focus {
+  outline: none;
+}
+
 #notice {
   color: green;
 }

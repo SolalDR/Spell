@@ -5,7 +5,7 @@
 #  id          :integer          not null, primary key
 #  user_id     :integer
 #  book_id     :integer
-#  config      :text
+#  config      :jsonb            not null
 #  nb_visit    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

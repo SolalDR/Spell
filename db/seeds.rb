@@ -8,6 +8,21 @@
 
 
 
+jsonB = {
+  "choices": {
+    "choice_1": {
+      "value":"test2", 
+      "choices": ["test", "test2"]
+    }
+  }, 
+  "variables": {
+    "sound_gain": 1, 
+    "sound_mute": false, 
+    "participation": true, 
+    "display_quality": "high", 
+    "voice_recognition": true
+  }
+} 
 
 b = Book.create!({ 
   :title => "Mission Mars", 

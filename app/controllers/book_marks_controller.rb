@@ -34,7 +34,7 @@ class BookMarksController < ApplicationController
 
   # GET /book_marks/1/box
   def sandbox
-
+    @words = Word.where(book: @book_mark.book)
   end
 
   # POST /book_marks

@@ -2,7 +2,6 @@
   <% if book_mark.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(book_mark.errors.count, "error") %> prohibited this book_mark from being saved:</h2>
-
       <ul>
       <% book_mark.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,24 +10,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :book_id %>
-    <%= f.text_field :book_id %>
-  </div>
-
-  <div class="field">
+  <div id="codemirror-block" class="field codemirror">
     <%= f.label :config %>
-    <%= f.text_area :config %>
-  </div>
-
-  <div class="field">
-    <%= f.label :nb_visit %>
-    <%= f.number_field :nb_visit %>
+    <%= f.text_area :config, class: "codemirror__textarea" %>
+    <button id="" class="material-icons" data-toggle-target="#codemirror-block" data-toggle-modifier="codemirror--full" >
+      fullscreen
+    </button>
   </div>
 
   <div class="actions">

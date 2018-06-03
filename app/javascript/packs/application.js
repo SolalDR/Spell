@@ -24,6 +24,13 @@ window.addEventListener("load", ()=>{
   RessourceForm.init();
   MagicBox.init();
 
+  document.querySelectorAll(".field input").forEach(input => {
+    input.setAttribute("data-value", input.value);
+    input.addEventListener("keyup", function(){
+      this.setAttribute("data-value", this.value);
+    })
+  })
+
   if( document.querySelector("#tree") ) var tree = new Tree(document.querySelector(".tree"));
 
 

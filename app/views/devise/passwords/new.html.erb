@@ -7,8 +7,8 @@
         <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :email, value: "E-mail" %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.label :email, value: "E-mail" %>
         </div>
 
         <div class="actions text-right">
