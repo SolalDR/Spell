@@ -1,6 +1,7 @@
 class FragmentsController < ApplicationController
   before_action :set_fragment, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: :show
+  before_action :authenticate_user!
 
   # GET /fragments
   # GET /fragments.json

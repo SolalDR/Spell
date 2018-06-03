@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
   before_action :set_book, only: :index
+  before_action :authenticate_user!
 
   def index
     @words = Word.where(book: @book)

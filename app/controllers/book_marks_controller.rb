@@ -1,6 +1,7 @@
 class BookMarksController < ApplicationController
   before_action :set_book_mark, only: [:show, :edit, :update, :destroy, :update_config, :sandbox]
-
+  before_action :authenticate_user!
+  
   # GET /book_marks
   # GET /book_marks.json
   def index
