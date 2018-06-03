@@ -1,11 +1,12 @@
 class FragmentsController < ApplicationController
   before_action :set_fragment, only: [:show, :edit, :update, :destroy]
+  before_action :is_admin?, except: [:show]
   protect_from_forgery except: :show
   before_action :authenticate_user!
 
   # GET /fragments
   # GET /fragments.json
-  def index    
+  def index
     @fragments = params[:book_id] ? Fragment.where(book: params[:book_id]) : Fragment.all
   end
 
@@ -82,5 +83,11 @@ class FragmentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def fragment_params
       params.require(:fragment).permit(:name, :content, :config, :book_id, :ressources_attributes => [:id, :name, :_destroy, :mode, :file])
+    end
+
+    def is_admin?
+      if !current_user.admin?
+        redirect_to root_path, notice: "Vous n'êtes pas autoriser à modifier ces ressources"
+      end
     end
 end

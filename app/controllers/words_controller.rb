@@ -14,7 +14,7 @@ class WordsController < ApplicationController
       if params[:book_id]
         @book = Book.find(params[:book_id])
         if !@book 
-          redirect_to root_path
+          redirect_to root_path, notice: "Le livre cherché n'existe pas."
         end
       end
     end
