@@ -51,6 +51,9 @@ gem 'webpacker', '~> 3.4'
 gem 'paperclip', '~> 5.1.0'
 gem 'aws-sdk',   '~> 2.6'
 
+gem 'cancancan', '~> 2.0'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

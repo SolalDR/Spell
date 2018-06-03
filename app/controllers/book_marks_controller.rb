@@ -1,11 +1,10 @@
 class BookMarksController < ApplicationController
-  before_action :set_book_mark, only: [:show, :edit, :update, :destroy, :update_config, :sandbox]
   before_action :authenticate_user!
+  before_action :set_book_mark, only: [:show, :edit, :update, :destroy, :update_config, :sandbox]  
   
   # GET /book_marks
-  # GET /book_marks.json
   def index
-    @book_marks = BookMark.all
+    @book_marks = BookMark.where(user: current_user)
     @books_interest = Book.all.except(@book_marks.map(&:book)).first(3)
   end
 
@@ -26,11 +25,6 @@ class BookMarksController < ApplicationController
     end
 
     redirect_to @book_mark.fragment
-  end
-
-  # GET /book_marks/new
-  def new
-    @book_mark = BookMark.new
   end
 
   # GET /book_marks/1/box
@@ -111,6 +105,13 @@ class BookMarksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_book_mark
       @book_mark = BookMark.find(params[:id])
+      if !@book_mark
+        redirect_to root_path, notice: "Aucune référence n'existe vers ce marque-page"
+      end
+
+      if @book_mark.user.id != current_user.id && !current_user.admin?
+        redirect_to @book_mark.book, notice: "Vous n'êtes pas autorisé"
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

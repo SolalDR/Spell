@@ -46,14 +46,21 @@
 
             <% else %>
 
-              <li class="header__menu-item">
-                <%= link_to "Mon espace", book_marks_path %>
-              </li>
-
-              <li class="header__menu-item">
-                <%= link_to "Déconnexion", destroy_user_session_path, :method => :delete %>
-              </li>
-
+              <nav class="header__nav header__nav--right">
+                <ul class="header__menu">
+                  <li class="header__menu-item">
+                    <%= link_to "Ma Bibliothèque", book_marks_path %>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="#" class="header__drop-btn">Mon Compte</a>
+                    <div class="header__drop header__drop--close">
+                      <%= link_to "Paramètre du compte", edit_user_registration_path, class: "header__drop-item" %>
+                      <%= link_to "Déconnexion", destroy_user_session_path, :method => "delete", class: "header__drop-item" %>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+              
             <% end %>
 
           </ul>
