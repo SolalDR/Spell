@@ -152,7 +152,18 @@ export default {
 
   initEvents: function() {
     window.addEventListener("keydown", (e) => {
-      if( this.letters[e.key] ) this.playground.addLetter(this.letters[e.key]);
+
+      var letter = e.key;
+      switch(letter){
+        case "é" : letter = "e"; break;
+        case "è" : letter = "e"; break;
+        case "ê" : letter = "e"; break;
+        case "à" : letter = "a"; break;
+        case "î" : letter = "i"; break;
+        case "ï" : letter = "i"; break;
+      }
+
+      if( this.letters[letter] ) this.playground.addLetter(this.letters[letter]);
       
       if( e.keyCode == 13 ){
         this.playground.refresh();

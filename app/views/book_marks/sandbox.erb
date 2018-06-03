@@ -16,17 +16,21 @@
   <!-- Dialog -->
   <div id="dialog-1" class="dialog">
     <p class="dialog__content">
-      Bienvenue dans ta boîte magique !
-      <br>écris ou prononce les mots magiques
-      <br>pour les faire apparaître</p> 
-    <span class="btn btn--slide" data-toggle-target="#dialog-1, #dialog-2" data-toggle-modifier="dialog--hidden, dialog--hidden">Suivant</span>
+      <span class="bold block mb-2">Bienvenue dans ta boîte magique !
+      <br>prononce ou écris un mot magique
+      <br>pour le faire apparaître</span>
+      <span class="italic">Exemple : Fusée</span>
+      </p> 
+    <span class="btn btn--slide mt-3" data-toggle-target="#dialog-1, #dialog-2" data-toggle-modifier="dialog--hidden, dialog--hidden">J'ai compris</span>
   </div>
 
   <div id="dialog-2" class="dialog dialog--hidden">
     <p class="dialog__content">
-      Si tu ne te rappelles pas, <br>tu peux retrouver tes mots magiques<br>
-      dans le dictionnaire présent dans le menu</p> 
-    <span class="btn btn--slide" data-toggle-target="#dialog-2, #controller" data-toggle-modifier="dialog--hidden, control--disabled">J'ai compris</span>
+      <span class="bold block">
+        Si tu ne te rappelles pas, <br>tu peux retrouver tes mots magiques<br>
+        dans le dictionnaire présent dans le menu</p> 
+      </span>
+      <span class="btn btn--slide mt-3" data-toggle-target="#dialog-2, #controller" data-toggle-modifier="dialog--hidden, control--disabled">J'ai compris</span>
   </div>
 
 
@@ -35,10 +39,15 @@
   <button id="control-menu-btn" class="control__btn" data-toggle-target="#controller" data-toggle-modifier="control--hide">
     <i class="material-icons">pause</i>
   </button>
-  <div class="control__menu control__menu--4">
-    <button class="control__btn control__menu-item" data-toggle-target="#dictionnary-box" data-toggle-modifier="panel--hidden">
+
+  <div class="control__out control__out--4">
+    <button class="control__btn control__out-item" data-toggle-target="#dictionnary-box" data-toggle-modifier="panel--hidden">
       <%= image_tag "picto/picto-_.svg" %>
+      <span class="control__out-item-label">Mes mots<br>magique</span>
     </button>
+  </div>
+
+  <div class="control__menu control__menu--3">
     <button class="control__btn control__menu-item" data-toggle-target="#arborescence-panel" data-toggle-modifier="panel--hidden">
       <%= image_tag "picto/picto-boussole.svg" %>
     </button>
@@ -87,33 +96,6 @@
         </ul>
       </div>
     <% end %>
-    <div class="magicword dictionnary__list-item">
-      <%= image_tag "/images/boite.png", class: "magicword__img" %>
-      <p class="magicword__title">Boite</p>
-    </div>
-    <div class="magicword dictionnary__list-item">
-      <%= image_tag "/images/boss.png", class: "magicword__img" %>
-      <p class="magicword__title">Dragon</p>
-      <ul class="magicword__synonymes">
-        <li class="magicword__synonyme">Boss</li>
-        <li class="magicword__synonyme">Méchant</li>
-        <li class="magicword__synonyme">Monstre</li>
-      </ul>
-    </div>
-    <div class="magicword dictionnary__list-item">
-      <%= image_tag "/images/fusee.png", class: "magicword__img" %>
-      <p class="magicword__title">Fusée</p>
-      <ul class="magicword__synonymes">
-        <li class="magicword__synonyme">Vaisseau</li>
-        <li class="magicword__synonyme">Navette</li>
-        <li class="magicword__synonyme">Avion</li>
-      </ul>
-    </div>
-    <div class="magicword dictionnary__list-item">
-      <%= image_tag "/images/etoile.png", class: "magicword__img" %>
-      <p class="magicword__title">Etoile</p>
-    </div>
-
   </div>
 </div>
 

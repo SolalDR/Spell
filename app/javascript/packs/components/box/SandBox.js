@@ -56,12 +56,12 @@ export default {
 
     for(var command in this.commands){
       (function(speech, command, name){
-        speech.addCommand(name, ()=>{
+        speech.addCommand(name, () => {
           self.addComposite(command.path, command.options);  
         })
 
         command.synonymous.forEach(word => {        
-          speech.addCommand(word, ()=>{
+          speech.addCommand(word, () => {
             self.addComposite(command.path, command.options);  
           })
         })
@@ -108,7 +108,7 @@ export default {
     });
     Matter.World.add(this.world, mouseConstraint);
     this.renderer.mouse = this.mouse;
-  }, 
+  },
 
   genBoundaries: function() {
     var options = {
@@ -120,7 +120,7 @@ export default {
         Matter.Bodies.rectangle(window.innerWidth/2, window.innerHeight-70, window.innerWidth, 5, options),
         Matter.Bodies.rectangle(-5, 0, 5, 2*window.innerHeight, options),
         Matter.Bodies.rectangle(window.innerWidth, 0, 5, 2*window.innerWidth, options),
-        Matter.Bodies.rectangle(window.innerWidth/2, window.innerHeight-70, window.innerWidth, 50, options)
+        Matter.Bodies.rectangle(window.innerWidth/2, window.innerHeight-20, window.innerWidth, 50, options)
     ];
 
     // these static walls will not be rendered in this sprites example, see options

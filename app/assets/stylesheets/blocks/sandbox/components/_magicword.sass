@@ -2,7 +2,7 @@
 
   width: 100%
   margin-bottom: 30px
-  max-width: 250px
+  max-width: 200px
   margin: auto
   padding: 20px
 
@@ -17,13 +17,21 @@
     font-weight: bold
     font-size: 22px
     margin-top: 10px
+    height: 40px
 
   &__synonymes
     display: flex
     justify-content: center
 
   &__synonyme
-    margin: 0 10px
+    padding: 0 3px
+    &::after
+      content: "|"
+      color: #CCC
+      transform: translateX(5px)
+      margin-left: 5px
+    &:last-child::after
+      display: none
 
 .dictionnary__storage
   display: none
