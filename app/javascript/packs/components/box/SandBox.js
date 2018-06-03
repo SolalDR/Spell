@@ -1,4 +1,3 @@
-
 import * as Matter from "matter-js";
 import {SpeechRecognition} from "js-bard"; 
 
@@ -58,12 +57,12 @@ export default {
       (function(speech, command, name){
         speech.addCommand(name, () => {
           self.addComposite(command.path, command.options);  
-        })
+        }, true)
 
         command.synonymous.forEach(word => {        
           speech.addCommand(word, () => {
             self.addComposite(command.path, command.options);  
-          })
+          }, true)
         })
       })(this.speechRecognition, this.commands[command], command);
     }
