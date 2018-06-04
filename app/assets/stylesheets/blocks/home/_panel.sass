@@ -1,0 +1,278 @@
+$pad-title: 70px
+
+.panel
+  padding-left: 150px
+  .pad-title
+    padding-left: $pad-title
+
+  & > .panel__container
+    // padding-left: 100px
+
+  &__container
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    position: relative
+
+    &--end
+      justify-content: flex-end
+
+  &__block
+    position: relative
+    z-index: 1
+
+  &__count
+    font-size: 200px
+    line-height: 170px
+    font-weight: 300
+    color: #EFEFEF
+    opacity: .7
+    z-index: -1
+    position: absolute
+    top: 20px
+    left: $pad-title
+    transform: translateX(-40%) translateY(-50%)
+
+  &__title
+    
+    &-huge
+      font-size: 100px
+      font-weight: bold
+      line-height: 90px
+
+    &-container
+      flex-grow: 1
+      padding-left: $pad-title
+      width: 100%
+    
+    &-line
+      letter-spacing: -4px
+      font-size: 60px
+      line-height: 60px
+      font-weight: bold
+      display: block
+      &:nth-child(1)
+        color: black
+      &:nth-child(2)
+        color: $color-primary
+        font-style: italic
+
+  &__text
+    &-container
+      max-width: 320px
+
+      &--horizontal
+        max-width: none
+        display: flex
+        width: 100%
+        & > *
+          flex: 1
+          border-right: 1px solid black
+          &:not(:last-child)
+            padding-right: 40px
+          &:not(:first-child)
+            padding-left: 40px
+          &:last-child
+            border-right: none
+
+    &-content
+      font-weight: 400
+      font-size: $font-size-normal
+      line-height: 20px
+      margin-bottom: 10px
+
+    &-title
+      font-weight: bold
+      font-size: 30px
+      margin-bottom: 25px
+
+    &-separator
+      height: 1px
+      background-color: #AAA
+      display: block
+      margin: 30px 0
+
+  &__background
+    display: block
+    position: absolute
+    z-index: -1
+    width: 100%
+
+#background-mockup
+  left: 0
+  top: 0
+  height: 55vh
+  width: calc(100% - 300px)
+
+
+#section-1
+  min-height: 650px
+  .panel
+    &__container
+      &-1
+        height: 550px
+        position: relative
+        top: -30px
+    &__text-container
+      max-width: 320px
+      position: absolute
+      height: 100%
+      display: flex
+      justify-content: center
+      flex-direction: column
+    
+    &__background
+      img
+        height: 550px
+        position: absolute
+        left: 0
+
+#section-2
+  min-height: 1000px
+  .panel
+    &__container
+      &-1
+        height: 650px
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        padding-bottom: 70px
+        .panel__text-container
+          margin-left: 90px
+      &-2
+        padding-left: 20px
+
+    &__title
+      width: 700px
+      &-container
+        width: auto
+        flex-grow: initial
+    
+    &__background
+      video, img
+        height: 650px
+        position: absolute
+        right: 0
+
+#section-3
+  min-height: 750px
+  .panel
+    
+    &__title
+      &-container
+        flex-grow: initial
+        position: relative
+        top: 70px
+
+    &__background
+      position: absolute
+      top: 0
+      right: 0
+      float: right
+      video, img
+        height: 420px
+        float: right
+        
+  
+    &__container
+      &-1
+        height: 420px
+        display: flex
+        justify-content: flex-end
+        flex-direction: column
+      &-2
+        margin-top: 150px
+        
+
+#section-4
+  min-height: 900px
+  .panel
+    &__count 
+      top: -40px
+
+    &__title
+      &-container
+        flex-grow: initial
+        margin-top: 180px
+
+    &__background
+      height: 650px
+      position: absolute
+      top: 0
+      left: auto
+      right: -250px
+
+      video, img
+        height: 100%  
+  
+    &__container
+      &-1
+        margin-top: 80px
+      &-2
+        height: 650px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        
+#section-5
+  min-height: 1350px
+  .panel
+    &__background
+      display: block
+      z-index: -1
+      width: 100%
+      position: relative
+      left: 90px
+      margin-bottom: 40px
+      video
+        width: 120%
+
+    &__container
+      &-1
+        position: relative
+        top: -160px
+      &-2
+        margin-top: 80px
+
+    &__count
+      top: -5px
+
+#spaceship
+  width: 180px
+  margin: auto
+  display: block
+  // position: relative
+  // left: 35px
+  margin-top: 20px
+
+#section-6
+  
+  .panel
+
+    &__background
+      display: block
+      position: absolute
+      z-index: -1
+      width: 100%
+      top: 230px
+      right: 0
+      filter: opacity(.35)
+      img
+        height: 400px
+        float: right
+    
+    &__title-huge
+      margin-bottom: 40px
+
+    &__container
+      &-1
+        padding: 90px 0 130px 0
+        border-top: 2px solid black
+        border-bottom: 2px solid black
+        display: block
+        min-height: 730px
+
+
+@media screen and (max-width: 1200px)
+  .panel
+    padding-left: 0px

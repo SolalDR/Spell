@@ -1,0 +1,63 @@
+.timeline
+  position: fixed
+  height: calc(100vh - 70px - 120px)
+  bottom: 60px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  transform: translateX(-120px)
+
+  &__item
+    display: flex
+    justify-content: center
+    flex-direction: column
+    border-left: 2px solid #d8d8d8
+    flex: 1
+    transition: .4s
+    position: relative
+    padding-left: 25px
+  
+    &::after
+      content: ""
+      position: absolute
+      left: -2px
+      top: 0
+      height: 0
+      width: 2px
+      transition: .4s
+      background-color: #d8d8d8
+  
+    &--active
+      &::after
+        height: 100%
+        background-color: $color-primary
+
+    &:not(.timeline__item--active)
+      .timeline__item-count
+        margin-top: 35px
+      .timeline__item-label
+        opacity: 0
+
+    &:hover
+      padding-left: 20px
+      color: black
+      &::after
+        height: 100%
+        background-color: transparentize(#000000, .5)
+
+
+    &-count
+      margin-bottom: 15px
+      &::before
+        content: ""
+        display: inline-block
+        height: 1px
+        width: 20px
+        background-color: #D8D8D8
+        margin-right: 7px
+        margin-bottom: 5px
+
+
+@media screen and (max-width: 1200px)
+  .timeline
+    display: none
