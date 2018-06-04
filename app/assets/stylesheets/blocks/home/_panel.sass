@@ -34,6 +34,7 @@ $pad-title: 70px
     transform: translateX(-40%) translateY(-50%)
 
   &__title
+    transform: rotate(var(--scrollable, 0))
     
     &-huge
       font-size: 100px
@@ -75,16 +76,31 @@ $pad-title: 70px
           &:last-child
             border-right: none
 
+      &--visible
+        opacity: 1
+        .panel__text
+          &-title
+            opacity: 1
+          &-content
+            transform: translateY(0)
+            opacity: 1
+
+
     &-content
       font-weight: 400
       font-size: $font-size-normal
       line-height: 20px
       margin-bottom: 10px
+      transition: .8s
+      opacity: 0
+      transform: translateY(10px)
 
     &-title
       font-weight: bold
       font-size: 30px
       margin-bottom: 25px
+      transition: .4s
+      opacity: 0
 
     &-separator
       height: 1px
@@ -93,6 +109,7 @@ $pad-title: 70px
       margin: 30px 0
 
   &__background
+    transform: translateY(var(--scrollable, 0px))
     display: block
     position: absolute
     z-index: -1
@@ -107,6 +124,7 @@ $pad-title: 70px
 
 #section-1
   min-height: 650px
+  padding-top: 100px
   .panel
     &__container
       &-1
@@ -185,7 +203,7 @@ $pad-title: 70px
         
 
 #section-4
-  min-height: 900px
+  min-height: 1000px
   .panel
     &__count 
       top: -40px
@@ -224,6 +242,7 @@ $pad-title: 70px
       position: relative
       left: 90px
       margin-bottom: 40px
+      transform: scale(var(--scrollable, 1))
       video
         width: 120%
 

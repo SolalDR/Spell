@@ -1,8 +1,17 @@
 <div class="home" data-current="#section-1">
 
-  <section id="section-landing" class="panel">   
+  <section id="section-landing" class="landing">   
     <div class="center-y">
-      <svg></svg>
+      <svg class="landing__logo" xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 200 216">
+        <g id="logo__group">
+          <path class="landing__logo-left" fill="#143adb" style="opacity: .5;" class="cls-1" d="M9.28,46a46,46,0,0,0,46,46V0A46,46,0,0,0,9.28,46Z"/>
+          <path class="landing__logo-right" fill="#ffcca9" style="opacity: .65;" class="cls-2" d="M82.89,69.46a46,46,0,0,0-46-46V115.5A46,46,0,0,0,82.89,69.46Z"/>
+        </g>
+      </svg>
+      <div class="landing__container">
+        <h1 class="landing__content">SPELL</h1>
+        <a class="landing__content landing__content--hidden">Regarder le trailer</a>
+      </div>
     </div>
   </section>
 
@@ -18,7 +27,8 @@
       
 
       <div class="panel__container panel__container-1 panel__container--end">
-        <div class="panel__block panel__text-container">
+        <div class="panel__block panel__text-container" 
+        data-scrollable data-scrollable-modifier="panel__text-container--visible" data-scrollable-offset="200" data-scrollable-debug>
           <h3 class="panel__text-title">Simplissime</h3>
           <p class="panel__text-content">
             Rien à intaller<br>
@@ -34,7 +44,7 @@
           </div>
         </div>
 
-        <div id="background-mockup" class="panel__background">
+        <div id="background-mockup" class="panel__background" data-scrollable="-20%">
           <%= image_tag "mock-up.png" %>
         </div>
       </div>
@@ -44,7 +54,7 @@
   <section id="section-2" class="panel">   
     
     <div id="background-section-2" class="panel__background">
-      <video autoplay>
+      <video autoplay="true" loop="true" muted> 
         <source src="/videos/chateaux.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video> 
@@ -53,7 +63,8 @@
     <div class="container panel__container"> 
       
       <div id="" class="panel__container-1 panel__container panel__container--start">
-        <div class="panel__block panel__text-container">
+        <div class="panel__block panel__text-container"
+        data-scrollable data-scrollable-modifier="panel__text-container--visible" data-scrollable-offset="200" >
           <h3 class="panel__text-title">Passionant</h3>
           <p class="panel__text-content">
             Au fur et à mesure que le parent lit, l'histoire se matérialise et s'anime sous les yeux de l'enfant grâce à la reconnaissance vocale.<br>
@@ -81,7 +92,7 @@
   <section id="section-3" class="panel">   
     
     <div class="container panel__container panel__container-1"> 
-      <div id="background-section-3" class="panel__background">
+      <div id="background-section-3" class="panel__background" data-scrollable="20%">
         <%= image_tag "photo.jpg" %>
       </div>
       <div class="panel__block panel__title-container">
@@ -94,7 +105,8 @@
     </div>  
 
     <div class="container panel__container panel__container-2">
-      <div class="panel__block panel__text-container panel__text-container--horizontal">
+      <div class="panel__block panel__text-container panel__text-container--horizontal"
+      data-scrollable data-scrollable-modifier="panel__text-container--visible" data-scrollable-offset="100" >
         <div class="pad-title">
           <h3 class="panel__text-title">Élémentaire.</h3>
           <p class="panel__text-content">
@@ -115,8 +127,8 @@
   <section id="section-4" class="panel">
   
     <div class="container panel__container panel__container-2"> 
-      <div id="background-mockup" class="panel__background">
-        <video autoplay loop>
+      <div id="background-mockup" class="panel__background" data-scrollable="20%">
+        <video autoplay loop muted>
           <source src="/videos/heros.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video> 
@@ -131,7 +143,8 @@
       </div>
       
       <div class="panel__container-1 pad-title">
-        <div class="panel__block panel__text-container">
+        <div class="panel__block panel__text-container"
+        data-scrollable data-scrollable-modifier="panel__text-container--visible" data-scrollable-offset="200" >
           <h3 class="panel__text-title">Ludique</h3>
           <p class="panel__text-content">
             Spell offre la possibilité à l'enfant de choisir son héros, son nom, son aspect, son cri de guerre
@@ -148,7 +161,7 @@
 
     <div class="container panel__container panel__container-1"> 
       <div id="background-5" class="panel__background">
-        <video autoplay loop>
+        <video autoplay loop muted>
           <source src="/videos/dragon.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video> 
@@ -163,7 +176,8 @@
       </div>
 
       <div class="container panel__container panel__container-2">
-        <div class="panel__block panel__text-container panel__text-container--horizontal">
+        <div class="panel__block panel__text-container panel__text-container--horizontal"
+        data-scrollable data-scrollable-modifier="panel__text-container--visible" data-scrollable-offset="200" >
           <div class="pad-title">
             <h3 class="panel__text-title">Légendaire.</h3>
             <p class="panel__text-content">
@@ -200,7 +214,7 @@
   <!-- TIMELINE -->
   <div class="container">
     <div class="timeline">
-      <a class="timeline__item timeline__item--active" href="#section-1" data-scroll>
+      <a class="timeline__item timeline__item--active" href="#section-1" data-scroll data-options='{"offset": 60}'>
         <span class="timeline__item-count">01</span>
         <span class="timeline__item-label">Simplissime</span>
       </a>
@@ -208,15 +222,15 @@
         <span class="timeline__item-count">02</span>
         <span class="timeline__item-label">Passionant</span>
       </a>
-      <a class="timeline__item" href="#section-3" data-scroll>
+      <a class="timeline__item" href="#section-3" data-scroll data-options='{"offset": 60}'l>
         <span class="timeline__item-count">03</span>
         <span class="timeline__item-label">Élémentaire</span>
       </a>
-      <a class="timeline__item" href="#section-4" data-scroll>
+      <a class="timeline__item" href="#section-4" data-scroll data-options='{"offset": 30}'>
         <span class="timeline__item-count">04</span>
         <span class="timeline__item-label">Ludique</span>
       </a>
-      <a class="timeline__item" href="#section-5" data-scroll>
+      <a class="timeline__item" href="#section-5" data-scroll data-options='{"offset": 200}'>
         <span class="timeline__item-count">05</span>
         <span class="timeline__item-label">Légendaire</span>
       </a>

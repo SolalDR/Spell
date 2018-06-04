@@ -9,6 +9,7 @@ import deleteRecord from "./components/delete.js"
 import BardManager from "./components/bard.js"
 import Http from "./components/http.js"
 import MagicBox from "./components/MagicBox.js"
+import Home from "./home.js";
 
 window.Http = Http;
 window.Bard = Bard;
@@ -22,6 +23,7 @@ window.addEventListener("load", ()=>{
   TogglerManager.init();
   RessourceForm.init();
   MagicBox.init();
+  Home.init();
 
   document.querySelectorAll(".field input").forEach(input => {
     input.setAttribute("data-value", input.value);

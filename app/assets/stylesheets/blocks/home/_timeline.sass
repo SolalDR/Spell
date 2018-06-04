@@ -5,8 +5,13 @@
   display: flex
   flex-direction: column
   justify-content: space-between
-  transform: translateX(-120px)
-
+  transform: translateX(-100vw)
+  transition: 1s
+  
+  &--visible
+    transform: translateX(-120px)
+    
+  
   &__item
     display: flex
     justify-content: center
@@ -27,16 +32,6 @@
       transition: .4s
       background-color: #d8d8d8
   
-    &--active
-      &::after
-        height: 100%
-        background-color: $color-primary
-
-    &:not(.timeline__item--active)
-      .timeline__item-count
-        margin-top: 35px
-      .timeline__item-label
-        opacity: 0
 
     &:hover
       padding-left: 20px
@@ -45,9 +40,24 @@
         height: 100%
         background-color: transparentize(#000000, .5)
 
+    &--active
+      &::after
+        height: 100%
+        background-color: $color-primary !important
 
+    &:not(.timeline__item--active)
+      .timeline__item-count
+        margin-top: 35px
+      .timeline__item-label
+        opacity: 0
+
+    &-label
+      opacity: 1
+      transition: all .3s
+  
     &-count
       margin-bottom: 15px
+      transition: all .3s
       &::before
         content: ""
         display: inline-block

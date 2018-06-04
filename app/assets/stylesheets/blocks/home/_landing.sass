@@ -1,0 +1,74 @@
+.landing
+  height: calc(100vh - 60px)
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  &__content
+    text-align: center
+    font-size: 24px
+    font-weight: 300 
+    display: block
+    transition: .5s
+    &--hidden
+      opacity: 0
+
+  &__container
+    position: relative
+    &::before
+      content: ""
+      display: block
+      bottom: 120%
+      width: 1px
+      height: 30px
+      position: absolute
+      left: 50%
+      background-color: #AAA
+
+
+  &__logo
+    width: 200px
+    margin: auto
+    display: block
+    &:hover 
+      .landing__logo-left
+        transform: rotate(-5deg) translateX(-10px)
+      .landing__logo-right
+        transform: rotate(5deg) translateX(10px)
+    &-left, &-right
+      transition: .4s
+      animation: 
+        duration: 1.3s
+        timing-function: ease
+        iteration-count: 1
+    
+    &-left
+      animation-name: logo-left-bounce
+    &-right
+      animation-name: logo-right-bounce
+
+@keyframes logo-left-bounce
+  0%
+    transform: translateY(60px)
+    opacity: 0
+
+  90%
+    transform: translateY(-5px)
+    opacity: .45
+
+  100%
+    transform: translateY(0)
+    opacity: .5
+
+@keyframes logo-right-bounce
+  0%
+    transform: translateY(-60px)
+    opacity: 0
+
+  90%
+    transform: translateY(5px)
+    opacity: .45
+
+  100%
+    transform: translateY(0)
+    opacity: .5
