@@ -17,8 +17,10 @@ class Scrollable {
     elements.forEach(element => scrollables.push(new Scrollable(element)));
 
     window.addEventListener("scroll", function() {
-      scrollables.forEach(item => item.scroll(this.horizon));
+      var horizon = this.horizon;
+      scrollables.forEach(item => item.scroll(horizon));
     })
+    scrollables.forEach(item => item.scroll(window.horizon));
 
     return scrollables;
   }
@@ -75,9 +77,9 @@ class Scrollable {
     else if (intensity <= 0 && this.modifier)
       this.element.classList.remove(this.modifier)
 
-    if( this.element.hasAttribute("data-scrollable-debug")){
-      // console.log(this.offset, intensity)
-    }
+    // if( this.element.hasAttribute("data-scrollable-debug")){
+    //  console.log(this.offset, intensity)
+    // }
     
 
     this.element.style.setProperty("--scrollable", intensity+this.unit);

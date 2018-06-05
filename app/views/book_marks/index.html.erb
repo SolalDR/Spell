@@ -1,14 +1,16 @@
 <div class="container mt-4">
 
-<h1 class="title-1 container__title">Ma bibliothèque</h1>
+<h1 class="title-1 container__title animate--from-fade-bottom delay-3" data-scrollable data-scrollable-modifier="animate--launched">
+  Ma bibliothèque
+</h1>
 
 <% if @book_marks.length < 1 %>
 
-<p class="books__empty">Vous n'avez pas encore de livres dans votre bibliothèque.</p> 
+<p class="books__empty  animate--from-fade-bottom delay-2" data-scrollable data-scrollable-modifier="animate--launched">Vous n'avez pas encore de livres dans votre bibliothèque.</p> 
 
 <% else %>
 
-<div class="books">
+<div class="books animate--from-fade-bottom delay-2" data-scrollable data-scrollable-modifier="animate--launched">
   <% @book_marks.each do |book_mark| %>
     <%= link_to book_path(book_mark.book), class: "books__item" do %>
       <div class="books__item-img-container">
@@ -24,9 +26,9 @@
 
 <% if @books_interest.length > 0 %>
 
-<h2 class="title-2 mt-4 container__sub-title">Ces livres peuvent vous intéresser également</h2>  
+<h2 class="title-2 mt-4 container__sub-title animate--from-fade-bottom delay-1" data-scrollable data-scrollable-modifier="animate--launched">Ces livres peuvent vous intéresser également</h2>  
 
-<div class="books">
+<div class="books animate--from-fade-bottom" data-scrollable data-scrollable-modifier="animate--launched">
   <% @books_interest.each do |book| %>
     <%= link_to book_path(book), class: "books__item books__item--small" do %>
       <div class="books__item-img-container">

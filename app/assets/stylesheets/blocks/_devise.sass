@@ -8,22 +8,41 @@
   .devise
     padding: 20px
     border-radius: 5px
-    max-width: 550px
+    max-width: 500px
     width: 90%
     margin: 50px 0
 
+    .field_with_errors
+      width: 100%
+      background-color: $color-secondary
+      label
+        font-size: 13px
+        margin-left: 10px
+        padding-top: 7px
+
+    &__logo
+      width: 80px
+      display: block
+      margin: auto
+      margin-bottom: 60px
+
   h2
-    letter-spacing: 5px
-    text-transform: uppercase
     font-size: $font-size-medium
-    color: #555
+    font-weight: 300
+    color: black
     padding-bottom: 40px
     text-align: center
     margin-botom: 20px
+    font-size: 30px
 
   .field 
-    margin-bottom: 40px
+    margin-bottom: 45px
     margin-top: 0
+
+    label
+      color: #9c9c9c !important
+      font-weight: 500
+      font-size: 15px
 
 
   input[type="submit"]

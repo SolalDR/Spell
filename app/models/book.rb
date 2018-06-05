@@ -28,7 +28,7 @@ class Book < ApplicationRecord
   has_many :words, dependent: :destroy
   has_many :ressources, as: :ressourceable, :dependent => :destroy
   
-  has_attached_file :thumbnail, default_url: "/images/missing_book.png"
+  has_attached_file :thumbnail, default_url: "/images/missing_book_thumbnail.png"
   has_attached_file :cover, default_url: "/images/missing_book.png"
   validates_attachment_content_type :thumbnail, :content_type => ["image/jpg", "image/jpeg", "image/png"]
   validates_attachment_content_type :cover, :content_type => ["image/jpg", "image/jpeg", "image/png"]

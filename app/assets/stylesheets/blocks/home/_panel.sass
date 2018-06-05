@@ -2,6 +2,7 @@ $pad-title: 70px
 
 .panel
   padding-left: 150px
+  transition: .5s
   .pad-title
     padding-left: $pad-title
 
@@ -31,10 +32,12 @@ $pad-title: 70px
     position: absolute
     top: 20px
     left: $pad-title
-    transform: translateX(-40%) translateY(-50%)
+    transform: translateX(-40%) translateY(-50%) translateZ(0)
+    max-width: 250px
+
 
   &__title
-    transform: rotate(var(--scrollable, 0))
+    transform: rotate(var(--scrollable, 0)) translateZ(0) 
     
     &-huge
       font-size: 100px
@@ -45,6 +48,7 @@ $pad-title: 70px
       flex-grow: 1
       padding-left: $pad-title
       width: 100%
+      transform: translateX(var(--scrollable, 0)) translateZ(0)
     
     &-line
       letter-spacing: -4px
@@ -82,8 +86,10 @@ $pad-title: 70px
           &-title
             opacity: 1
           &-content
-            transform: translateY(0)
+            transform: translateY(0) translateZ(0)
             opacity: 1
+          &-separator
+            width: 100%
 
 
     &-content
@@ -93,7 +99,7 @@ $pad-title: 70px
       margin-bottom: 10px
       transition: .8s
       opacity: 0
-      transform: translateY(10px)
+      transform: translateY(10px) translateZ(0)
 
     &-title
       font-weight: bold
@@ -107,9 +113,11 @@ $pad-title: 70px
       background-color: #AAA
       display: block
       margin: 30px 0
+      transition: .4s ease-in-out .4s
+      width: 0
 
   &__background
-    transform: translateY(var(--scrollable, 0px))
+    transform: translateY(var(--scrollable, 0px)) translateZ(0)
     display: block
     position: absolute
     z-index: -1
@@ -167,6 +175,7 @@ $pad-title: 70px
         flex-grow: initial
     
     &__background
+      right: 0
       video, img
         height: 650px
         position: absolute
@@ -242,7 +251,7 @@ $pad-title: 70px
       position: relative
       left: 90px
       margin-bottom: 40px
-      transform: scale(var(--scrollable, 1))
+      transform: scale(var(--scrollable, 1)) translateZ(0)
       video
         width: 120%
 
@@ -260,9 +269,11 @@ $pad-title: 70px
   width: 180px
   margin: auto
   display: block
-  // position: relative
-  // left: 35px
   margin-top: 20px
+
+.spaceship__container
+  padding-left: 70px
+  transition: .5s
 
 #section-6
   
@@ -295,3 +306,4 @@ $pad-title: 70px
 @media screen and (max-width: 1200px)
   .panel
     padding-left: 0px
+

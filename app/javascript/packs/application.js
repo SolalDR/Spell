@@ -10,6 +10,7 @@ import BardManager from "./components/bard.js"
 import Http from "./components/http.js"
 import MagicBox from "./components/MagicBox.js"
 import Home from "./home.js";
+import Scrollable from "./components/Scrollable.js";
 
 window.Http = Http;
 window.Bard = Bard;
@@ -24,6 +25,7 @@ window.addEventListener("load", ()=>{
   RessourceForm.init();
   MagicBox.init();
   Home.init();
+  Scrollable.initialize();
 
   document.querySelectorAll(".field input").forEach(input => {
     input.setAttribute("data-value", input.value);

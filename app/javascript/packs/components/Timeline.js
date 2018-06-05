@@ -38,23 +38,25 @@ export default {
     this.initListener();
   },
 
-  initListener: function(){
-    window.addEventListener("scroll", ()=>{
-      
-      var top = window.scrollTop;
-      this.visible = ( top < window.innerHeight * 0.75) ? false : true
-      
-      if (this.moving) return; 
-      var nearest = null;
-      for(var i=0; i<this.items.length; i++){
-        if(Math.abs(top - this.items[i].top) < 100) {
-          nearest = this.items[i];
-        }
+  onScroll: function(){
+    var top = window.scrollTop;
+    this.visible = ( top < window.innerHeight * 0.75) ? false : true
+    
+    if (this.moving) return; 
+    var nearest = null;
+    for(var i=0; i<this.items.length; i++){
+      if(Math.abs(top - this.items[i].top) < 100) {
+        nearest = this.items[i];
       }
+    }
 
-      
+    if( this.current !== nearest && nearest ) this.current = nearest;
+  },
 
-      if( this.current !== nearest && nearest ) this.current = nearest;
+  initListener: function(){
+    this.onScroll();
+    window.addEventListener("scroll", ()=>{
+      this.onScroll();
     })
   },
 

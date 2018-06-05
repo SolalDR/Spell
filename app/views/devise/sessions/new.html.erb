@@ -1,39 +1,35 @@
 <div class="container devise-container">
   <div class="row">
     <div class="mx-auto my-auto devise">
-      <h2>Connexion</h2>
+      
+      <%= image_tag "logo-vertical.svg", class: "devise__logo animate--from-fade-bottom delay-5", data: {scrollable: "", "scrollable-modifier": "animate--launched"} %>
+
+      <h2 class="animate--from-fade-bottom delay-4" data-scrollable data-scrollable-modifier="animate--launched">Connexion</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
+        <div class="field animate--from-fade-bottom delay-3" data-scrollable data-scrollable-modifier="animate--launched">
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           <%= f.label :email, value: "Nom d'utilisateur" %>
         </div>
 
-        <div class="field">
+        <div class="field animate--from-fade-bottom delay-3" data-scrollable data-scrollable-modifier="animate--launched">
           <%= f.password_field :password, autocomplete: "off" %>
           <%= f.label :password, value: "Mot de passe" %>
         </div>
   
-        <div class="text-right">
+        <div class="text-right animate--from-fade-bottom delay-2" data-scrollable data-scrollable-modifier="animate--launched">
           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
             <%= link_to "Mot de passe oublié ?", new_password_path(resource_name), class: "color-grey" %><br />
           <% end -%>
         </div>
-        
+      
 
-        <% if devise_mapping.rememberable? -%>
-          <!-- <div class="field">
-            <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div> -->
-        <% end -%>
-
-        <div class="actions text-right">
+        <div class="actions text-right animate--from-fade-bottom delay-1" data-scrollable data-scrollable-modifier="animate--launched">
           <%= f.submit "Connexion" %>
         </div>
       <% end %>
       
-      <div class="text-right">
+      <div class="text-right animate--from-fade-bottom" data-scrollable data-scrollable-modifier="animate--launched">
         <%= render "devise/shared/links" %>  
       </div>
       

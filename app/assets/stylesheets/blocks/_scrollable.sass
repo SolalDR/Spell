@@ -1,0 +1,68 @@
+.animate
+  &--from-fade-bottom
+    transition: 
+      duration: .5s 
+      timing-function: ease-in-out
+    transform: translateY(20px) translateZ(0)
+    opacity: 0
+    &.animate--launched
+      transform: translateY(0px) translateZ(0)
+      opacity: 1
+
+
+  &--from-swipe-left
+    overflow: hidden
+    position: relative
+    text-indent: -100%
+    &::after
+      content: ""
+      height: 100%
+      width: 100%
+      background-color: #94a5ed
+      display: block
+      position: absolute
+      left: 0
+      top: 0
+      transform: translateX(-100%)
+      transition: 1s
+
+    &.animate--launched
+      text-indent: 0
+      animation: 
+        name: from-swipe-left
+        duration: 1s
+      &::after
+        transform: translateX(100%)
+        animation: 
+          name: from-swipe-left-after
+          duration: 1s
+
+
+.delay
+  @for $i from 1 to 6
+    &-#{$i}
+      transition-delay: $i*.1s
+
+
+
+@keyframes from-swipe-left
+  0%
+    color: transparent
+  50%
+    color: transparent
+  51%
+    color: #EFEFEF
+  100%
+    color: #EFEFEF
+
+@keyframes from-swipe-left-after
+  0%
+    transform: translateX(-100%)
+  50%
+    transform: translateX(0%)
+  51%
+    transform: translateX(0%)
+  100%
+    transform: translateX(100%)
+
+

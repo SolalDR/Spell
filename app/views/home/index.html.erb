@@ -17,8 +17,8 @@
 
   <section id="section-1" class="panel">
     <div class="container panel__container"> 
-      <div class="panel__block panel__title-container">
-        <span class="panel__count">01</span>
+      <div class="panel__block panel__title-container" data-scrollable="50px">
+        <span class="panel__count animate--from-swipe-left" data-scrollable data-scrollable-modifier="animate--launched">01</span>
         <h2 class="panel__title">
           <span class="panel__title-line">Une application web</span>
           <span class="panel__title-line">pour s'initier à la lecture</span>
@@ -78,8 +78,8 @@
       </div>
       
       <div class="panel__container mt-4 panel__container-2">
-        <div class="panel__block panel__title-container">
-          <span class="panel__count">02</span>
+        <div class="panel__block panel__title-container"  data-scrollable="-20px">
+          <span class="panel__count animate--from-swipe-left" data-scrollable data-scrollable-modifier="animate--launched">02</span>
           <h2 class="panel__title">
             <span class="panel__title-line">Une nouvelle manière</span>
             <span class="panel__title-line">de raconter des histoires</span>
@@ -92,11 +92,11 @@
   <section id="section-3" class="panel">   
     
     <div class="container panel__container panel__container-1"> 
-      <div id="background-section-3" class="panel__background" data-scrollable="20%">
+      <div id="background-section-3" class="panel__background" data-scrollable="25%">
         <%= image_tag "photo.jpg" %>
       </div>
-      <div class="panel__block panel__title-container">
-        <span class="panel__count">03</span>
+      <div class="panel__block panel__title-container" data-scrollable="20px">
+        <span class="panel__count animate--from-swipe-left" data-scrollable data-scrollable-modifier="animate--launched">03</span>
         <h2 class="panel__title">
           <span class="panel__title-line">Des récits</span>
           <span class="panel__title-line">interactifs</span>
@@ -134,8 +134,8 @@
         </video> 
       </div>
 
-      <div class="panel__block panel__title-container">
-        <span class="panel__count">04</span>
+      <div class="panel__block panel__title-container" data-scrollable="-20px">
+        <span class="panel__count animate--from-swipe-left" data-scrollable data-scrollable-modifier="animate--launched">04</span>
         <h2 class="panel__title">
           <span class="panel__title-line">Un héros</span>
           <span class="panel__title-line">personnalisable</span>
@@ -167,8 +167,8 @@
         </video> 
       </div>
 
-      <div class="panel__block panel__title-container">
-        <span class="panel__count">05</span>
+      <div class="panel__block panel__title-container" data-scrollable="50px">
+        <span class="panel__count animate--from-swipe-left" data-scrollable data-scrollable-modifier="animate--launched">05</span>
         <h2 class="panel__title">
           <span class="panel__title-line">Des mondes fantastiques</span>
           <span class="panel__title-line">à explorer</span>
@@ -192,9 +192,9 @@
         </div>
       </div>
 
-      <div class="container text-center pad-title">
-        <%= image_tag "fusee.png", id: "spaceship" %>
-        <a href="" class="btn btn--upperline">Débuter l'aventure</a>
+      <div class="container text-center spaceship__container">
+        <%= image_tag "fusee.png", id: "spaceship", class: "spaceship" %>
+        <%= link_to "Débuter l'aventure", book_marks_path, class: "btn btn--upperline", id: "aventure-start" %>
       </div>
 
     </div>
@@ -205,7 +205,7 @@
     <div class="container panel__container panel__container-1"> 
       <h2 class="panel__title-huge">"Parfois on arrive à<br> faire des choses et<br> c'est cool"</h2>
       <p>_Irène, 6 ans_</p>
-      <div id="background-6" class="panel__background">
+      <div id="background-6" class="panel__background" data-scrollable="25%">
         <%= image_tag "photo.jpg" %>
       </div>
     </div>  

@@ -58,8 +58,9 @@ $gutter: 10px
       margin: 0
       padding: 0
       transition: .2s
-      animation-duration: 2.5s
+      animation-duration: 1s
       animation-name: rotate
+      animation-iteration-count: infinite
       display: inline-block  
       &:hover 
         transform: translateY(-5px)
@@ -81,12 +82,6 @@ $gutter: 10px
   
 @keyframes rotate
   0%
-    transform: rotate(0deg)
-  20%
-    transform: rotate(45deg)
-  35%
-    transform: rotate(0deg)
-  50%
     transform: rotate(0deg)
   100%
     transform: rotate(360deg)

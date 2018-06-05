@@ -21,6 +21,7 @@
     transition: .4s
     position: relative
     padding-left: 25px
+    min-width: 70px
   
     &::after
       content: ""
@@ -36,11 +37,15 @@
     &:hover
       padding-left: 20px
       color: black
+      .timeline__item-count
+        opacity: 1
       &::after
         height: 100%
         background-color: transparentize(#000000, .5)
 
     &--active
+      .timeline__item-count
+        opacity: 1
       &::after
         height: 100%
         background-color: $color-primary !important
@@ -58,6 +63,7 @@
     &-count
       margin-bottom: 15px
       transition: all .3s
+      opacity: 0
       &::before
         content: ""
         display: inline-block
@@ -71,3 +77,7 @@
 @media screen and (max-width: 1200px)
   .timeline
     display: none
+
+@media screen and (min-width: 1450px)
+  .timeline--visible
+    transform: translateX(-250px)

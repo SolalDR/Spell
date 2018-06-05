@@ -1,0 +1,52 @@
+// & => .home
+
+&.disapear
+  #section-1, #section-2, #section-3, #section-4, #section-6, #section-5 .panel__background, #section-5 .panel__background, #section-5 .panel__title-container, #section-5 .panel__container-2, .timeline
+    transition: .5s ease 
+    transform: translateY(-30px)
+    opacity: 0
+  .panel
+    padding-left: 0px
+  .spaceship__container
+    padding-left: 0
+
+
+
+
+#aventure-start
+  transition: .5s
+  animation: 
+    name: fade-cycle
+    duration: 1.5s
+    iteration-count: infinite
+  &.fade
+    opacity: 0
+    animation: none
+  
+#spaceship
+  transition: all .4s
+  &.fly
+    transform: translateX(0px) translateY(-200vh) translateZ(0)
+    animation: 
+      name: fly
+      duration: 2.5s
+      timing-function: cubic-bezier(1,.05,1,.13)
+      iteration-count: 1
+
+
+@keyframes fly
+  0% 
+    transform: translateX(0px) translateZ(0)
+  25% 
+    transform: translateX(0px) translateZ(0)
+  100%
+    transform: translateX(0px) translateY(-200vh) translateZ(0)
+
+
+@keyframes fade-cycle
+  0% 
+    opacity: 0.5
+  50% 
+    opacity: 1
+  100%
+    opacity: 0.5
