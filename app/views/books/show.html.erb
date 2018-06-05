@@ -1,25 +1,26 @@
-<div class="book" style="background-image: url('<%= @book.cover.url %>')">
+<div class="book delay-3" data-scrollable data-scrollable-modifier="book--visible" style="background-image: url('<%= @book.cover.url %>')">
 
   <div class="book__container">
     <div class="container">
-      <%= link_to book_marks_path, class: "book__close-btn" do  %>
+      <%= link_to book_marks_path, class: "book__close-btn animate--from-fade-bottom delay-3 smoothout", data: {scrollable: "",  "scrollable-modifier": "animate--launched", "smoothout-modifier": "main--hidden-bottom"} do  %>
       <i class="material-icons">close</i>
       <% end %>
-      <h1 class="book__title title-1 container__title"><%= @book.title %></h1>
-      <div class="book__specs">
+      <h1 class="book__title title-1 container__title animate--from-fade-bottom delay-3" data-scrollable data-scrollable-modifier="animate--launched"><%= @book.title %></h1>
+      <div class="book__specs animate--from-fade-bottom delay-2" data-scrollable data-scrollable-modifier="animate--launched">
         <p class="book__spec"><%= @book.author %></p>
         <p class="book__spec">A partir de <%= @book.age %> ans</p>
         <p class="book__spec"><%= @book.publisher %></p>
         <p class="book__spec">Durée: 15min</p>
       </div>
-      <div class="book__description">
+      <div class="book__description animate--from-fade-bottom delay-1" data-scrollable data-scrollable-modifier="animate--launched">
         <%= @book.description %>
       </div>
-      <div class="book__actions">
+      <div class="book__actions animate--from-fade-bottom" data-scrollable data-scrollable-modifier="animate--launched">
         <% if @book_mark %>
-          <%= link_to "Commencez l'aventure", read_path(id: @book), class: "btn btn--slide" %>
+          <%= link_to "Commencez l'aventure", read_path(id: @book), class: "btn btn--slide smoothout",
+          data: { "toggle-target": "#header-top-main", "toggle-modifier": "header--slided-top" } %>
         <% else %>
-          <%= link_to "Ajouter à ma bibliothèque", add_book_mark_path(id: @book.id), class: "btn btn--slide" %>
+          <%= link_to "Ajouter à ma bibliothèque", add_book_mark_path(id: @book.id), class: "btn btn--slide smoothout" %>
         <% end %>
       </div>
     </div>

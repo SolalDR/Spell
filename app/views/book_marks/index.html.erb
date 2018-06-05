@@ -12,7 +12,7 @@
 
 <div class="books animate--from-fade-bottom delay-2" data-scrollable data-scrollable-modifier="animate--launched">
   <% @book_marks.each do |book_mark| %>
-    <%= link_to book_path(book_mark.book), class: "books__item" do %>
+    <%= link_to book_path(book_mark.book), class: "books__item smoothout" do %>
       <div class="books__item-img-container">
         <img src="<%= book_mark.book.thumbnail.url %>" class="books__item-img" alt="<%= book_mark.book.title %>">  
       </div>

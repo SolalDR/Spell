@@ -9,24 +9,24 @@
   </head>
 
   <body>
-    <header class="header">
+    <header id="header-top-bard" class="header">
       <div class="container">
          <nav class="header__nav header__nav--left">
           <h1 class="header__brand header__brand--center">
-          <%= link_to root_path do %>
+          <%= link_to root_path, class: "smoothout" do %>
             <%= image_tag "logo-horizontal.svg" %>
           <% end %>
           </h1>
                       
           <ul class="header__menu">
             <li class="header__menu-item">
-              <%= link_to "A propos", root_path %>
+              <%= link_to "A propos", root_path, class: "smoothout"  %>
             </li>
             <li class="header__menu-item">
-              <%= link_to "L'équipe", team_path %>
+              <%= link_to "L'équipe", team_path, class: "smoothout"  %>
             </li>
             <li class="header__menu-item">
-              <%= link_to "Le Magasin", store_path %>
+              <%= link_to "Le Magasin", store_path, class: "smoothout"  %>
             </li>
           </ul>
         </nav>
@@ -38,10 +38,10 @@
             <% if current_user.nil? %>
 
               <li class="header__menu-item">
-                <%= link_to "Connexion", new_user_session_path %>
+                <%= link_to "Connexion", new_user_session_path, class: "smoothout" %>
               </li>
               <li class="header__menu-item">
-                <%= link_to "Inscription", new_user_registration_path %>
+                <%= link_to "Inscription", new_user_registration_path, class: "smoothout" %>
               </li>
 
             <% else %>
@@ -49,13 +49,13 @@
               <nav class="header__nav header__nav--right">
                 <ul class="header__menu">
                   <li class="header__menu-item">
-                    <%= link_to "Ma Bibliothèque", book_marks_path %>
+                    <%= link_to "Ma Bibliothèque", book_marks_path, class: "smoothout" %>
                   </li>
                   <li class="header__menu-item">
                     <a href="#" class="header__drop-btn">Mon Compte</a>
                     <div class="header__drop header__drop--close">
-                      <%= link_to "Paramètre du compte", edit_user_registration_path, class: "header__drop-item" %>
-                      <%= link_to "Déconnexion", destroy_user_session_path, :method => "delete", class: "header__drop-item" %>
+                      <%= link_to "Paramètre du compte", edit_user_registration_path, class: "header__drop-item smoothout" %>
+                      <%= link_to "Déconnexion", destroy_user_session_path, :method => "delete", class: "header__drop-item smoothout" %>
                     </div>
                   </li>
                 </ul>

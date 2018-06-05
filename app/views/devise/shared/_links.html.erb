@@ -1,21 +1,21 @@
 <%- if controller_name != 'sessions' %>
-  <span>Déja un compte ?</span>  <%= link_to "Connexion", new_session_path(resource_name), class: "color-secondary" %><br />
+  <span>Déja un compte ?</span>  <%= link_to "Connexion", new_session_path(resource_name), class: "color-secondary smoothout" %><br />
 <% end -%>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <span>Nouveau sur Spell ? </span><%= link_to "Inscription", new_registration_path(resource_name), class: "color-secondary" %><br />
+  <span>Nouveau sur Spell ? </span><%= link_to "Inscription", new_registration_path(resource_name), class: "color-secondary smoothout" %><br />
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: "smoothout" %><br />
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name), class: "smoothout" %><br />
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Connecter avec #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    <%= link_to "Connecter avec #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), class: "smoothout" %><br />
   <% end -%>
 <% end -%>

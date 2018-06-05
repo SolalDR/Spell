@@ -5,13 +5,22 @@ $gutter: 20px
   position: relative
   background-repeat: no-repeat
   background-size: cover
-  background-position: center bottom
-  transition-delay: .5s
+  background-position: 50% 100vh
   height: calc(100vh - 70px)
+  opacity: 0
 
+  &--visible
+    background-position: 50% bottom
+    opacity: 1
+    animation:
+      name: book-cover-appear
+      duration: 2s
+
+  
   &__close-btn
     position: absolute
     top: 60px
+    z-index: 2
     right: $gutter
     i
       font-size: $font-size-icon
@@ -50,3 +59,17 @@ $gutter: 20px
 
   &__actions
     text-align: left
+
+
+@keyframes book-cover-appear
+  0%
+    opacity: 0
+    background-position: 50% 100vh
+
+  2%
+    opacity: 1
+
+  100%
+    background-position: 50% bottom
+  
+

@@ -19,7 +19,7 @@
   
         <div class="text-right animate--from-fade-bottom delay-2" data-scrollable data-scrollable-modifier="animate--launched">
           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "Mot de passe oublié ?", new_password_path(resource_name), class: "color-grey" %><br />
+            <%= link_to "Mot de passe oublié ?", new_password_path(resource_name), class: "color-grey smoothout" %><br />
           <% end -%>
         </div>
       

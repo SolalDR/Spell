@@ -11,6 +11,7 @@ import Http from "./components/http.js"
 import MagicBox from "./components/MagicBox.js"
 import Home from "./home.js";
 import Scrollable from "./components/Scrollable.js";
+import TransitionPage from "./components/TransitionPage.js";
 
 window.Http = Http;
 window.Bard = Bard;
@@ -26,6 +27,7 @@ window.addEventListener("load", ()=>{
   MagicBox.init();
   Home.init();
   Scrollable.initialize();
+  TransitionPage.init();
 
   document.querySelectorAll(".field input").forEach(input => {
     input.setAttribute("data-value", input.value);
