@@ -87,7 +87,7 @@ class BooksController < ApplicationController
     end
 
     def is_admin?
-      if !current_user.admin?
+      if !current_user || !current_user.admin?
         redirect_to root_path, notice: "Vous n'êtes pas autoriser à modifier ces ressources"
       end
     end

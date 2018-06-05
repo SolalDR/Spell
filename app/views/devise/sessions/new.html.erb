@@ -7,6 +7,7 @@
       <h2 class="animate--from-fade-bottom delay-4" data-scrollable data-scrollable-modifier="animate--launched">Connexion</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
         <div class="field animate--from-fade-bottom delay-3" data-scrollable data-scrollable-modifier="animate--launched">
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           <%= f.label :email, value: "Nom d'utilisateur" %>

@@ -1,0 +1,28 @@
+@function strip-unit($number)
+  @if type-of($number) == 'number' and not unitless($number)
+    @return $number / ($number * 0 + 1)
+
+  @return $number
+
+
+@function scrim-gradient($offsetPercent: 0, $direction: 'to bottom', $startColor: 'black')
+  
+  $scrimCoordinates: ( 0: 1, 19: 0.738, 34: 0.541, 47: 0.382, 56.5: 0.278, 65: 0.194, 73: 0.126, 80.2: 0.075, 86.1: 0.042, 91: 0.021, 95.2: 0.008, 98.2: 0.002, 100: 0)
+
+  
+  $hue: hue($startColor)
+  $saturation: saturation($startColor)
+  $lightness: lightness($startColor)
+  $stops: ()
+  $offset: strip-unit($offsetPercent)/100
+
+  @each $colorStop, $alphaValue in $scrimCoordinates
+    
+    $computedStop: $colorStop*(1 - $offset) + $offset*100
+
+
+    $stop: hsla($hue, $saturation, $lightness, $alphaValue) percentage($computedStop/100)
+    $stops: append($stops, $stop, comma)
+  
+  @return linear-gradient(unquote($direction), $stops)
+
