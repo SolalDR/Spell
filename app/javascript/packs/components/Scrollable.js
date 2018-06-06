@@ -27,7 +27,21 @@ class Scrollable {
 
   constructor(element) {
     this.element = element;
-    this.value = element.getAttribute("data-scrollable");
+    this.from = 0;
+    this.to = 0;
+    var attr = element.getAttribute("data-scrollable");
+    var values = attr.split(/,\s?/);
+
+    this.from = values[1] && values[0] ? values[0] : "0"
+
+    if ( values[1] )
+      this.to = values[1]
+    else if( values[0])
+      this.to = values[0]
+    else
+      this.to = "1";
+
+
     this.modifier = element.getAttribute("data-scrollable-modifier");
     this.offset = element.getAttribute("data-scrollable-offset");
     this.screenRatio = element.getAttribute("data-scrollable-screenRatio");
@@ -37,14 +51,22 @@ class Scrollable {
   }
 
   init() {
-    this.value = this.value ? this.value : "1";
-    this.offset = this.offset ? parseInt(this.offset) : 0;
+    this.offset = this.offset ? parseInt(this.offset): 0;
     this.screenRatio = this.screenRatio ? this.screenRatio : 1;
     this.modifier = this.modifier ? this.modifier : null;
 
-    var extract = this.value.match(/([\-+]?\d+)?([a-z%]*)?/);
-    this.value = extract[1] ? parseInt(extract[1]) : 50;
+    var extract = this.from.match(/([\-+]?\d+)?([a-z%]*)?/);
+    this.from = extract[1] ? parseInt(extract[1]) : 0;
     this.unit = extract[2] ? extract[2] : "";
+
+  
+    var extract = this.to.match(/([\-+]?\d+)?([a-z%]*)?/);
+    this.to = extract[1] ? parseInt(extract[1]) : 1;
+    if( this.unit == "" ){
+      this.unit = extract[2] ? extract[2] : "";
+    }
+
+    this.diff = this.to - this.from;
 
     this.setTop();
   }
@@ -66,20 +88,20 @@ class Scrollable {
     var limit = window.innerHeight + this.element.offsetHeight; 
     var intensity;
     if( diff < 0 )
-      intensity = 0;
+      intensity = this.from;
     else if( diff > limit )
-      intensity = this.value;
+      intensity = this.to;
     else 
-      intensity = diff/limit*this.value;
+      intensity = diff/limit*this.diff + this.from;
 
-    if (intensity > 0 && this.modifier)
+    if (intensity > this.from && this.modifier)
       this.element.classList.add(this.modifier)
-    else if (intensity <= 0 && this.modifier)
+    else if (intensity <= this.from && this.modifier)
       this.element.classList.remove(this.modifier)
 
-    // if( this.element.hasAttribute("data-scrollable-debug")){
-    //  console.log(this.offset, intensity)
-    // }
+    if( this.element.hasAttribute("data-scrollable-debug")){
+     console.log(this.diff, intensity, this.unit)
+    }
     
 
     this.element.style.setProperty("--scrollable", intensity+this.unit);

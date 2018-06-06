@@ -1,19 +1,29 @@
 <div class="home" data-current="#section-1">
 
   <section id="section-landing" class="landing">   
-    <div class="center-y">
-      <svg class="landing__logo" xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 200 216">
-        <g id="logo__group">
-          <path class="landing__logo-left" fill="#143adb" style="opacity: .5;" class="cls-1" d="M9.28,46a46,46,0,0,0,46,46V0A46,46,0,0,0,9.28,46Z"/>
-          <path class="landing__logo-right" fill="#ffcca9" style="opacity: .65;" class="cls-2" d="M82.89,69.46a46,46,0,0,0-46-46V115.5A46,46,0,0,0,82.89,69.46Z"/>
-        </g>
-      </svg>
+    <div class="landing__wrapper" data-scrollable="1, 1" data-scrollable-debug data-scrollable-offset="0">
+
+      <svg class="landing__logo" viewBox="0 0 1380 821" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <path class="landing__logo-video" d="M699.28,302.283227 L699.28,275 C673.874902,275 653.28,295.594902 653.28,321 C653.28,339.866805 664.638335,356.080728 680.889999,363.176765 L680.89,390.5 C693.096892,390.500005 704.803238,385.648099 713.431062,377.012773 C722.058886,368.377446 726.900615,356.666888 726.89,344.46 C726.89,325.593195 715.531665,309.379272 699.280001,302.283235 Z M0,0 L1380,0 L1380,821 L0,821 L0,0 Z" id="Combined-Shape" fill="white"></path>
+      <g transform="translate(653.000000, 275.000000)" fill-rule="nonzero">
+          <path class="landing__logo-left" d="M0.28,46 C0.28,71.4050985 20.8749015,92 46.28,92 L46.28,0 C20.8749015,-1.55561363e-15 0.28,20.5949015 0.28,46 Z" id="Shape" fill="#143ADB" opacity="0.5"></path>
+          <path class="landing__logo-right" d="M73.89,69.46 C73.89,44.0549015 53.2950985,23.46 27.89,23.46 L27.89,115.5 C40.0968921,115.500005 51.8032381,110.648099 60.4310622,102.012773 C69.0588864,93.3774463 73.9006147,81.6668875 73.89,69.46 Z" id="Shape" fill="#FFCCA9" opacity="0.67"></path>
+      </g>
+    </svg>
+
+      <video loop width="852" height="480" autoplay class="landing__video" muted>
+        <source src="/videos/trailer.mp4" type="video/mp4">
+      </video>
+
       <div class="landing__container">
-        <h1 class="landing__content">SPELL</h1>
-        <a class="landing__content landing__content--hidden">Regarder le trailer</a>
+        <h1 class="landing__title">SPELL</h1>
+        <!-- <a class="landing__content landing__content--hidden">Regarder le trailer</a> -->
       </div>
+    
     </div>
+
   </section>
+
 
   <section id="section-1" class="panel">
     <div class="container panel__container"> 
