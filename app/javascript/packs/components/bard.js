@@ -2,6 +2,7 @@ import WordPanel from "./bard/WordPanel.js";
 import SettingsPanel from "./bard/SettingsPanel.js";
 import HelpManager from "./bard/HelpManager.js";
 import MenuManager from "./bard/MenuManager.js";
+import CustomizationManager from "./bard/CustomizationManager.js";
 
 export default {
 
@@ -51,6 +52,7 @@ export default {
         SettingsPanel.init(document.querySelector("#settings-panel"), this);
         MenuManager.init(this);
         HelpManager.init(this);
+        CustomizationManager.init(this);
         this.initListener();   
       })  
     }

@@ -21,8 +21,21 @@ jsonB = {
     "participation": true, 
     "display_quality": "high", 
     "voice_recognition": true
+  },
+  "character": {
+    "color_id": nil,
+    "color_hex": "#139850",
+    "body_parts": {
+      "csqe": 1,
+      "tete": 1,
+      "crps": 1,
+      "bras": 1,
+      "jmbe": 1
+    },
+    "name": "Chevalier Courage",
+    "ressource_id": 1
   }
-} 
+}
 
 b = Book.create!({ 
   :title => "Mission Mars", 

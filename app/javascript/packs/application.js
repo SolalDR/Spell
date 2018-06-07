@@ -39,7 +39,6 @@ window.addEventListener("load", ()=>{
   if( document.querySelector("#tree") ) var tree = new Tree(document.querySelector(".tree"));
 
 
-
   var canvas = document.querySelector("#bard-canvas"); 
   if( canvas ){
     window.loadAsyncScript = loadAsyncScript;

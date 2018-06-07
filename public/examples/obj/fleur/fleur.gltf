@@ -1,0 +1,409 @@
+{
+    "accessors": [
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1896,
+            "max": [
+                4.5394514813779097e-08,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.598534851154909e-07,
+                -1.0,
+                -1.7071067690849304
+            ],
+            "name": "accessor_buffer_CUCurve.078_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1896,
+            "max": [
+                2.3232119872318435e-07,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -3.466394957740704e-07,
+                -1.0,
+                -1.0
+            ],
+            "name": "accessor_buffer_CUCurve.077_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1896,
+            "max": [
+                0.005929352715611458,
+                0.0004200224648229778,
+                0.00845758244395256
+            ],
+            "min": [
+                -0.005811331793665886,
+                -0.0011783863883465528,
+                -0.014031238853931427
+            ],
+            "name": "accessor_buffer_CUCurve.076_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 8,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 79,
+            "max": [
+                3.25
+            ],
+            "min": [
+                0.0
+            ],
+            "name": "accessor_buffer_Curve.031_Curve.031_KeyAction_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1896,
+            "max": [
+                0.0034856246784329414,
+                5.820766091346741e-11,
+                0.0007247200701385736
+            ],
+            "min": [
+                0.0,
+                -2.9103830456733704e-11,
+                -0.0012481613084673882
+            ],
+            "name": "accessor_buffer_CUCurve.077_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 9,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 158,
+            "max": [
+                1.0
+            ],
+            "min": [
+                0.0
+            ],
+            "name": "accessor_buffer_Curve.031_Curve.031_KeyAction_1",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1896,
+            "max": [
+                0.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0,
+                -1.0
+            ],
+            "name": "accessor_buffer_CUCurve.076_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 1068,
+            "max": [
+                1205
+            ],
+            "min": [
+                138
+            ],
+            "name": "accessor_buffer_CUCurve.076_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 828,
+            "max": [
+                1895
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_CUCurve.076_1",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 1896,
+            "max": [
+                0.0,
+                2.9103830456733704e-11,
+                0.0004908503033220768
+            ],
+            "min": [
+                -0.0038597858510911465,
+                -2.9103830456733704e-11,
+                -0.001149594783782959
+            ],
+            "name": "accessor_buffer_CUCurve.078_POSITION_0",
+            "type": "VEC3"
+        }
+    ],
+    "animations": [
+        {
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 0,
+                        "path": "weights"
+                    }
+                }
+            ],
+            "name": "Curve.031_KeyAction",
+            "samplers": [
+                {
+                    "input": 3,
+                    "interpolation": "LINEAR",
+                    "output": 5
+                }
+            ]
+        }
+    ],
+    "asset": {
+        "copyright": "",
+        "generator": "blendergltf v1.2.0",
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 22752,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.076_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 22752,
+            "byteOffset": 22752,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.076_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2140,
+            "byteOffset": 45504,
+            "name": "bufferView_buffer_CUCurve.076_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1660,
+            "byteOffset": 47644,
+            "name": "bufferView_buffer_CUCurve.076_1",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 22752,
+            "byteOffset": 49304,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.077_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 22752,
+            "byteOffset": 72056,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.077_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 22752,
+            "byteOffset": 94808,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.078_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 22752,
+            "byteOffset": 117560,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.078_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 316,
+            "byteOffset": 140312,
+            "byteStride": 4,
+            "name": "bufferView_buffer_Curve.031_Curve.031_KeyAction_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 632,
+            "byteOffset": 140628,
+            "byteStride": 4,
+            "name": "bufferView_buffer_Curve.031_Curve.031_KeyAction_1"
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 141260,
+            "name": "buffer_fleur",
+            "uri": "buffer_fleur.bin"
+        }
+    ],
+    "materials": [
+        {
+            "alphaMode": "BLEND",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "bleu 50",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.0009105807403102517,
+                    0.006512089632451534,
+                    0.06301002949476242,
+                    0.5
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        {
+            "alphaMode": "BLEND",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "bleu 75",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.0009105807403102517,
+                    0.006512089632451534,
+                    0.06301002949476242,
+                    0.75
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "CUCurve.076",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 2
+                    },
+                    "indices": 7,
+                    "material": 1,
+                    "mode": 4,
+                    "targets": [
+                        {
+                            "NORMAL": 1,
+                            "POSITION": 4
+                        },
+                        {
+                            "NORMAL": 0,
+                            "POSITION": 9
+                        }
+                    ]
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 2
+                    },
+                    "indices": 8,
+                    "material": 0,
+                    "mode": 4,
+                    "targets": [
+                        {
+                            "NORMAL": 1,
+                            "POSITION": 4
+                        },
+                        {
+                            "NORMAL": 0,
+                            "POSITION": 9
+                        }
+                    ]
+                }
+            ],
+            "weights": [
+                0.986912190914154,
+                0.0130878034979105
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0,
+            "name": "Curve.031",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "translation": [
+                0.0,
+                0.01405395194888115,
+                -0.0007376526482403278
+            ]
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ]
+}

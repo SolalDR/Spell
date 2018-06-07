@@ -31,6 +31,71 @@
   </div>
 </div>
 
+<div id="customization-panel" class="customization customization--hidden">
+  <h2 class="title-1 text-center">Personnalise ton héros</h2>
+  <div class="customization__sidebar customization__sidebar--left">
+    <h3 class="customization__sub-title">A quoi ressembles-tu ?</h3>
+    <div class="customization__lists">
+       <div id="body-part-categories-container" class="customization__list  customization__list--depth-1">
+        <button id="csqe" class="customization__list-item"><%= image_tag "personnalisation/asset-head-shield" %></button>
+        <button id="tete" class="customization__list-item"><%= image_tag "personnalisation/asset-head" %></button>
+        <button id="crps" class="customization__list-item"><%= image_tag "personnalisation/asset-body" %></button>
+        <button id="bras" class="customization__list-item"><%= image_tag "personnalisation/asset-arm" %></button>
+        <button id="jmbe" class="customization__list-item"><%= image_tag "personnalisation/asset-leg" %></button>
+      </div>
+      <div id="body-part-choices-container" class="customization__list customization__list--depth-2">
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-head-shield" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-head" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-body" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-arm" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-leg" %></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="customization__sidebar customization__sidebar--right">
+    <h3 class="customization__sub-title">De quelle couleur es-tu ?</h3>
+    <div class="customization__section customization__colors">
+      <button data-color="#1a33e3" id="customization-color-blue" class="customization__color"></button>
+      <button data-color="#ffe600" id="customization-color-yellow" class="customization__color"></button>
+      <button data-color="#02114a" id="customization-color-dark" class="customization__color"></button>
+      <button data-color="#ff8d79" id="customization-color-orange" class="customization__color"></button>
+    </div>
+
+    <h3 class="customization__sub-title">Pousse ton cri de guerre</h3>
+    <div class="customization__section mb-2">
+      <div class="text-center flex-1">
+        <h4 class="customization__mention">Enregistrer</h4>
+        <button class="customization__recorder customization__recorder--inactive"></button> 
+      </div>
+      <div class="text-center flex-1">
+        <h4 class="customization__mention">Lire</h4>
+        <button class="customization__play"></button> 
+      </div>
+    </div>
+
+    <h3 class="customization__sub-title">Quel est ton nom ?</h3>
+    <div class="customization__form">
+      <p class="customization__mention customization__form-label">Ton titre</p>
+      <div class="select">
+        <select aria-label="Select menu example" id="title-input">
+          <option selected value="1">Chevalier</option>
+          <option value="2">Chevalière</option>
+          <option value="3">Prince</option>
+          <option value="4">Princesse</option>
+        </select>
+      </div>
+      <p class="customization__mention customization__form-label">Ton Nom</p>
+      <input type="text" class="customization__form-input" id="name-input">
+    </div>
+  </div>
+
+  <div class="customization__cta">
+    <button id="customization-save" class="btn">Partir à l'aventure</button>
+  </div>
+</div>
+
+
 
 <!-- Tree -->
 <div id="arborescence-panel" class="panel panel--hidden">

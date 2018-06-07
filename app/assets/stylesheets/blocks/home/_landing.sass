@@ -49,11 +49,13 @@
   &__video 
     display: block
     position: absolute
-    width: 100%
-    height: 100vh
-    top: 0
-    left: 0
-
+    min-width: 100%
+    min-height: 100vh
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
+    transition: 1s
+    opacity: 0
 
   &__logo
     display: block
@@ -63,11 +65,14 @@
     min-width: 100vw
     top: 50%
     min-height: 100vh
-    transform: translateX(-50%) translateY(-50%) scale(var(--scrollable, 0))
+    transform: translateX(-50%) translateY(-50%) scale(1)
     transform-origin: 50% 43%
+    opacity: 1
+    transition: 1s ease
+
 
     &-left, &-right
-      transition: all .4s
+      transition: all 1s
       transform: rotate(0deg) translateX(0)
       animation: 
         duration: 1.3s
@@ -78,6 +83,41 @@
       animation-name: logo-left-bounce
     &-right
       animation-name: logo-right-bounce
+
+  &--trailer-hover
+    .landing
+      &__logo-left, &__logo-right
+        opacity: 0
+      &__video
+        opacity: 1
+
+  &--trailer-focus
+    .landing
+      &__logo-left, &__logo-right
+        opacity: 0
+      &__video
+        opacity: 1
+      &__logo
+        transform: translateX(-50%) translateY(-40%) scale(3)
+      &__container
+        bottom: 140px 
+        top: auto
+
+
+  &--trailer-show
+    .landing
+      &__logo-left, &__logo-right
+        opacity: 0
+      &__video
+        opacity: 1
+      &__logo
+        transform: translateX(-50%) translateY(-40%) scale(50) 
+        // opacity: 0
+      &__container
+        opacity: 0
+        bottom: 140px 
+        top: auto
+
 
 @keyframes logo-left-bounce
   0%

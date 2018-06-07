@@ -21,10 +21,31 @@ export default  {
     }
   },
 
+  display(){
+    this.header.classList.remove("header--slided-top");
+  },
+
+  hide(){
+    this.header.classList.add("header--slided-top");
+  },
+
+  initListener: function(){
+    window.addEventListener("wheel", (e)=>{
+      if( e.deltaY > 0 )
+        this.hide()
+      else if(e.deltaY < 0)
+        this.display()
+    })
+  },
+
   init: function() {
     this.header = document.querySelector(".header");
+
+    
     if( this.header ){
-      this.manageDropBtns();  
+      this.isWheelSensitive = this.header.classList.contains("header--wheel-sensitive");
+      this.manageDropBtns();
+      if( this.isWheelSensitive ) this.initListener();
     }
   }
   
