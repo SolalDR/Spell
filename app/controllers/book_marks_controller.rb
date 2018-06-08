@@ -21,8 +21,8 @@ class BookMarksController < ApplicationController
     end
 
     if !@book_mark.fragment
-      if @book_mark.book.start_fragment
-        @book_mark.fragment = @book_mark.book.start_fragment
+      if @book_mark.book.fragment
+        @book_mark.fragment = @book_mark.book.fragment
       else 
         @book_mark.fragment = @book_mark.book.fragments.first
       end
@@ -87,7 +87,10 @@ class BookMarksController < ApplicationController
     if @book && current_user
      @book_mark = BookMark.find_by({book: @book, user: current_user}) 
      if !@book_mark
-      @book_mark = BookMark.create!({book: @book, user: current_user, fragment: @book.fragments.first, config: @book.config})
+      @book_mark = BookMark.create({book: @book, user: current_user, fragment: @book.fragments.first, config: @book.config})
+      if @book.fragment
+        @book_mark.fragment = @book.fragment
+      end
       @book_mark.save
      end
     end
