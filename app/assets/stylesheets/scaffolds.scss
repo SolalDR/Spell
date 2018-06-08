@@ -136,6 +136,13 @@ button:focus {
   transform: translateX(-50%);
 }
 
+.bottom-center-medium {
+  position: absolute;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 #alert-manager {
   display: none;

@@ -102,7 +102,7 @@
   <div class="panel__container">
     <button class="panel__close"><i class="material-icons">close</i></button>
     <h2 class="title-1 text-center panel__title"><%= @fragment.book.title %></h2>
-    <a href="" class="btn bottom-center-big">Ma collection de mot</a>
+    <%= link_to "Ma collection de mot", book_marks_box_path(@book_mark), class: "btn bottom-center-medium" %>
   </div>
   <%= render "partials/tree", fragments: @fragments %>
 </div>
