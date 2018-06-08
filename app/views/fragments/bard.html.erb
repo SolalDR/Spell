@@ -2,7 +2,7 @@
 
 <div class="fragment">
   <div class="fragment__background"></div>
-  <canvas id="bard-canvas" data-book="<%= @fragment.book.id %>"></canvas> 
+  <canvas class="fragment__canvas fragment__canvas--hidden" id="bard-canvas" data-book="<%= @fragment.book.id %>"></canvas> 
   <div class="fragment__foreground"></div>
 </div>
 
@@ -102,7 +102,7 @@
   <div class="panel__container">
     <button class="panel__close"><i class="material-icons">close</i></button>
     <h2 class="title-1 text-center panel__title"><%= @fragment.book.title %></h2>
-    <%= link_to "Ma collection de mot", book_marks_box_path(@book_mark), class: "btn bottom-center-medium" %>
+    <%= link_to "Ma collection de mot", book_marks_box_path(@book_mark), class: "btn btn--slide bottom-center-medium smoothout" %>
   </div>
   <%= render "partials/tree", fragments: @fragments %>
 </div>

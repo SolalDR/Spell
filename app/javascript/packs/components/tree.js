@@ -60,14 +60,16 @@ class TreeItem {
     element.style.transform = `rotate(${angle}deg)`;
 
     this.tree.ramificationContainer.appendChild(element)
-
   }
+
 
   generateRamifications() {
     for(var i=0; i<this.children.length; i++){
       this.generateRamification(this.children[i]);
     }
   }
+
+
 
   set position(position) {
     this._position = position;
@@ -121,6 +123,20 @@ class Tree {
     this.generateItems();
     this.generateGrid();
     this.setPositions();
+
+    this.baseHeight = window.innerHeight;
+
+    window.addEventListener("resize", ()=>{
+      var ramifications = document.querySelectorAll(".tree__item-ramification");
+      var diff = window.innerHeight - this.baseHeight;
+      ramifications.forEach(element => {
+        var value = parseInt(element.style.top.match(/(\d+?)px/));
+        if(!isNaN(value)){
+          element.style.top = value + diff + "px"
+        }
+      })
+      this.baseHeight = window.innerHeight;
+    })
   }
 
   setPositions() {
@@ -139,7 +155,12 @@ class Tree {
       }
     });
     this.container.style.width = maxLeft + config.offset.x*2 + "px";
+  }
 
+  onResize(){
+    this.items.forEach(item=>{
+      item.updateRamificationPosition();
+    })
   }
 
   generateGrid() {

@@ -9,7 +9,7 @@
       href="<%= fragment_path(fragment) %>"
       <% if fragment.thumbnail.present? %> style="background-image: url('<%= fragment.thumbnail.url %>')" <% end %>
       id="fragment-<%= fragment.id %>" 
-      class="tree__item"
+      class="tree__item smoothout"
       data-children="<% fragment.children.each do |f| %><%= f.id %><% if fragment.children.last != f %>,<% end %><% end %>">
         
         <p class="tree__item-title"><%= fragment.name %></p>

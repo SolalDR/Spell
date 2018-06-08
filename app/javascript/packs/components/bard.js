@@ -43,10 +43,24 @@ export default {
       }
     })
   },
+
+  displayCanvas: function(){
+    this.canvas.classList.remove("fragment__canvas--hidden");
+  },
+
+  hideCanvas: function(){
+    this.canvas.classList.add("fragment__canvas--hidden");
+  },
   
   init: function(book){
     this.book = book;
     if( this.book ){
+      this.canvas = document.querySelector("#bard-canvas");
+
+      this.book.on("fragment:start", ()=>{
+        this.displayCanvas();  
+      })
+
       this.book.on("start", ()=>{
         WordPanel.init(this, document.querySelector("#word-panel"));
         SettingsPanel.init(document.querySelector("#settings-panel"), this);
