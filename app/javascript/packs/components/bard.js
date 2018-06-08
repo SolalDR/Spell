@@ -48,6 +48,7 @@ export default {
     this.book = book;
     if( this.book ){
       this.book.on("start", ()=>{
+        console.log("------------", this.book.config)
         WordPanel.init(document.querySelector("#word-panel"));
         SettingsPanel.init(document.querySelector("#settings-panel"), this);
         MenuManager.init(this);

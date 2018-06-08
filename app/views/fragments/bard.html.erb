@@ -44,11 +44,11 @@
         <button id="jmbe" class="customization__list-item"><%= image_tag "personnalisation/asset-leg.png" %></button>
       </div>
       <div id="body-part-choices-container" class="customization__list customization__list--depth-2">
-        <button class="customization__list-item"><%= image_tag "personnalisation/asset-head-shield" %></button>
-        <button class="customization__list-item"><%= image_tag "personnalisation/asset-head" %></button>
-        <button class="customization__list-item"><%= image_tag "personnalisation/asset-body" %></button>
-        <button class="customization__list-item"><%= image_tag "personnalisation/asset-arm" %></button>
-        <button class="customization__list-item"><%= image_tag "personnalisation/asset-leg" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-head-shield.png" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-head.png" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-body.png" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-arm.png" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-leg.png" %></button>
       </div>
     </div>
   </div>
@@ -210,7 +210,9 @@
     if( window.book ){
 
       window.book.dictionnary = <%= raw @fragment.book.dictionnary %>
-      window.book.config = <%= raw @book_mark.config.to_json %>
+      window.book.config = <%= @book_mark.config.to_json %>
+
+      console.log(window.book.config);
       window.book.bookMark = <%= @book_mark.id %>
       loadAsyncScript("/books/<%= @fragment.book.id %>/fragments/<%= @fragment.id %>.js", function(element){
         element.parentNode.removeChild(element);
