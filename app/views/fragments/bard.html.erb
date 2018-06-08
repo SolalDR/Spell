@@ -210,7 +210,10 @@
     if( window.book ){
 
       window.book.dictionnary = <%= raw @fragment.book.dictionnary %>
-      window.book.config = <%= @book_mark.config.to_json %>
+      window.book.config = <%= raw @book_mark.config.to_json %>
+      if(typeof window.book.config === "string") {
+        window.book.config = JSON.parse(window.book.config);
+      }
 
       console.log(window.book.config);
       window.book.bookMark = <%= @book_mark.id %>

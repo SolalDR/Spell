@@ -26,7 +26,7 @@ class Word < ApplicationRecord
   has_attached_file :figure, default_url: "/images/missing_book.png"
 
   validates_attachment_content_type :thumbnail, :content_type => ["image/gif", "image/jpg", "image/jpeg", "image/png"]
-  validates_attachment_content_type :figure, :content_type => ["image/gif", "image/jpg", "image/jpeg", "image/png"]
+  validates_attachment_content_type :figure, :content_type => ["image/gif", "image/jpg", "image/jpeg", "image/png", "video/mp4"]
 
   def file_url
     figure.url
