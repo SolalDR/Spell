@@ -27,7 +27,7 @@ class Book < ApplicationRecord
   has_many :book_marks, dependent: :destroy
   has_many :words, dependent: :destroy
   has_many :ressources, as: :ressourceable, :dependent => :destroy
-  has_one :fragment
+  belongs_to :fragment
   
   has_attached_file :thumbnail, default_url: "/images/missing_book_thumbnail.png"
   has_attached_file :cover, default_url: "/images/missing_book.png"
