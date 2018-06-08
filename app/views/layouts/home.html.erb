@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
@@ -17,7 +18,7 @@
             <%= image_tag "logo-horizontal.svg" %>
           <% end %>
           </h1>
-                      
+
           <ul class="header__menu">
             <li class="header__menu-item">
               <%= link_to "A propos", root_path, class: "smoothout"  %>

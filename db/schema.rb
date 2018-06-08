@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180515132901) do
+ActiveRecord::Schema.define(version: 20180608140947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180515132901) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.integer  "fragment_id"
+    t.index ["fragment_id"], name: "index_books_on_fragment_id", using: :btree
   end
 
   create_table "fragment_links", force: :cascade do |t|

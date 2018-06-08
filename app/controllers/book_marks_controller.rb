@@ -21,7 +21,11 @@ class BookMarksController < ApplicationController
     end
 
     if !@book_mark.fragment
-      @book_mark.fragment = @book_mark.book.fragments.first
+      if @book_mark.book.start_fragment
+        @book_mark.fragment = @book_mark.book.start_fragment
+      else 
+        @book_mark.fragment = @book_mark.book.fragments.first
+      end
     end
 
     redirect_to @book_mark.fragment
