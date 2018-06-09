@@ -100,7 +100,7 @@ class Scrollable {
       this.element.classList.remove(this.modifier)
 
     if( this.element.hasAttribute("data-scrollable-debug")){
-     console.log(this.diff, intensity, this.unit)
+     console.log(this, intensity)
     }
     
 

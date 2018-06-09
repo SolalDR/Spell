@@ -129,12 +129,25 @@ export default {
 
   execute: function(string){
     var words = string.split(/\s+?/);
+    console.log(words);
+
     for(var i in words){
       if(this.commands[words[i]]) {
         if( this.commands[words[i]].path ){
           this.addComposite(this.commands[words[i]].path, this.commands[words[i]].options);  
         } else {
           this.executeAction(words[i]);  
+        }
+      } else {
+        for(var key in this.commands) {
+          if(this.commands[key].synonymous){
+            for(var j=0; j<this.commands[key].synonymous.length; j++){
+              console.log(this.commands[key].synonymous[j])
+              if( this.commands[key].synonymous[j] === words[i] ) {
+                this.addComposite(this.commands[key].path, this.commands[key].options);  
+              }
+            } 
+          }
         }
       }
     }

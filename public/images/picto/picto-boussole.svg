@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="47px" viewBox="0 0 40 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>picto-boussole</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.1136,20.0992906 C0.1136,31.0990933 9.0378,40.0163237 20.0462,40.0163237 C31.0546,40.0163237 39.9788,31.0990933 39.9788,20.0992906 C39.9788,9.09948794 31.0546,0.182257549 20.0462,0.182257549 C9.0378,0.182257549 0.1136,9.09948794 0.1136,20.0992906 Z" id="path-1"></path>
+        <path d="M0.0083862069,14.5556565 C0.0083862069,22.5515227 6.46356913,29.0337144 14.4256736,29.0337144 C22.3881773,29.0337144 28.8429609,22.5515227 28.8429609,14.5556565 C28.8429609,6.55979038 22.3881773,0.0775986207 14.4256736,0.0775986207 C6.46356913,0.0775986207 0.0083862069,6.55979038 0.0083862069,14.5556565 Z" id="path-3"></path>
+        <polygon id="path-5" points="0.156263736 0.1287161 10.2141099 0.1287161 10.2141099 10.2289572 0.156263736 10.2289572"></polygon>
+        <polygon id="path-7" points="4.71728302 9.92821005 10.4931824 3.36052842 0.0545408805 0.156558093"></polygon>
+        <polygon id="path-9" points="0.0402515723 6.72085791 10.4790943 9.92482823 5.81615094 0.152977349"></polygon>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="picto-boussole">
+            <g id="Group-23">
+                <g id="Group-45" opacity="0.75" transform="translate(0.000000, 5.738372)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-44"></g>
+                    <polygon id="Fill-43" fill="#143ADB" mask="url(#mask-2)" points="-1.9204 42.0485353 42.0126 42.0485353 42.0126 -1.85015394 -1.9204 -1.85015394"></polygon>
+                </g>
+                <g id="Group-48" opacity="0.752490942" transform="translate(5.714286, 11.476744)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-47"></g>
+                    <polygon id="Fill-46" fill="#FFFEFE" mask="url(#mask-4)" points="-2.02187455 31.0727335 30.8738207 31.0727335 30.8738207 -1.96162095 -2.02187455 -1.96162095"></polygon>
+                </g>
+                <g id="Group-51" opacity="0.497056159" transform="translate(14.857143, 0.000000)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <g id="Clip-50"></g>
+                    <polygon id="Fill-49" fill="#143ADB" mask="url(#mask-6)" points="-1.85538462 12.2490849 12.2257582 12.2490849 12.2257582 -1.89141158 -1.85538462 -1.89141158"></polygon>
+                </g>
+                <g id="Group-54" transform="translate(12.952381, 19.510465)">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <g id="Clip-53"></g>
+                    <polygon id="Fill-52" fill="#143ADB" mask="url(#mask-8)" points="2.74046792 -5.98145413 13.3807698 3.1609815 4.91928553 12.7822422 -5.72101635 3.63980657"></polygon>
+                </g>
+                <g id="Group-57" opacity="0.497056159" transform="translate(17.523810, 22.570930)">
+                    <mask id="mask-10" fill="white">
+                        <use xlink:href="#path-9"></use>
+                    </mask>
+                    <g id="Clip-56"></g>
+                    <polygon id="Fill-55" fill="#143ADB" mask="url(#mask-10)" points="7.79294591 16.0625421 -2.84715472 6.92010643 5.61432956 -2.70115427 16.2544302 6.44128136"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

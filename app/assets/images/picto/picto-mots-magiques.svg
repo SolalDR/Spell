@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>picto-mots-magiques</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.07388 17.11938 0.07388 17.11938 34.31228 0 34.31228"></polygon>
+    </defs>
+    <g id="symboles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="picto-mots-magiques">
+            <g id="Group" transform="translate(0.000000, 2.000000)">
+                <polygon id="Fill-1" fill="#143ADB" opacity="0.496716486" points="17.1194 35.5262 22.8808 35.5262 22.8808 8.5596 17.1194 8.5596"></polygon>
+                <polygon id="Fill-3" fill="#143ADB" opacity="0.504528986" points="22.8400024 8.57152 22.8400024 25.69072 22.8400024 34.25032 39.9592024 25.69072 39.9592024 8.57152 39.9592024 0.01192"></polygon>
+                <polygon id="Fill-5" fill="#143ADB" opacity="0.502547554" points="26.4474 12.9064 36.303 12.9064 36.303 11.0866 26.4474 11.0866"></polygon>
+                <polygon id="Fill-7" fill="#143ADB" opacity="0.502547554" points="26.44734 12.90642 26.44734 17.83422 36.30294 12.90642"></polygon>
+                <polygon id="Fill-9" fill="#143ADB" opacity="0.502547554" points="36.30292 11.0867 36.30292 6.1589 26.44732 11.0867"></polygon>
+                <g id="Group-13" opacity="0.497735507" transform="translate(0.059998, 0.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-12"></g>
+                    <polygon id="Fill-11" fill="#143ADB" mask="url(#mask-2)" points="-2e-05 0.07388 -2e-05 8.63348 -2e-05 25.75268 17.11938 34.31228 17.11938 25.75268 17.11938 8.63348"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

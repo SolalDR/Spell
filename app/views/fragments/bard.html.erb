@@ -7,11 +7,28 @@
 </div>
 
 
+<div class="loader">
+  <svg xmlns="http://www.w3.org/2000/svg" class="loader__svg" viewBox="0 -20 99.16 170.65">
+    <title>logo-vertical</title>
+    <g id="Calque_1" data-name="Calque 1">
+      <path class="loader__left" fill="#143adb" style="opacity: 0.5;" d="M9.28,46a46,46,0,0,0,46,46V0A46,46,0,0,0,9.28,46Z"/>
+      <path class="loader__right" fill="#ffcca9" style="opacity: 0.5;" d="M82.89,69.46a46,46,0,0,0-46-46V115.5A46,46,0,0,0,82.89,69.46Z"/>
+    </g>
+  </svg>
+</div>
+
 <!-- Menu -->
 <div id="controller" class="control control--hide">
   <button id="control-menu-btn" class="control__btn">
     <i class="material-icons">pause</i>
   </button>
+
+  <div class="control__out control__out--6">
+    <button id="pass-interaction-btn" class="control__btn control__out-item control__out-item--dark control__out-item--no-label">
+      <%= image_tag "picto/picto-arrow.svg" %>
+    </button>
+  </div>
+
   <div class="control__menu">
     <button class="control__btn control__menu-item" data-target="help">
       <%= image_tag "picto/picto-_.svg" %>
@@ -43,12 +60,12 @@
         <button id="bras" class="customization__list-item"><%= image_tag "personnalisation/asset-arm.png" %></button>
         <button id="jmbe" class="customization__list-item"><%= image_tag "personnalisation/asset-leg.png" %></button>
       </div>
-      <div id="body-part-choices-container" class="customization__list customization__list--depth-2">
-        <button class="customization__list-item"><%= image_tag "personnalisation/asset-head-shield.png" %></button>
+      <div id="body-part-choices-container" class="customization__list customization__list--hidden customization__list--depth-2">
+       <!--  <button class="customization__list-item"><%= image_tag "personnalisation/asset-head-shield.png" %></button>
         <button class="customization__list-item"><%= image_tag "personnalisation/asset-head.png" %></button>
         <button class="customization__list-item"><%= image_tag "personnalisation/asset-body.png" %></button>
         <button class="customization__list-item"><%= image_tag "personnalisation/asset-arm.png" %></button>
-        <button class="customization__list-item"><%= image_tag "personnalisation/asset-leg.png" %></button>
+        <button class="customization__list-item"><%= image_tag "personnalisation/asset-leg.png" %></button> -->
       </div>
     </div>
   </div>
@@ -63,13 +80,11 @@
     </div>
 
     <h3 class="customization__sub-title">Pousse ton cri de guerre</h3>
-    <div class="customization__section mb-2">
+    <div class="customization__section mb-3">
       <div class="text-center flex-1">
-        <h4 class="customization__mention">Enregistrer</h4>
         <button class="customization__recorder customization__recorder--inactive"></button> 
       </div>
-      <div class="text-center flex-1">
-        <h4 class="customization__mention">Lire</h4>
+      <div class="text-center flex-1 customization__play-container customization__play-container--hidden">
         <button class="customization__play"></button> 
       </div>
     </div>

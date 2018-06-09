@@ -3,7 +3,17 @@
     transition: 
       duration: .5s 
       timing-function: ease-in-out
-    transform: translateY(20px) translateZ(0)
+    transform: translateY(30px) translateZ(0)
+    opacity: 0
+    &.animate--launched
+      transform: translateY(0px) translateZ(0)
+      opacity: 1
+
+  &--from-fade-top
+    transition: 
+      duration: .5s 
+      timing-function: ease-in-out
+    transform: translateY(-30px) translateZ(0)
     opacity: 0
     &.animate--launched
       transform: translateY(0px) translateZ(0)

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>picto-info</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 40 0 40 39.99998 0 39.99998"></polygon>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="picto-info">
+            <g id="Group">
+                <g id="Group-3" opacity="0.500849185">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M40,19.99998 C40,8.95418 31.0458,-2e-05 20,-2e-05 C8.9542,-2e-05 0,8.95418 0,19.99998 C0,31.04578 8.9542,39.99998 20,39.99998 C31.0458,39.99998 40,31.04578 40,19.99998" id="Fill-1" fill="#143ADB" mask="url(#mask-2)"></path>
+                </g>
+                <polygon id="Fill-4" fill="#143ADB" points="18.0172 30.2108 21.9828 30.2108 21.9828 15.0976 18.0172 15.0976"></polygon>
+                <path d="M18.01718,11.7721 C18.01718,12.8671 18.90498,13.7549 19.99998,13.7549 C21.09518,13.7549 21.98278,12.8671 21.98278,11.7721 C21.98278,10.6771 21.09518,9.7893 19.99998,9.7893 C18.90498,9.7893 18.01718,10.6771 18.01718,11.7721" id="Fill-5" fill="#143ADB"></path>
+            </g>
+        </g>
+    </g>
+</svg>

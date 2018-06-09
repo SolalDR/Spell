@@ -1,0 +1,35 @@
+.loader
+
+  position: fixed
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
+  width: 100px
+  height: 100px
+  z-index: -1
+
+  &__svg
+    width: 100%
+    height: 100%
+
+  &__left, &__right
+    animation: 
+      name: loader-part
+      duration: 2s
+      iteration-count: infinite
+      timing-function: cubic-bezier(0.24, 0.01, 0.74, 1.01)
+
+  &__right
+    animation-delay: 1s
+
+
+
+@keyframes loader-part
+  0%
+    transform: translateX(0) translateY(0) translateZ(0)
+  
+  50%
+    transform: translateX(0) translateY(-15px) translateZ(0)
+
+  100%
+    transform: translateX(0) translateY(0px) translateZ(0)

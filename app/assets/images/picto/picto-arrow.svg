@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="35px" viewBox="0 0 21 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>fleche-passer-interaction</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.132192 20.77774 0.132192 20.77774 20.909932 0 20.909932"></polygon>
+        <polygon id="path-3" points="0 1.7e-05 20.77774 1.7e-05 20.77774 20.777757 0 20.777757"></polygon>
+    </defs>
+    <g id="-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="fleche-passer-interaction">
+            <g id="Group-2">
+                <g id="Group-3" opacity="0.748697917" transform="translate(0.000000, 13.090000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <polygon id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)" points="16.999966 0.132192 -3.4e-05 17.132192 3.777706 20.909932 20.777876 3.909932"></polygon>
+                </g>
+                <g id="Group-6" opacity="0.745810688">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <g id="Clip-5"></g>
+                    <polygon id="Fill-4" fill="#FFFFFF" mask="url(#mask-4)" points="20.777825 17.000017 3.777825 1.7e-05 -8.5e-05 3.777757 16.999915 20.777757"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,9 +6,6 @@ $pad-title: 70px
   .pad-title
     padding-left: $pad-title
 
-  & > .panel__container
-    // padding-left: 100px
-
   &__container
     width: 100%
     display: flex
@@ -27,13 +24,18 @@ $pad-title: 70px
     line-height: 170px
     font-weight: 300
     color: #EFEFEF
-    opacity: .7
+    opacity: 0
     z-index: -1
     position: absolute
     top: 20px
     left: $pad-title
-    transform: translateX(-40%) translateY(-50%) translateZ(0)
+    transform: translateX(-40%) translateY(50%) translateZ(0)
     max-width: 250px
+    transition: 1s cubic-bezier(0.02, 0.74, 0.25, 1)
+
+    &--visible
+      transform: translateX(-40%) translateY(-50%) translateZ(0)
+      opacity: .7
 
 
   &__title
@@ -56,15 +58,30 @@ $pad-title: 70px
       line-height: 60px
       font-weight: bold
       display: block
+      opacity: 0
+      transform: translateY(-40px) translateZ(0)
+      transition: 1s ease-out
+
       &:nth-child(1)
         color: black
+        transition-delay: .1s
       &:nth-child(2)
         color: $color-primary
         font-style: italic
+        
+    &-container--visible
+      .panel__title-line
+        opacity: 1
+        transform: translateY(0%) translateZ(0)
 
   &__text
     &-container
       max-width: 320px
+
+      & > *
+        transform: translateY(30px) translateZ(0)
+        opacity: 0
+        transition-duration: .8s ease-in-out
 
       &--horizontal
         max-width: none
@@ -80,8 +97,10 @@ $pad-title: 70px
           &:last-child
             border-right: none
 
-      &--visible
-        opacity: 1
+      &--visible        
+        & > *
+          transform: translateY(0) !important
+          opacity: 1 !important
         .panel__text
           &-title
             opacity: 1
@@ -97,7 +116,7 @@ $pad-title: 70px
       font-size: $font-size-normal
       line-height: 20px
       margin-bottom: 10px
-      transition: .8s
+      transition-duration: .8s
       opacity: 0
       transform: translateY(10px) translateZ(0)
 
@@ -105,7 +124,7 @@ $pad-title: 70px
       font-weight: bold
       font-size: 30px
       margin-bottom: 25px
-      transition: .4s
+      transition-duration: .4s
       opacity: 0
 
     &-separator
@@ -148,7 +167,7 @@ $pad-title: 70px
       flex-direction: column
     
     &__background
-      img
+      img, video
         height: 550px
         position: absolute
         left: 0
@@ -223,7 +242,7 @@ $pad-title: 70px
         margin-top: 180px
 
     &__background
-      height: 650px
+      height: 550px
       position: absolute
       top: 0
       left: auto

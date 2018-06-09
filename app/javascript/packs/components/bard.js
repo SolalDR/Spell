@@ -35,12 +35,17 @@ export default {
 
   initListener: function(){
     var self = this;
+    
     this.book.on("fragment:start", function(fragment){
       for(var i=0; i<fragment.elements.length; i++){
         if( fragment.elements[i].type == "text" && self.book.dictionnary ){
           self.manageDictionnary(fragment.elements[i]);
         }
       }
+    })
+
+    this.passInteractionButton.addEventListener("click", ()=>{
+      this.book.currentFragment.executeAction();
     })
   },
 
@@ -55,6 +60,8 @@ export default {
   init: function(book){
     this.book = book;
     if( this.book ){
+
+      this.passInteractionButton = document.querySelector("#pass-interaction-btn");
       this.canvas = document.querySelector("#bard-canvas");
 
       this.book.on("fragment:start", ()=>{

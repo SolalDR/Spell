@@ -51,7 +51,7 @@ $color: transparentize(#a9b7f5, 0.5)
     border-radius: $size
     transition: .4s
 
-    @for $i from 0 to 5
+    @for $i from 0 to 7
       &--#{$i}
         bottom: #{($size+$gutter)*($i) + $gutter*2}
 
@@ -76,6 +76,15 @@ $color: transparentize(#a9b7f5, 0.5)
         background-color: $color
         border-radius: 100%
         z-index: -1
+
+      &--dark
+        background-color: #253682
+        &::before
+          display: none
+          
+
+      &--no-label
+        transform: scale(1) rotate(0deg) translateY(25px)
 
       img
         height: 60%

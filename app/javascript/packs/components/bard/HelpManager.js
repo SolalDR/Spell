@@ -49,7 +49,7 @@ export default {
 
     messageEl.innerHTML = message.message.replace(/\{\{\s*content\s*?\}\}/g, content);; 
     if( !message.image ) message.image = message.type;
-    image.src = `/assets/picto/picto-${message.image}.svg`
+    image.src = `/images/picto/picto-${message.image}.svg`
 
     el.appendChild(messageEl);
     el.appendChild(image);

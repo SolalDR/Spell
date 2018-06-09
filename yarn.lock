@@ -3053,9 +3053,9 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-js-bard@0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/js-bard/-/js-bard-0.3.4.tgz#82c97533e0a542f9c33e180bd2e70b93b8f10d2a"
+js-bard@0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/js-bard/-/js-bard-0.3.6.tgz#4e172659ece837e82f3d3c5fa9d5d4ee30535760"
   dependencies:
     annyang "^2.6.0"
     recorder-js "1.0.7"

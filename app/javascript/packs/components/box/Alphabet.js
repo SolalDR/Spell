@@ -168,6 +168,8 @@ export default {
       if( e.keyCode == 13 ){
         this.playground.refresh();
         this.onEnter.call(this, this.playground.currentString);
+        e.preventDefault();
+        return false;
       }
 
       if (e.keyCode == 8) {
