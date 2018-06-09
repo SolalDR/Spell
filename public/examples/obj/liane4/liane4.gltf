@@ -1,0 +1,410 @@
+{
+    "accessors": [
+        {
+            "bufferView": 5,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 943,
+            "max": [
+                0.0,
+                2.3283064365386963e-10,
+                0.0
+            ],
+            "min": [
+                0.0,
+                0.0,
+                -0.003764532506465912
+            ],
+            "name": "accessor_buffer_CUCurve.009_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 7,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 50,
+            "max": [
+                2.0416666666666665
+            ],
+            "min": [
+                0.0
+            ],
+            "name": "accessor_buffer_Curve.006_Curve.006_brutale_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 8,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 100,
+            "max": [
+                1.0
+            ],
+            "min": [
+                0.0
+            ],
+            "name": "accessor_buffer_Curve.006_Curve.006_brutale_1",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 943,
+            "max": [
+                0.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0,
+                -9.647596925788093e-06
+            ],
+            "name": "accessor_buffer_CUCurve.007_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 943,
+            "max": [
+                -0.0013829170493409038,
+                0.0020479902159422636,
+                -0.0027370331808924675
+            ],
+            "min": [
+                -0.1560380756855011,
+                0.0,
+                -0.14794088900089264
+            ],
+            "name": "accessor_buffer_CUCurve.007_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 10,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 100,
+            "max": [
+                0.699999988079071
+            ],
+            "min": [
+                0.0
+            ],
+            "name": "accessor_buffer_Curve.006_Curve.006_doux_1",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 943,
+            "max": [
+                0.03948173299431801,
+                0.0,
+                0.0
+            ],
+            "min": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "accessor_buffer_CUCurve.008_POSITION_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 943,
+            "max": [
+                0.0,
+                5.960464477539063e-08,
+                6.625896730838576e-06
+            ],
+            "min": [
+                0.0,
+                -5.960464477539063e-08,
+                -3.3225460356334224e-06
+            ],
+            "name": "accessor_buffer_CUCurve.008_NORMAL_0",
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 951,
+            "max": [
+                942
+            ],
+            "min": [
+                0
+            ],
+            "name": "accessor_buffer_CUCurve.007_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 9,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 50,
+            "max": [
+                2.0416666666666665
+            ],
+            "min": [
+                0.0
+            ],
+            "name": "accessor_buffer_Curve.006_Curve.006_doux_0",
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 6,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 943,
+            "max": [
+                0.0,
+                5.960464477539063e-08,
+                1.1255529784648388e-05
+            ],
+            "min": [
+                -5.998329055678653e-10,
+                0.0,
+                -1.3512441000784747e-05
+            ],
+            "name": "accessor_buffer_CUCurve.009_NORMAL_0",
+            "type": "VEC3"
+        }
+    ],
+    "animations": [
+        {
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 0,
+                        "path": "weights"
+                    }
+                }
+            ],
+            "name": "Curve.006_brutale",
+            "samplers": [
+                {
+                    "input": 1,
+                    "interpolation": "LINEAR",
+                    "output": 2
+                }
+            ]
+        },
+        {
+            "channels": [
+                {
+                    "sampler": 0,
+                    "target": {
+                        "node": 0,
+                        "path": "weights"
+                    }
+                }
+            ],
+            "name": "Curve.006_doux",
+            "samplers": [
+                {
+                    "input": 9,
+                    "interpolation": "LINEAR",
+                    "output": 5
+                }
+            ]
+        }
+    ],
+    "asset": {
+        "copyright": "",
+        "generator": "blendergltf v1.2.0",
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 11316,
+            "byteOffset": 0,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.007_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 11316,
+            "byteOffset": 11316,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.007_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1904,
+            "byteOffset": 22632,
+            "name": "bufferView_buffer_CUCurve.007_0",
+            "target": 34963
+        },
+        {
+            "buffer": 0,
+            "byteLength": 11316,
+            "byteOffset": 24536,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.008_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 11316,
+            "byteOffset": 35852,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.008_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 11316,
+            "byteOffset": 47168,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.009_POSITION_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 11316,
+            "byteOffset": 58484,
+            "byteStride": 12,
+            "name": "bufferView_buffer_CUCurve.009_NORMAL_0",
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteLength": 200,
+            "byteOffset": 69800,
+            "byteStride": 4,
+            "name": "bufferView_buffer_Curve.006_Curve.006_brutale_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 400,
+            "byteOffset": 70000,
+            "byteStride": 4,
+            "name": "bufferView_buffer_Curve.006_Curve.006_brutale_1"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 200,
+            "byteOffset": 70400,
+            "byteStride": 4,
+            "name": "bufferView_buffer_Curve.006_Curve.006_doux_0"
+        },
+        {
+            "buffer": 0,
+            "byteLength": 400,
+            "byteOffset": 70600,
+            "byteStride": 4,
+            "name": "bufferView_buffer_Curve.006_Curve.006_doux_1"
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 71000,
+            "name": "buffer_groupe liane4",
+            "uri": "buffer_groupe_liane4.bin"
+        }
+    ],
+    "materials": [
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": false,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "SVGMat",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    1.0,
+                    0.10461650043725967,
+                    0.09530746936798096,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "CUCurve.007",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 3,
+                        "POSITION": 4
+                    },
+                    "indices": 8,
+                    "material": 0,
+                    "mode": 4,
+                    "targets": [
+                        {
+                            "NORMAL": 7,
+                            "POSITION": 6
+                        },
+                        {
+                            "NORMAL": 10,
+                            "POSITION": 0
+                        }
+                    ]
+                }
+            ],
+            "weights": [
+                0.43570461869239807,
+                0.965298056602478
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "mesh": 0,
+            "name": "Curve.006",
+            "rotation": [
+                -0.7071068286895752,
+                0.0,
+                0.0,
+                0.7071067094802856
+            ],
+            "scale": [
+                6.5139265060424805,
+                6.5139265060424805,
+                6.5139265060424805
+            ],
+            "translation": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "extras": {
+                "background_color": [
+                    0.05087608844041824,
+                    0.05087608844041824,
+                    0.05087608844041824
+                ],
+                "frames_per_second": 24
+            },
+            "name": "Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ]
+}
