@@ -4,12 +4,16 @@ RailsAdmin.config do |config|
 
   ## == Devise ==
   # config.authenticate_with do
-  #   warden.authenticate! scope: :user
+    # warden.authenticate! scope: :user
+  #   redirect_to root_path unless current_user.is_admin?
   # end
-  # config.current_user_method(&:current_user)
+  
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan
+  # config.authorize_with :cancancan2
+  config.current_user_method(&:current_user)
+  config.parent_controller = 'ApplicationController' 
 
   ## == Pundit ==
   # config.authorize_with :pundit
@@ -23,7 +27,7 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
 
-  # config.authorize_with :cancancan2
+  
   
   config.actions do
     dashboard                     # mandatory

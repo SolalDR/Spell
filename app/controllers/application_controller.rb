@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   layout :layout_by_resource
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to '/', :notice => "Vous n'êtes pas autorisé à accéder à cette page."
+  end
+
   private
 
   def layout_by_resource

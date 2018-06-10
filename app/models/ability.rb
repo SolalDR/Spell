@@ -9,8 +9,9 @@ class Ability
     if user.admin?
       can :manage, :all
       can :access, :rails_admin   # grant access to rails_admin
-      # can :manage, :dashboard       # grant access to the dashboard
+      can :manage, :dashboard       # grant access to the dashboard
     else
+      can :manage, [Book, Fragment]
       can :read, :all
     end
     #
