@@ -16,6 +16,24 @@ $gutter: 10px
     bottom: $gutter
     left: $gutter
 
+  button
+    height: 25px
+    width: 25px
+    position: relative
+    top: 4px
+    border-radius: 100%
+    background-color: transparent
+    border: 0
+    background-position: center
+    background-size: contain
+    background-repeat: no-repeat
+    background-image: url(/images/picto/picto-record-active.svg)
+    transform: scale(1.7)
+    margin: 0 15px
+
+    &.clicked
+      background-image: url(/images/picto/picto-record-inactive.svg)
+    
   &--default 
     font-size: $font-size-medium
     line-height: 30px

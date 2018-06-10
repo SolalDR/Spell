@@ -9,18 +9,27 @@ export default {
     return this.menu.classList.contains("control--hide") ? false : true;
   },
 
-
   set display(value) {
     if (value) {
+      this.btn.classList.add("control__btn--cross");
       this._display = true; 
       this.menu.classList.replace("control--hide", "control--display")
     } else {
+      this.btn.classList.remove("control__btn--cross");
       this._display = false;
       this.menu.classList.replace("control--display", "control--hide") 
     }
   },
 
   initEvents: function(){
+
+    this.btn.addEventListener("click", ()=>{
+      if(this.display){
+        this.btn.classList.add("control__btn--cross");
+      } else {
+        this.btn.classList.remove("control__btn--cross");
+      }
+    })
 
     this.items.forEach(item => {
       item.addEventListener("click", ()=>{

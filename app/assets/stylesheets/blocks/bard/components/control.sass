@@ -23,6 +23,29 @@ $color: transparentize(#a9b7f5, 0.5)
     margin: 0
     z-index: 2
     line-height: 0
+    &::before, &::after
+      content: ""
+      display: block
+      height: 25px
+      width: 4px
+      background-color: white
+      position: absolute
+      top: 12px
+      left: 23px
+      transition: .4s ease-in-out
+
+    &::before
+      transform: translateX(5px)
+    &::after
+      transform: translateX(-5px)
+    
+    &.control__btn
+      &--cross
+        &::before
+          transform: rotate(45deg)
+        &::after
+          transform: rotate(-45deg)
+          
 
   &__btn
     height: $size
@@ -81,6 +104,8 @@ $color: transparentize(#a9b7f5, 0.5)
         background-color: #253682
         &::before
           display: none
+        .control__out-item-label
+          color: white
           
 
       &--no-label
@@ -97,10 +122,10 @@ $color: transparentize(#a9b7f5, 0.5)
       &-label
         position: absolute
         font-size: 12px
-        line-height: 12px
+        line-height: 14px
         color: $color-primary-dark
         top: $size+$gutter/2
-        width: $size + $gutter
+        width: 80px
         font-weight: 400
 
   &__menu
