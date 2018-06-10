@@ -24,27 +24,43 @@ export default class Fragment2 extends Bard.Fragment {
      * ELEMENTS
      */
     // this.char = this.addElement(new Bard.CharacterElement({}))
-  
+    
+    this.customPipeline = [
+      "terryfying-roar", 
+      "unlock-sword",
+      "dragon-appear",
+      "dragonStopTalking",
+      "break-sword",
+      "charUp",
+      "run",
+      "next",
+      "ocelot-talk",
+      "next",
+      "dragon-talk",
+      "ocelot-respond",
+      "dragon-respond",
+      "robot-click",
+      "dragon-roar",
+      "dragon-death",
+      "dragon-fade"
+    ]
 
     var text = this.addElement(
       new Bard.TextElement({
         nodes: [
-          " Enfin arrivés ! La fusée à peine posée, les habitants de mars affluent des alentours pour t'acclamer et t’encourager :”Libère-nous ! Tu es notre <span data-speech='next'>seul espoir</span> !”",
-          "Tout à coup, un <span data-speech='terryfying-roar'>bruit terrifiant</span> retentit dans les environs. Pris de panique les martiens courent se mettre à l’abri ! Le monstre est <span data-speech='unlock-sword'>tout proche</span> !" ,
-        
+          // " Enfin arrivés ! La fusée à peine posée, les habitants de mars affluent des alentours pour t'acclamer et t’encourager :”Libère-nous ! Tu es notre <span data-speech='next'>seul espoir</span> !”",
+          "Enfin arrivés ! La fusée à peine posée, un <span data-speech='terryfying-roar'>bruit terrifiant</span> retentit dans les environs. L'heure du combat a sonné ! Le monstre est <span data-speech='unlock-sword'>tout proche</span> !" ,
           "Notre héros brandit son arme, prêt à combattre. Tout à coup, la créature s’élance d’<span data-speech='dragon-appear'>une falaise</span> et atterrit devant eux.",
-           "“Graougrrrr !! je vais vous manger tout crus !!” dit-elle en <span data-speech='dragonStopTalking'>grognant</span>.",
-           "Avant même que *Nom du héro* ait eu le temps d’esquisser un geste, elle lui <span data-speech='break-sword'>fonce dessus</span> et le projette sur le sol, son arme se brisant avec la force du choc.<br> “Hahahaha, <span data-speech='charUp'>trop facile</span> !”",
+           "“ Graougrrrr !! je vais vous manger tout crus !! ” dit-elle en <span data-speech='dragonStopTalking'>grognant</span>.",
+           "Avant même que Chevalier Justine ait eu le temps d’esquisser un geste, elle lui <span data-speech='break-sword'>fonce dessus</span> et le projette sur le sol, son arme se brisant avec la force du choc.<br> “ Hahahaha, <span data-speech='charUp'>trop facile</span> ! ”",
            "Ton héros est désarmé ! Vite, nous <span data-speech='run'>devons fuir</span> !",
-           "*Nom du héro* et ses compagnons déguerpissent sans attendre. Le monstre les prend en chasse! Ils sont rapides, mais le monstre <span data-speech='next'>plus encore</span>…  ",
-           "Il gagne de la distance sur eux ! <span data-speech='ocelot-talk'>Tout</span> à coup, Ocelot s’écrie : “Nous voilà bloqués !” Un grand rocher se cachait au détour d’un virage : pas moyen de <span data-speech='next'>continuer à fuir</span> !",
-           "En appui sur ses pattes arrière, <span data-speech='dragon-talk'>le monstre</span> s’apprête à bondir. “Quelle pitoyable tentative ! lance le méchant. Vous ne pourrez pas m’empêcher de terroriser la planète mars ! Et je vais vous faire si peur que <span data-speech='ocelot-respond'>vous en</span> mourrez !”",
-           "Moi je n’ai pas peur, lui répond Ocelot, et je connais même quelqu’un que tu ne pourras jamais effrayer, il est d’ailleurs <span data-speech='dragon-respond'>avec nous</span> !",
-           "Impossible ! Répond le monstre. Dis-moi qui est cette personne, que je te montre que tu as tort” Touche ton compagnon qui ne pourra jamais être effrayé pour vaincre le monstre ",
-           "“Le robot Tanique ne te craint pas !” dit *Nom du héro* À ces mots, le monstre se met à <span data-speech='dragon-wigle'>trembler</span> et à enfler de colère, prêt à faire <span data-speech='dragon-roar'>le cri</span> le plus terrorisant de tous les temps : “Braougraaaaaagggggaaaaaar !!!!",
-           "Voyant qu’il a échoué à effrayer le robot, le <span data-speech='dragon-death'>monstre pâlit</span> et un grondement sourd sort de sa gueule. Le <span data-speech='dragon-vainquished'>voilà vaincu</span>! Il s’écroule tout à coup et son corps s’évanouit pour ne laisser qu’une petite forme <span data-speech='dragon-fade'>sur le sol</span>.",
-           "Le roi et son garde a"
-          
+           "Chevalier Justine et ses compagnons déguerpissent sans attendre. Le monstre les prend en chasse ! Ils sont rapides, mais le monstre <span data-speech='next'>plus encore</span>…  ",
+           "Il gagne de la distance sur eux ! <span data-speech='ocelot-talk'>Tout</span> à coup, Ocelot s’écrie : “ Nous voilà bloqués ! ” Un grand rocher se cachait au détour d’un virage : pas moyen de <span data-speech='next'>continuer à fuir</span> !",
+           "En appui sur ses pattes arrières, <span data-speech='dragon-talk'>le monstre</span> s’apprête à bondir. “ Quelle pitoyable tentative ! lance le méchant. Vous ne pourrez pas m’empêcher de terroriser la planète mars ! Et je vais vous faire si peur que <span data-speech='ocelot-respond'>vous en</span> mourrez ! ”",
+           "” Moi je n’ai pas peur, lui répond Ocelot, et je connais même quelqu’un que tu ne pourras jamais effrayer, il est d’ailleurs <span data-speech='dragon-respond'>avec nous</span> ! ”",
+           "” Impossible ! Répond le monstre. Dis-moi qui est cette personne, que je te montre que tu as tort ! ” Touche ton compagnon qui ne pourra jamais être effrayé pour vaincre le monstre. ",
+           "“ Le robot Tanique ne te craint pas ! ” dit Chevalier Justine À ces mots, le monstre se met à trembler et à enfler de colère, prêt à faire <span data-speech='dragon-roar'>le cri</span> le plus terrorisant de tous les temps : “ Braougraaaaaagggggaaaaaar !!!! “",
+           "Voyant qu’il a échoué à effrayer le robot, le <span data-speech='dragon-death'>monstre pâlit</span> et un grondement sourd sort de sa gueule. Le voilà vaincu ! Il s’écroule tout à coup et son corps s’évanouit pour ne laisser qu’une petite forme <span data-speech='dragon-fade'>sur le sol</span>.",
         ],
         align: "bottom-left",
         position: { x: "40px", y: "-20px" },
@@ -449,7 +465,7 @@ export default class Fragment2 extends Bard.Fragment {
     })
 
     this.addAction('unlock-sword', (e)=>{
-      this.executeAction('next')
+      text.next();
       this.ocelot.actions[8].play();
       this.caracal.actions[8].play();
 
@@ -510,13 +526,13 @@ export default class Fragment2 extends Bard.Fragment {
       this.dragon.actions[3].play()
       this.dragon.actions[0].fadeIn(1.5)
       this.dragon.actions[0].play()
-      this.executeAction('next')
+      text.next();
     }, {
       once: true
     })
     this.addAction('dragonStopTalking', (e)=>{
       this.dragon.actions[3].fadeOut(0.4)
-      this.executeAction('next')
+      text.next();
     })
 
     this.addAction('break-sword', (e)=>{
@@ -549,11 +565,11 @@ export default class Fragment2 extends Bard.Fragment {
       this.char.actions[4].setLoop(THREE.LoopOnce)
       this.char.actions[4].play()
 
-        this.executeAction('next')
+        text.next();
     })
 
     this.addAction('run', (e)=>{
-      this.executeAction('next')
+      text.next();
       this.executeAction('move-element', {element: this.ocelot, to: -this.winWidth*1.4/this.aspect, duration: 11000})
       this.executeAction('move-element', {element: this.caracal, to: -this.winWidth*1.4/this.aspect, duration: 11000})
       this.executeAction('move-element', {element: this.robot, to: -this.winWidth*1.4/this.aspect, duration: 11000})
@@ -650,27 +666,31 @@ export default class Fragment2 extends Bard.Fragment {
       this.dragon.actions[0].play()
       this.ocelot.actions[5].setLoop(1,2)
       this.ocelot.actions[5].play()
-      this.executeAction('next')
+      text.next();
     })
 
     
     this.addAction('dragon-respond', (e)=>{
       this.robotClickable = true
 
-      this.executeAction('next')
+      text.next();
       this.dragon.actions[3].enabled = true
       this.dragon.actions[3].crossFadeFrom(this.dragon.actions[0], 1)
       this.dragon.actions[3].play()
     })
 
-    this.robot.on('click', ()=>{
+    this.addAction("robot-click", ()=>{
       if(this.robotClickable) {
         this.dragon.actions[3].fadeOut(0.4)
         this.robotClickable = false
         this.robot.actions[1].setLoop(THREE.LoopOnce)
         this.robot.actions[1].play()
-        this.executeAction('next')
+        text.next();
       }
+    })
+
+    this.robot.on('click', ()=>{
+      this.executeAction("robot-click");
     })
 
     this.addAction('dragon-wigle', (e)=>{
@@ -700,7 +720,7 @@ export default class Fragment2 extends Bard.Fragment {
 
       this.dragon.actions[4].setLoop(THREE.LoopOnce)
       this.dragon.actions[4].play()
-      this.executeAction('next')
+      text.next();
     })
 
     this.addAction('dragon-death', (e)=>{
@@ -791,7 +811,7 @@ export default class Fragment2 extends Bard.Fragment {
       this.rocket.actions[4].fadeOut( 5)
       this.rocket.actions[2].play()
       this.rocket.actions[2].fadeIn(5)
-      
+
       this.liane.anims.push(new Bard.Animation({
         duration: 5000,
         from: this.liane.mesh.position.y-(this.winWidth*0.2/this.aspect),
