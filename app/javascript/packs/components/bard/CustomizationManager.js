@@ -56,6 +56,16 @@ export default {
 
     items.forEach(item=>{
       item.addEventListener("click", ()=>{
+
+        items.forEach( element =>{
+          if(element === item){
+            element.classList.add("customization__list-item--active");
+          } else {
+            element.classList.remove("customization__list-item--active");
+          }
+        })
+
+
         bodyPart.classList.add("customization__list--hidden");
 
         setTimeout(()=>{
@@ -63,6 +73,17 @@ export default {
           var choiceItems = bodyPart.querySelectorAll(".customization__list-item");
           choiceItems.forEach( item => {
             item.setAttribute("style", `background-image: url("/images/personnalisation/${item.getAttribute("data-partcode")}.png");`)
+            
+            // On item click
+            item.addEventListener("click", ()=>{
+              choiceItems.forEach( element => {
+                if(element === item){
+                  element.classList.add("customization__list-item--active");
+                } else {
+                  element.classList.remove("customization__list-item--active");
+                }
+              })
+            })
           });
         }, 500)
       })

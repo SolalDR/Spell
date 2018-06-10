@@ -29,7 +29,7 @@ export default {
       },
 
       chrome_exception: {
-        message: "Vous n'utilisez pas Google Chrome, certaines fonctionnalités risque de ne pas fonctionner correctement.",
+        message: "Vous n'utilisez pas Google Chrome, certaines fonctionnalités risquent de ne pas fonctionner correctement.",
         type: "warning",
         image: "aide"
       }
