@@ -34,17 +34,15 @@ export default {
         playContainer.classList.add("customization__play-container--hidden");
         isRecording = true;
       }
-    })
+    });
 
     this.recorder.on("record:stop", (e)=>{
       this.sound = new Bard.Sound(this.book.soundManager, "heros-call", e.buffer, {
-        gain: 1, 
-        effect: "distortionCurve",
-        effectIntensity: 100
+        gain: 1
       });
 
       this.book.soundManager.sounds["heros-call"] = this.sound;
-    })
+    });
 
     this.playButton.addEventListener("click", ()=>{
       this.sound.start(); 
@@ -55,14 +53,22 @@ export default {
   manageListItem: function(){
     var items = document.querySelectorAll(".customization__list-item");
     var bodyPart = document.querySelector("#body-part-choices-container");
+
     items.forEach(item=>{
       item.addEventListener("click", ()=>{
         bodyPart.classList.add("customization__list--hidden");
+
         setTimeout(()=>{
           bodyPart.classList.remove("customization__list--hidden");
+          var choiceItems = bodyPart.querySelectorAll(".customization__list-item");
+          choiceItems.forEach( item => {
+            item.setAttribute("style", `background-image: url("/images/personnalisation/${item.getAttribute("data-partcode")}.png");`)
+          });
         }, 500)
       })
     })
+
+    
   },
 
   save: function(){
