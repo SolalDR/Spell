@@ -45,6 +45,14 @@ $pad-title: 70px
       font-size: 100px
       font-weight: bold
       line-height: 90px
+      overflow: hidden
+
+      span
+        display: block
+        transition: .6s ease
+        @for $i from 1 to 4 
+          &:nth-child(#{$i})
+            transition-delay: $i*.1s
 
     &-container
       flex-grow: 1
@@ -296,6 +304,26 @@ $pad-title: 70px
 
 #section-6
   
+
+  #carousel-photo
+    position: absolute
+    bottom: 60px
+    right: 0
+    height: 430px
+    width: 600px
+    overflow: hidden
+    z-index: -1
+
+    .carousel__item
+      position: absolute
+      top: 0
+      left: 0
+      min-width: 100%
+      min-height: 100%
+      z-index: -1
+      transition: 1s
+
+
   .panel
 
     &__background
@@ -303,12 +331,21 @@ $pad-title: 70px
       position: absolute
       z-index: -1
       width: 100%
-      top: 230px
+      top: 0
       right: 0
-      filter: opacity(.35)
+      transition: .5s
+
       img
         height: 400px
         float: right
+      &::after
+        content: ""
+        display: block
+        width: 100%
+        position: absolute
+        left: 100%
+        height: 100%
+        background-color: $color-primary-light
     
     &__title-huge
       margin-bottom: 40px
@@ -317,7 +354,6 @@ $pad-title: 70px
       &-1
         padding: 90px 0 130px 0
         border-top: 2px solid black
-        border-bottom: 2px solid black
         display: block
         min-height: 730px
 

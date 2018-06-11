@@ -84,8 +84,7 @@
           <h3 class="panel__text-title delay-4">Passionnant</h3>
           <p class="panel__text-content delay-4">
             Au fur et à mesure que le parent lit, l'histoire se matérialise et s'anime sous les yeux de l'enfant grâce à la reconnaissance vocale.<br>
-            Des ambiances sonores <br>
-            renforcent la puissance du récit.
+            Des ambiances sonores renforcent la puissance du récit.
           </p>
           <span class="panel__text-separator delay-3"></span>
           <p class="panel__text-content uppercase delay-2">Apprentissage des mots</p>
@@ -112,7 +111,10 @@
     
     <div class="container panel__container panel__container-1"> 
       <div id="background-section-3" class="panel__background" data-scrollable="25%">
-        <%= image_tag "photo.jpg" %>
+        <video autoplay loop muted>
+          <source src="/videos/video-landing.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video> 
       </div>
     
       <div 
@@ -240,11 +242,39 @@
 
   <section id="section-6" class="panel">
     <div class="container panel__container panel__container-1"> 
-      <h2 class="panel__title-huge">"Parfois on arrive à<br> faire des choses et<br> c'est cool"</h2>
-      <p>_Irène, 6 ans_</p>
-      <div id="background-6" class="panel__background" data-scrollable="25%">
-        <%= image_tag "photo.jpg" %>
+    
+      <div id="carousel-title" class="carousel">
+        <div class="carousel__item carousel__item--visible">
+          <h2 class="panel__title-huge">
+            <span>"Parfois on arrive à</span>
+            <span>faire des choses et</span>
+            <span>c'est cool"</span>
+          </h2>
+          <p class="carousel__item-label">_Irène, 6 ans_</p>
+        </div>
+        <div class="carousel__item carousel__item--hidden">
+          <h2 class="panel__title-huge">
+            <span>"Test on arrive à</span>
+            <span>faire des choses et</span>
+            <span>c'est cool"</span>
+          </h2>
+          <p class="carousel__item-label">_Nikiswag, 6 ans_</p>
+        </div>
       </div>
+
+      <div id="carousel-photo" class="carousel carousel--no-overflow" data-carousel='{"timeout": 500}'>
+        <div class="carousel__item carousel__item carousel__item--visible">
+          <div class="panel__background">
+            <%= image_tag "photo.jpg" %>
+          </div>
+        </div>
+        <div class="carousel__item carousel__item carousel__item--hidden">
+          <div class="panel__background">
+            <%= image_tag "mock-up.png" %>
+          </div>
+        </div>
+      </div>
+
     </div>  
   </section>
 

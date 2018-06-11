@@ -12,6 +12,8 @@ import MagicBox from "./components/MagicBox.js"
 import Home from "./home.js";
 import Scrollable from "./components/Scrollable.js";
 import TransitionPage from "./components/TransitionPage.js";
+import ColoredText from "./components/ColoredText.js"
+import Carousel from "./components/carousel.js";
 
 window.Http = Http;
 window.Bard = Bard;
@@ -28,6 +30,8 @@ window.addEventListener("load", ()=>{
   Home.init();
   Scrollable.initialize();
   TransitionPage.init();
+  ColoredText.init();
+  Carousel.init();
 
   document.querySelectorAll(".field input").forEach(input => {
     input.setAttribute("data-value", input.value);

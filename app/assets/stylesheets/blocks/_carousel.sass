@@ -1,0 +1,54 @@
+.home
+  .carousel
+    position: relative 
+
+    &--no-overflow
+      .carousel__item
+        overflow: visible
+
+    &__item
+      transition: 1s
+      position: absolute
+      top: 0
+      left: 0
+      overflow: hidden
+
+      &-label
+        transition: .5s
+        display: inline-block
+
+      &--visible
+        opacity: 1
+        z-index: 2
+        .panel__title-huge span
+          transform: translateX(0)
+        .carousel__item-label
+          transform: translateX(0)
+        .panel__background
+          opacity: .5
+
+
+      &--hidden
+        z-index: 0
+        pointer-events: none
+        display: none
+        z-index: 1
+
+      &--before-visible
+        z-index: 3
+        .panel__title-huge span
+          transform: translateX(100%)
+        .carousel__item-label
+          transform: translateX(100%)
+        .panel__background
+          opacity: 0
+
+      &--hidding
+        .panel__title-huge span
+          transform: translateX(-100%)
+        .carousel__item-label
+          transform: translateX(-100%)
+        .panel__background
+          opacity: 0
+
+

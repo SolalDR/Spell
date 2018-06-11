@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   
   get '/team', to: 'home#team', as: 'team'
   get '/store', to: 'home#store', as: 'store'
+  get '/about', to: 'home#about', as: 'about'
 
   resources :fragments, only: [:index, :show, :destroy]
   
