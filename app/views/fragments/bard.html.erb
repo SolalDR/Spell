@@ -109,7 +109,9 @@
 <!-- Tree -->
 <div id="arborescence-panel" class="panel panel--hidden">
   <div class="panel__container">
-    <button class="panel__close"><i class="material-icons">close</i></button>
+    <button class="panel__close">
+      <%= image_tag "picto/picto-erreur.svg" %>
+    </button>
     <h2 class="title-1 text-center panel__title"><%= @fragment.book.title %></h2>
     <%= link_to "Ma collection de mot", book_marks_box_path(@book_mark), class: "btn btn--slide bottom-center-medium smoothout" %>
   </div>
@@ -121,7 +123,7 @@
 <!-- Settings -->
 <div id="settings-panel" class="panel panel--hidden">
   <div class="panel__container">
-    <button class="panel__close"><i class="material-icons">close</i></button>
+    <button class="panel__close"><%= image_tag "picto/picto-erreur.svg" %></button>
     <h2 class="title-1 text-center panel__title">Réglages</h2>
     <div class="settings container">
       
@@ -190,7 +192,7 @@
 
 <!-- Help -->
 <div id="help-panel" class="panel panel--hidden">
-  <button class="panel__close"><i class="material-icons">close</i></button>
+  <button class="panel__close"><%= image_tag "picto/picto-erreur.svg" %></button>
   <div class="panel__container">
     <div class="text-center">
       <h3 id="help-title" class="font-big bold mb-5">Cherche et trouve</h3>
@@ -207,7 +209,7 @@
 <div id="word-panel" class="word-panel panel panel--hidden">
   <button class="panel__close"
   data-toggle-target="#word-panel" data-toggle-modifier="panel--hidden">
-  <i class="material-icons">close</i>
+  <%= image_tag "picto/picto-erreur.svg" %>
 </button>
   <div class="panel__container">
     <div>

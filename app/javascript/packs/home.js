@@ -31,8 +31,8 @@ export default {
     })
 
     setTimeout(()=>{
-      title.classList.remove("landing__title--half-hidden");
-    }, 1500)
+      title.classList.remove("landing__title--hidden");
+    }, 500)
 
     title.addEventListener("mouseenter", ()=>{
       this.landingElement.className = "landing landing--trailer-hover"
