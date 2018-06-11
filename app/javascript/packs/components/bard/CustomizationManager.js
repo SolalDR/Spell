@@ -7,7 +7,6 @@ export default {
     this.colorsElement.forEach(element => {
       element.addEventListener("click", ()=>{
         this.book.config.character.color_hex = element.getAttribute("data-color");
-        console.log(this.book.config.character);
       })
     })
   },
@@ -76,6 +75,17 @@ export default {
             
             // On item click
             item.addEventListener("click", ()=>{
+              console.log("Click on item", item);
+              var match = item.id.match(/((.+?)(\d+))$/)
+
+
+              var cat = match[2];
+              var id = match[3];
+              
+              if(this.book.config.character.body_parts[cat]){
+                this.book.config.character.body_parts[cat] = id;
+              }
+
               choiceItems.forEach( element => {
                 if(element === item){
                   element.classList.add("customization__list-item--active");
@@ -93,7 +103,7 @@ export default {
   },
 
   save: function(){
-    // var 
+    this.manager.updateConfig();
   },
 
   init: function(manager){

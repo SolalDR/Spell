@@ -73,6 +73,11 @@ class BookMarksController < ApplicationController
       @book_mark.config["variables"].keys.each do |key|
         @book_mark.config["variables"][key] = config["variables"][key]
       end
+
+      @book_mark.config["character"]["body_parts"].keys.each do |key|
+        @book_mark.config["character"]["body_parts"][key] = config["character"]["body_parts"][key]
+      end
+
       @book_mark.save;
 
       respond_to do |format|
