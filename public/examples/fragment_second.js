@@ -20,6 +20,51 @@ export default class Fragment2 extends Bard.Fragment {
      */
     var rocketLaunch = this.soundManager.load("forest", "/examples/sounds/rocket_launch.mp3");
 
+    this.soundManager.load('background-mars', "/examples/sounds/scene-2/mars-ambiance.mp3", {
+      loop: true
+    })
+
+    this.soundManager.load('rocket-down', "/examples/sounds/scene-2/atterissage-fusee.mp3", {
+    })
+
+    this.soundManager.load('far-roar', "/examples/sounds/scene-2/monstre-au-loin.mp3", {
+    })
+
+    this.soundManager.load('reverse-walk', "/examples/sounds/scene-2/marche-recul.mp3", {
+    })
+
+    this.soundManager.load('dragon-fall', "/examples/sounds/scene-2/saut-monstre.mp3", {
+    })
+
+    this.soundManager.load('dragon-talk', "/examples/sounds/scene-2/monstre-qui-parle.mp3", {
+    })
+
+    this.soundManager.load('char-fall', "/examples/sounds/scene-2/hero-qui-tombe.mp3", {
+    })
+
+    this.soundManager.load('chars-run', "/examples/sounds/scene-2/course.mp3", {
+      loop: true,
+    })
+    
+    this.soundManager.load('dragon-run', "/examples/sounds/scene-2/course-monstre.mp3", {
+      loop: true,
+    })
+
+    this.soundManager.load('char-fall', "/examples/sounds/scene-2/hero-qui-tombe.mp3", {
+    })
+
+    this.soundManager.load('shout-before-chase', "/examples/sounds/scene-2/cri-monstre-apres-saut.mp3", {
+    })
+
+    this.soundManager.load('success', "/examples/sounds/scene-2/validation-robot.mp3", {
+    })
+
+    this.soundManager.load('dragon-roar', "/examples/sounds/scene-2/cri-du-monstre.mp3", {
+    })
+
+    this.soundManager.load('dragon-death', "/examples/sounds/scene-2/monstre-qui-secroule.mp3", {
+    })
+
     /**
      * ELEMENTS
      */
@@ -69,6 +114,9 @@ export default class Fragment2 extends Bard.Fragment {
       })
     );
 
+    this.stars = this.addElement(new Bard.StarsElement({map: '/examples/img/etoile-bleu.png', count: 20, group: "background"}))
+
+
     var planets = []
     this.planes = []
     
@@ -101,7 +149,7 @@ export default class Fragment2 extends Bard.Fragment {
         },
         scale: 160,
         opacity: 0.5,
-        model: 'examples/obj/liane2/liane2.gltf'
+        model: '/examples/obj/liane2/liane2.gltf'
       })
     )
 
@@ -124,7 +172,7 @@ export default class Fragment2 extends Bard.Fragment {
         },
         scale: 160,
         opacity: 0.5,
-        model: 'examples/obj/liane3/liane3.gltf'
+        model: '/examples/obj/liane3/liane3.gltf'
       })
     )
 
@@ -147,7 +195,7 @@ export default class Fragment2 extends Bard.Fragment {
         },
         scale: 160,
         opacity: 0.5,
-        model: 'examples/obj/liane4/liane4.gltf'
+        model: '/examples/obj/liane4/liane4.gltf'
       })
     )
 
@@ -205,7 +253,7 @@ export default class Fragment2 extends Bard.Fragment {
           z:0,
         },
         scale: 300,
-        model: 'examples/obj/fusee/fusee.gltf'
+        model: '/examples/obj/fusee/fusee.gltf'
       })
     )
 
@@ -229,7 +277,7 @@ export default class Fragment2 extends Bard.Fragment {
         scale: 0.6,
         hide:true,
         originCenter: true,
-        model: 'examples/obj/rig-heros (2).glb'
+        model: '/examples/obj/rig-heros (2).glb'
       })
     )
 
@@ -252,7 +300,7 @@ export default class Fragment2 extends Bard.Fragment {
         scale: 0.8,
         hide:true,
         originCenter: true,
-        model: 'examples/obj/rig-robot-tanique.glb'
+        model: '/examples/obj/rig-robot-tanique.glb'
       })
     )
 
@@ -275,7 +323,7 @@ export default class Fragment2 extends Bard.Fragment {
         },
         scale: 0.5,
         originCenter: true,
-        model: 'examples/obj/rig-chats3.glb',
+        model: '/examples/obj/rig-chats3.glb',
         originRat: 3,
       })
     )
@@ -309,7 +357,7 @@ export default class Fragment2 extends Bard.Fragment {
         scale: 0.4,
         originCenter : true,
         originRat: 3,
-        model: 'examples/obj/rig-chats3.glb'
+        model: '/examples/obj/rig-chats3.glb'
       })
     )
 
@@ -343,7 +391,7 @@ export default class Fragment2 extends Bard.Fragment {
         scale: 0.35,
         originCenter : true,
         originRat: 3,
-        model: 'examples/obj/rig-chats3.glb'
+        model: '/examples/obj/rig-chats3.glb'
       })
     )
 
@@ -374,7 +422,7 @@ export default class Fragment2 extends Bard.Fragment {
           z:0,
         },
         scale: 2.,
-        model: 'examples/obj/rig-boss.glb'
+        model: '/examples/obj/rig-boss.glb'
       })
     )
 
@@ -396,7 +444,7 @@ export default class Fragment2 extends Bard.Fragment {
         },
         scale: 1.,
         hide:true,
-        model: 'examples/obj/rig-roi-martien.glb'
+        model: '/examples/obj/rig-roi-martien.glb'
       })
     )
 
@@ -418,7 +466,7 @@ export default class Fragment2 extends Bard.Fragment {
         },
         scale: 1.3,
         hide:true,
-        model: 'examples/obj/rig-soldat-mars.glb'
+        model: '/examples/obj/rig-soldat-mars.glb'
       })
     )
 
@@ -441,6 +489,8 @@ export default class Fragment2 extends Bard.Fragment {
     })
 
     this.addAction('terryfying-roar', (e)=>{
+      this.soundManager.play('far-roar')
+
       this.ocelotScared = this.ocelot.getAnimationByName('apeure')
       this.ocelotScared.setLoop(1,2)
      
@@ -465,6 +515,10 @@ export default class Fragment2 extends Bard.Fragment {
     })
 
     this.addAction('unlock-sword', (e)=>{
+      this.soundManager.play('reverse-walk')
+
+      
+
       text.next();
       this.ocelot.actions[8].play();
       this.caracal.actions[8].play();
@@ -485,7 +539,7 @@ export default class Fragment2 extends Bard.Fragment {
 
     this.addAction('dragon-appear', (e)=>{
       //this.executeAction('move-element', {element: this.dragon, to: -this.winWidth*0.72/this.aspect, duration: 1000})
-      
+    
       var from = new THREE.Vector3().copy(this.dragon.mesh.position);
       var to = new THREE.Vector3().copy(from);
       to.x -= this.winWidth*0.3/this.aspect
@@ -503,6 +557,8 @@ export default class Fragment2 extends Bard.Fragment {
         onFinish: ()=>{
           this.ocelot.actions[5].stop()
           this.caracal.actions[5].stop()
+          this.soundManager.play('dragon-fall')
+          this.soundManager.play('dragon-talk')
           this.dragon.anims.push(new Bard.Animation({
             from: 1,
             to: 0,
@@ -532,6 +588,9 @@ export default class Fragment2 extends Bard.Fragment {
     })
     this.addAction('dragonStopTalking', (e)=>{
       this.dragon.actions[3].fadeOut(0.4)
+
+      this.soundManager.stop('dragon-talk')
+
       text.next();
     })
 
@@ -539,7 +598,11 @@ export default class Fragment2 extends Bard.Fragment {
       this.dragon.actions[0].fadeOut(0.2)
       this.dragon.actions[9].setLoop(THREE.LoopOnce)
       this.dragon.actions[9].play()
-    
+
+      setTimeout(()=>{
+        this.soundManager.play('char-fall')
+      },1300)
+
       setTimeout(()=>{
         this.dragon.actions[0].fadeIn(0.5)
         this.dragon.actions[0].enabled = true
@@ -574,6 +637,9 @@ export default class Fragment2 extends Bard.Fragment {
       this.executeAction('move-element', {element: this.caracal, to: -this.winWidth*1.4/this.aspect, duration: 11000})
       this.executeAction('move-element', {element: this.robot, to: -this.winWidth*1.4/this.aspect, duration: 11000})
 
+      this.soundManager.play('chars-run')
+      this.soundManager.play('shout-before-chase')
+
       setTimeout(this.executeAction.bind(this, 'move-element', {element: this.dragon, to: -this.winWidth*1.5/this.aspect, duration: 8000}), 3000)
       this.dragon.actions[5].setLoop(THREE.LoopOnce)
       this.dragon.actions[5].play()
@@ -586,17 +652,18 @@ export default class Fragment2 extends Bard.Fragment {
       this.char.actions[14].fadeOut(0.5)
       setTimeout( ()=>{
         this.dragon.actions[1].fadeIn(0.5),
-      this.dragon.actions[1].play(),
-      this.dragon.actions[0].fadeOut(0.5)
+        this.dragon.actions[1].play(),
+        this.dragon.actions[0].fadeOut(0.5)
+        this.soundManager.play('dragon-run')
       }
         ,3000)
-        setTimeout( ()=>{
-          this.dragon.actions[1].fadeOut(1)
-          this.dragon.actions[0].enabled =true
-          this.dragon.actions[0].fadeIn(0.5)
-          this.dragon.actions[0].play()
-        }
-          ,10000)
+      setTimeout( ()=>{
+        this.dragon.actions[1].fadeOut(1)
+        this.dragon.actions[0].enabled =true
+        this.dragon.actions[0].fadeIn(0.5)
+        this.dragon.actions[0].play()
+      }
+        ,10000)
 
       this.caracal.mesh.rotation.y = Math.PI
       this.char.mesh.rotation.y = Math.PI 
@@ -622,6 +689,9 @@ export default class Fragment2 extends Bard.Fragment {
           this.book.scene.camera.position.x = advancement*(-this.winWidth*1.5/this.aspect)
         },
         onFinish: ()=>{
+          this.soundManager.stop('dragon-run')
+          this.soundManager.stop('chars-run')
+
           this.ocelot.actions[4].stop()
           // this.dragon.actions[2].stop()
           this.caracal.mesh.rotation.y = 0
@@ -655,12 +725,15 @@ export default class Fragment2 extends Bard.Fragment {
     })
     
     this.addAction('dragon-talk',()=>{
+      this.soundManager.play('dragon-talk')
+
       this.dragon.actions[3].enabled = true
       this.dragon.actions[3].crossFadeFrom(this.dragon.actions[0], 1)
       this.dragon.actions[3].play()
     })
 
     this.addAction('ocelot-respond', (e)=>{
+      this.soundManager.stop('dragon-talk')
       this.dragon.actions[3].crossFadeTo(this.dragon.actions[0], 0.5)
       this.dragon.actions[0].enabled =true
       this.dragon.actions[0].play()
@@ -672,6 +745,7 @@ export default class Fragment2 extends Bard.Fragment {
     
     this.addAction('dragon-respond', (e)=>{
       this.robotClickable = true
+      this.soundManager.play('dragon-talk')
 
       text.next();
       this.dragon.actions[3].enabled = true
@@ -680,7 +754,9 @@ export default class Fragment2 extends Bard.Fragment {
     })
 
     this.addAction("robot-click", ()=>{
+      this.soundManager.stop('dragon-talk')
       if(this.robotClickable) {
+        this.soundManager.play('success')
         this.dragon.actions[3].fadeOut(0.4)
         this.robotClickable = false
         this.robot.actions[1].setLoop(THREE.LoopOnce)
@@ -698,6 +774,7 @@ export default class Fragment2 extends Bard.Fragment {
     })
 
     this.addAction('dragon-roar', (e)=>{
+      this.soundManager.play('dragon-roar')
       // this.king.mesh.position.x = this.dragon.mesh.position.x + (this.winWidth*0.4/this.aspect)
      
       // this.ocelot.actions[8].setLoop(THREE.LoopOnce)
@@ -724,6 +801,7 @@ export default class Fragment2 extends Bard.Fragment {
     })
 
     this.addAction('dragon-death', (e)=>{
+      this.soundManager.play('dragon-death')
       this.dragon.actions[6].setLoop(THREE.LoopOnce)
       this.dragon.actions[6].clampWhenFinished = true
       this.dragon.actions[6].play()
@@ -806,7 +884,7 @@ export default class Fragment2 extends Bard.Fragment {
      * ACTIONS
      */
     this.addAction('transitionIn', (e)=>{
-
+      this.soundManager.play('rocket-down')
       this.rocket.actions[4].play()
       this.rocket.actions[4].fadeOut( 5)
       this.rocket.actions[2].play()
@@ -855,7 +933,7 @@ export default class Fragment2 extends Bard.Fragment {
           console.log(this.ocelot.actions)
           this.ocelot.getAnimationByName('faux fixe').play()
           this.ocelot.anims.push(new Bard.Animation({
-            duration: 1000,
+            duration: 1500,
             onProgress: (advancement, time) => {
               var easeTime = Bard.Easing.easeInOutQuint(advancement)
               this.ocelot.mesh.children[0].traverse((child)=> {
@@ -870,7 +948,7 @@ export default class Fragment2 extends Bard.Fragment {
 
           this.robot.getAnimationByName('faux fixe').play()
           this.robot.anims.push(new Bard.Animation({
-            duration: 1000,
+            duration: 1500,
             onProgress: (advancement, time) => {
               var easeTime = Bard.Easing.easeInOutQuint(advancement)
               this.robot.mesh.children[0].traverse((child)=> {
@@ -880,10 +958,11 @@ export default class Fragment2 extends Bard.Fragment {
               })
             }
           }))
+
           console.log(this.char.actions)
           this.caracal.getAnimationByName('faux fixe').play()
           this.caracal.anims.push(new Bard.Animation({
-            duration: 1000,
+            duration: 1500,
             onProgress: (advancement, time) => {
               var easeTime = Bard.Easing.easeInOutQuint(advancement)
               this.caracal.mesh.children[0].traverse((child)=> {
@@ -896,7 +975,7 @@ export default class Fragment2 extends Bard.Fragment {
 
           this.char.getAnimationByName('faux-fixe').play()
           this.char.anims.push(new Bard.Animation({
-            duration: 1000,
+            duration: 1500,
             onProgress: (advancement, time) => {
               var easeTime = Bard.Easing.easeInOutQuint(advancement)
               this.char.mesh.children[0].traverse((child)=> {
@@ -926,9 +1005,10 @@ export default class Fragment2 extends Bard.Fragment {
 
 
     this.on("start", ()=>{
-      
+      this.soundManager.play('background-mars')
       for(var i=0; i<this.elements.length; i++)
         this.elements[i].display();
+
       this.book.scene.camera.position.y = 50
       // this.book.scene.camera.position.x = this.winWidth*2.75
 

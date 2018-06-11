@@ -13,7 +13,6 @@ export default {
 
   manageRecording: function(){
     if( !this.book.soundManager ) return;
-
     var playContainer = document.querySelector(".customization__play-container");
     var isRecording = false;
     var isPlaying = false;
@@ -64,7 +63,6 @@ export default {
           }
         })
 
-
         bodyPart.classList.add("customization__list--hidden");
 
         setTimeout(()=>{
@@ -81,7 +79,7 @@ export default {
 
               var cat = match[2];
               var id = match[3];
-              
+
               if(this.book.config.character.body_parts[cat]){
                 this.book.config.character.body_parts[cat] = id;
               }
@@ -98,8 +96,6 @@ export default {
         }, 500)
       })
     })
-
-    
   },
 
   save: function(){
@@ -109,7 +105,6 @@ export default {
   init: function(manager){
     this.manager = manager;
     this.book = this.manager.book;
-
 
     this.saveButton = document.querySelector("#customization-save");
     this.selectTitle = document.querySelector("#title-input")
@@ -134,9 +129,7 @@ export default {
       })
     })
 
-    this.book.on("customize:hide", ()=>{
-
-    }) 
+    this.book.on("customize:hide", ()=>{});
   }
 
 }

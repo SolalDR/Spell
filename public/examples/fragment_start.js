@@ -140,7 +140,7 @@ export default class Fragment1 extends Bard.Fragment {
       "mayClickOcelot",
       "ocelot-click", // Click ocelot
       "rocketIsClickable",
-      "next", // Touch rocket
+      "rocket-click", // Touch rocket
       "rocket-launch"                    // Speak : Démarer la fusée
     ]
 
@@ -386,15 +386,27 @@ export default class Fragment1 extends Bard.Fragment {
     }
     )))
 
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i < 4; i++) {
       let cloud = this.addElement(new Bard.PlaneElement({
         name: "nuage"+i, 
-        group: "background",
-        map: '/examples/img/clouds/nuage'+i+'.png', 
+        clickable: true,
+        isPlane: true,
+        map: '/examples/img/clouds/nuage'+i+'-version1.png', 
         transparent: true, 
-        depth: -200
+        fit: 'no',
+        depth: -100,
+        rotation: {
+          x: 0,
+          y: 0,
+          z: 0,
+        },
+        scale: 128,
+        position : {
+          x:0.3*i,
+          y:(this.winWidth*(0.40+Math.random()*0.2-0.1))/this.aspect,
+          z: 30
+        }
       }));
-      cloud.x = (Math.random()*60 ) - 30
       this.clouds.push(cloud);
     }
 
@@ -619,6 +631,14 @@ export default class Fragment1 extends Bard.Fragment {
     this.rocket.on('click', ()=>{
 
       this.soundManager.play('clickRocket')
+      this.executeAction('rocket-click')
+    })
+
+    /**
+     * ACTIONS
+     */
+
+     this.addAction('rocket-click', (e)=>{
       if(this.scene3 && this.rocketIsClickable) {
         text.next();
         this.rocketIsClickable = false
@@ -661,11 +681,7 @@ export default class Fragment1 extends Bard.Fragment {
         }))
       }
       
-    })
-
-    /**
-     * ACTIONS
-     */
+     })
     
     this.addAction('caracalTalk', ()=>{
       this.caracal.actions[5].crossFadeFrom(this.caracal.actions[0], 0.3)
@@ -906,7 +922,7 @@ export default class Fragment1 extends Bard.Fragment {
           this.soundManager.play('marche')
           setTimeout(()=>{
             this.soundManager.play('voix')
-          }, 1000)
+          }, 2000)
         }
       })) 
       
@@ -1026,7 +1042,6 @@ export default class Fragment1 extends Bard.Fragment {
     }, { once: true })
 
     this.addAction("next",  e => {
-      console.log("Next");
       text.next()
     })
 
@@ -1082,11 +1097,11 @@ export default class Fragment1 extends Bard.Fragment {
         this.elements[i].render(this.clock);
       }
     }
-
+    
     if(this.clouds.length ) {
       for (let i = 0; i < this.clouds.length; i++) {
         if(this.clouds[i].mesh) {
-          this.clouds[i].mesh.position.x = (Math.sin(this.clock.elapsed/(2000.*((i*0.5)+1)))*40)+this.clouds[i].x
+          this.clouds[i].mesh.position.x = ((Math.sin(((this.clock.elapsed)/9000)+(this.clouds[i].position.x*Math.PI))+1)*(this.winWidth/this.aspect)*1.5)
         }
       }
     }
