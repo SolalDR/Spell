@@ -1,0 +1,40 @@
+.about 
+  padding-top: 70px
+  padding-bottom: 70px
+  
+  &__block
+    font-size: 20px
+    font-weight: 300
+    min-width: 300px
+    margin-right: 30px
+    margin-bottom: 64px
+    line-height: normal
+    flex: 1
+
+    &:last-child
+      margin-bottom: 0
+
+    &-container
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+
+  &__separator
+    &::after
+      content: ""
+      display: block
+      width: 33%
+      height: 1px 
+      background-color: black
+      margin-top: 50px
+  
+  &__logos
+    margin-top: 50px
+  
+  &__logo
+    &-left
+      width: 150px
+      margin-right: 60px
+
+    &-right
+      width: 300px

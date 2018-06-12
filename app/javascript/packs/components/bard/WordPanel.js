@@ -12,7 +12,6 @@ export default {
   },
 
   displayWord(event){
-    console.log("displayed")
     event.element.classList.add("clickable--load");
 
     var video = document.querySelector("#word-panel-video");

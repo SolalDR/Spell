@@ -14,22 +14,20 @@ class ColoredElement {
   }
 
   initEvents(){
-    this.colors = ["red", "pink", "blue", "pink"];
+    this.colors = ["#143adb", "#cae6fc", "#fcca9", "#6be8c2", "#f5b57", "#fe600", "#031347"];
     
     this.letters.forEach( letter => {
-      console.log(this.letters)
       letter.setAttribute("data-color", this.colors[Math.floor(Math.random()*this.colors.length)]);
-      letter.style.color = letter.getAttribute("data-color");
+      letter.style.color = "#000"
       letter.addEventListener("mouseenter", ()=>{
         letter.style.transitionDuration = ".4s";
-        letter.style.color = "black";
+        letter.style.color = letter.getAttribute("data-color");
         setTimeout(()=>{
-          letter.style.color = letter.getAttribute("data-color");
+          letter.style.color = "#000";
         }, 2500)
       })
     })
   }
-
 }
 
 export default {

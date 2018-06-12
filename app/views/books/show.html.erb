@@ -13,7 +13,7 @@
         <p class="book__spec">Durée: 35min</p>
       </div>
       <div class="book__description animate--from-fade-bottom delay-1" data-scrollable data-scrollable-modifier="animate--launched">
-        <%= @book.description %>
+        <%= raw @book.description %>
       </div>
       <div class="book__actions animate--from-fade-bottom" data-scrollable data-scrollable-modifier="animate--launched">
         <% if @book_mark %>

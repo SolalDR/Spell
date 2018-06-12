@@ -47,7 +47,7 @@ export default {
           document.documentElement.mozRequestFullScreen();  
         } else if (document.documentElement.webkitRequestFullScreen) {  
           document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
-        }  
+        }
       } else {  
         if (document.cancelFullScreen) {  
           document.cancelFullScreen();  

@@ -20,42 +20,53 @@ export default {
   manageLandingTop: function(){
     this.landingPlayed = false;
     var title = document.querySelector(".landing__title");
+    this.landingVideo = document.querySelector(".landing__video");
+    
+    this.landingVideo.onended = () => {
+      if(this.landingPlayed) this.hideVideo();
+    }
 
     window.addEventListener("scroll", ()=>{
-      this.landingElement.className = "landing landing--trailer-hover"
-      setTimeout(()=>{
-        this.landingElement.className = "landing"
-      }, 1500)
-      
-      this.landingPlayed = false;
+      this.hideVideo();
     })
 
     setTimeout(()=>{
       title.classList.remove("landing__title--hidden");
     }, 500)
 
-    title.addEventListener("mouseenter", ()=>{
+    title.addEventListener("mouseover", ()=>{
       this.landingElement.className = "landing landing--trailer-hover"
     })
 
     title.addEventListener("mouseleave", ()=>{
-      if(!this.landingPlayed)
+      if( !this.landingPlayed ){
         this.landingElement.className = "landing"
+      }
     })
 
     title.addEventListener("click", ()=>{
-      this.landingStatus = "show"
-      this.landingPlayed = true;
+      this.displayVideo();
     })
-    
   },
 
-  set landingStatus(status) {
-    if(status == null) {
-      this.landingElement.className = "landing"
-    } else if(!this.landingPlayed){
-      this.landingElement.className = "landing landing--trailer-"+status;  
-    }
+  displayVideo: function(){
+    if( this.landingPlayed ) return;
+
+    this.landingElement.className = "landing landing--trailer-show";
+    this.landingPlayed = true;
+    // Header
+    document.querySelector(".header").classList.add("header--slided-top");
+
+    // Restart, unmuted, play
+    this.landingVideo.currentTime = 0;
+    this.landingVideo.muted = false;
+    this.landingVideo.play();
+  },
+
+  hideVideo: function(){
+    this.landingElement.className = "landing"
+    this.landingPlayed = false;
+    this.landingVideo.muted = true;
   },
 
   init: function(){

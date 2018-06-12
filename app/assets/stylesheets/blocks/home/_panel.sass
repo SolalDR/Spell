@@ -42,15 +42,22 @@ $pad-title: 70px
     transform: rotate(var(--scrollable, 0)) translateZ(0) 
     
     &-huge
-      font-size: 100px
+      font-size: 6.5em
       font-weight: bold
       line-height: 90px
-      overflow: hidden
+  
+    &-medium
+      font-size: 60px
+      font-weight: bold
+      line-height: 55px
+      
 
+    &-medium, &-huge
+      overflow: hidden
       span
         display: block
         transition: .6s ease
-        @for $i from 1 to 4 
+        @for $i from 1 to 5 
           &:nth-child(#{$i})
             transition-delay: $i*.1s
 

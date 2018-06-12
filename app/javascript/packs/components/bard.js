@@ -42,10 +42,18 @@ export default {
           self.manageDictionnary(fragment.elements[i]);
         }
       }
+
+
+    })
+
+    document.body.addEventListener("keydown", (e)=>{
+      if( e.keyCode === 39 ){
+        this.book.currentFragment.next(true);  
+      }
     })
 
     this.passInteractionButton.addEventListener("click", ()=>{
-      this.book.currentFragment.executeAction();
+      this.book.currentFragment.next(true);
     })
   },
 

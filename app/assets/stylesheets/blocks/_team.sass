@@ -1,0 +1,52 @@
+.team
+  padding-top: 70px
+  padding-bottom: 70px
+
+  &__container
+    display: flex
+    flex-wrap: wrap
+
+  &__mate
+    min-width: 250px
+    margin: 0 20px
+    flex: 1
+
+    video
+      width: 200px
+      display: block
+      margin: auto
+      padding-left: 30px
+
+    &-role
+      font-size: 14px
+      color: #AAA
+      text-align: center
+      margin-bottom: 20px
+      padding-bottom: 20px
+      position: relative
+      color: black
+      line-height: normal
+
+      &::after
+        content: ""
+        display: block
+        position: absolute
+        width: 60px
+        height: 1px 
+        background-color: #000
+        top: 100%
+        left: 50%
+        transform: translateX(-50%)
+
+    &-title
+      font-size: 22px
+      font-weight: bold
+      text-align: center
+      margin-top: 40px
+      line-height: normal
+
+    &-description
+      font-weight: 300
+      font-size: 16px
+      text-align: center
+      line-height: normal
