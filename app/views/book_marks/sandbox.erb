@@ -4,14 +4,12 @@
   <!-- Alphabet -->
   <div class="alphabet__input">
     <svg id="alphabet__sandbox" viewBox="0 0 1920 1280"></svg>
-  </div>  
-  
+  </div>
   <div class="alphabet__storage">
     <%  ("A".."Z").each do |letter| %>
       <%= svg("typo/"+letter) %>
     <% end %>
   </div>
-
 
   <!-- Dialog -->
   <div id="dialog-1" class="dialog">
@@ -20,17 +18,19 @@
       <br>Prononce ou écris un mot magique
       <br>pour le faire apparaître.</span>
       <span class="italic">Exemple : Fusée</span>
-      </p> 
+    </p>
     <span class="btn btn--slide mt-3" data-toggle-target="#dialog-1, #dialog-2" data-toggle-modifier="dialog--hidden, dialog--hidden">J'ai compris</span>
   </div>
 
   <div id="dialog-2" class="dialog dialog--hidden">
     <p class="dialog__content">
       <span class="bold block">
-        Tu peux retrouver tes mots magiques<br>
-        dans le dictionnaire présent<br>dans le menu.</p> 
+        Tu peux retrouver ta collection de mots magiques<br>
+        en cliquant sur l'icône<br>
+        en bas à droite.
       </span>
-      <span class="btn btn--slide mt-3" data-toggle-target="#dialog-2, #controller" data-toggle-modifier="dialog--hidden, control--disabled">J'ai compris</span>
+    </p> 
+    <span class="btn btn--slide mt-3" data-toggle-target="#dialog-2, #controller" data-toggle-modifier="dialog--hidden, control--disabled">J'ai compris</span>
   </div>
 
 

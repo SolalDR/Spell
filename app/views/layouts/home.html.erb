@@ -27,7 +27,7 @@
               <%= link_to "L'équipe", team_path, class: "smoothout"  %>
             </li>
             <li class="header__menu-item">
-              <%= link_to "Le Magasin", store_path, class: "smoothout"  %>
+              <%= link_to "Le Magasin", root_path, class: "smoothout"  %>
             </li>
           </ul>
         </nav>
@@ -55,7 +55,7 @@
                   <li class="header__menu-item">
                     <a href="#" class="header__drop-btn">Mon Compte</a>
                     <div class="header__drop header__drop--close">
-                      <%= link_to "Paramètre du compte", edit_user_registration_path, class: "header__drop-item smoothout" %>
+                      <%= link_to "Paramètres du compte", edit_user_registration_path, class: "header__drop-item smoothout" %>
                       <%= link_to "Déconnexion", destroy_user_session_path, :method => "delete", class: "header__drop-item smoothout" %>
                     </div>
                   </li>
