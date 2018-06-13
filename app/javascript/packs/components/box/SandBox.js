@@ -67,6 +67,36 @@ export default {
       })(this.speechRecognition, this.commands[command], command);
     }
     
+    this.commands.espace = function(){
+      this.engine.world.gravity.y = -.2;
+    }
+
+    this.commands.terre = function(){
+      this.engine.world.gravity.y = 1;
+    }
+
+    this.commands.spell = function(){
+      var half5 = window.innerWidth/5;
+      // self.commands.terre();
+      self.commands.terre.call(this);
+      var letters = [];
+
+      setTimeout(()=>{ 
+        letters.push(self.addComposite("/images/S.svg", { x: 100 + half5*0, y: -200, width: 200, height: 200, xScale: 1.6, yScale: 1.6 }));
+      }, Math.random()*500);  
+      setTimeout(()=>{ 
+        letters.push(self.addComposite("/images/P.svg", { x: 100 + half5*1, y: -200, width: 200, height: 200, xScale: 1.6, yScale: 1.6 }));
+      }, Math.random()*500);  
+      setTimeout(()=>{ 
+        letters.push(self.addComposite("/images/E.svg", { x: 100 + half5*2, y: -200, width: 200, height: 200, xScale: 1.6, yScale: 1.6 }));
+      }, Math.random()*500);  
+      setTimeout(()=>{ 
+        letters.push(self.addComposite("/images/L.svg", { x: 100 + half5*3, y: -200, width: 200, height: 200, xScale: 1.6, yScale: 1.6 }));
+      }, Math.random()*500);  
+      setTimeout(()=>{ 
+        letters.push(self.addComposite("/images/L.svg", { x: 100 + half5*4, y: -200, width: 200, height: 200, xScale: 1.6, yScale: 1.6 }));
+      }, Math.random()*500);  
+    }
 
     this.commands.gros = function(){
       if( this.currentEl ) {
@@ -129,7 +159,7 @@ export default {
 
   execute: function(string){
     var words = string.split(/\s+?/);
-    console.log(words);
+
 
     for(var i in words){
       if(this.commands[words[i]]) {
@@ -224,5 +254,6 @@ export default {
 
     }
 
+    return composite;
   }
 }
